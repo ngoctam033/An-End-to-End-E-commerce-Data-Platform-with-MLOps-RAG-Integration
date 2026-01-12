@@ -1,0 +1,6 @@
+id,name,description,created_at,updated_at,is_active
+1,Shopee,Đơn hàng từ sàn thương mại điện tử Shopee,2025-01-01 09:00:00,2025-06-01 10:00:00,True
+2,Lazada,Đơn hàng từ sàn thương mại điện tử Lazada,2025-01-02 09:30:00,2025-06-02 10:30:00,True
+3,Tiki,Đơn hàng từ sàn thương mại điện tử Tiki,2025-01-03 10:00:00,2025-06-03 11:00:00,True
+4,Website,Đơn hàng từ website riêng của công ty,2025-01-04 10:30:00,2025-06-04 11:30:00,True
+5,Tiktok,Đơn hàng từ sàn thương mại điện tử Tiktok,2025-01-05 11:00:00,2025-06-05 12:00:00,True

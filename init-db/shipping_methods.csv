@@ -1,0 +1,5 @@
+id,name,description,estimated_delivery_time,is_active,created_at,updated_at
+1,Giao tiêu chuẩn,Giao hàng trong vòng 3-5 ngày,120,True,2025-01-01 08:00:00,2025-06-01 08:00:00
+2,Giao nhanh,Giao hàng trong vòng 1-2 ngày,48,True,2025-01-01 08:00:00,2025-06-01 08:00:00
+3,Giao siêu tốc,Giao trong ngày tại nội thành,8,True,2025-01-01 08:00:00,2025-06-01 08:00:00
+4,COD,Giao hàng thu tiền tận nơi,72,True,2025-01-01 08:00:00,2025-06-01 08:00:00

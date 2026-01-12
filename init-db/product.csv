@@ -1,0 +1,498 @@
+﻿id,product_sku,brand_id,name,description,price,sub_category_id,created_at,updated_at,is_active
+1,MSI Gaming Titan 18 HX AI A2XWJG-622VN,1,MSI Gaming Titan 18 HX AI A2XWJG-622VN Ultra 9 285HX,"Laptop MSI Gaming Titan 18 HX AI A2XWJG-622VN với màn hình 18"" MiniLED, tản nhiệt buồng hơi siêu mát, bàn phím cơ Cherry MX Ultra.",149990000,3,8/17/2025 13:26,8/17/2025 13:26,TRUE
+2,G635LX-RW179W,2,Asus ROG Strix Scar 16 G635LX-RW179W Ultra 9 275HX,"Laptop Asus ROG Strix Scar 16 với màn hình Mini-LED, tần số quét 240Hz, 3 quạt tản nhiệt và card đồ họa GeForce RTX AI 5090.",139390000,4,8/17/2025 13:30,8/17/2025 13:30,TRUE
+3,MSI Gaming Titan 18 HX AI A2XWIG-090VN,1,MSI Gaming Titan 18 HX AI A2XWIG-090VN Ultra 9 285HX,"Chuẩn AI Copilot+ PC, Màn hình 18"" MiniLED, Bàn phím cơ Cherry MX Ultra",132990000,4,8/17/2025 13:30,8/17/2025 13:30,TRUE
+4,MSI Gaming Raider 18 HX AI A2XWIG-033VN,1,MSI Gaming Raider 18 HX AI A2XWIG-033VN Ultra 9 275HX,"Chuẩn AI Copilot+ PC, Màn hình 18"" MiniLED, Tản nhiệt Cooler Boost 5, Trả góp 0%",115990000,4,8/17/2025 13:31,8/17/2025 13:31,TRUE
+5,SKU-B87CBA0C,3,MacBook Pro 16 M4 Max 2024 16CPU/40GPU/48GB/1TB,"Chip M4 Max đẳng cấp nhất, pin dài đến 24 tiếng, siêu mỏng, màn hình sáng khó tin.",102490000,5,8/17/2025 13:31,8/17/2025 13:31,TRUE
+6,83F5008WVN,4,Lenovo Gaming Legion Pro 7 16IAX10H Ultra 9 275HX,"Màn hình sáng, 500 nits, Hỗ trợ Mux Switch, Tần số quét 240Hz",88990000,4,8/17/2025 13:32,8/17/2025 13:32,TRUE
+7,SKU-CF3357AB,3,MacBook Pro 16 M4 Pro 2024 14CPU/20GPU/48GB/512GB,"Chip M4 Pro, chuyên nghiệp, pin dài đến 24 tiếng, siêu mỏng, màn hình sáng",74990000,5,8/17/2025 13:32,8/17/2025 13:32,TRUE
+8,GE68 HX 14VHG-646VN,1,MSI Gaming Raider GE68 HX 14VHG-646VN i9-14900HX,Laptop MSI Gaming Raider GE68 HX 14VHG-646VN i9-14900HX với công nghệ OverBoost Ultra và tản nhiệt Cooler Boost 5.,73990000,4,8/17/2025 13:32,8/17/2025 13:32,TRUE
+9,SKU-FECDE2DB,3,MacBook Pro 16 M4 Pro 2024 14CPU/20GPU/24GB/512GB,"Chip M4 Pro, chuyên nghiệp, Pin dài đến 24 tiếng, siêu mỏng, Màn hình sáng, khó tin",64990000,5,8/17/2025 13:33,8/17/2025 13:33,TRUE
+10,MSI Gaming Vector 16 HX AI A2XWIG-062VN,1,MSI Gaming Vector 16 HX AI A2XWIG-062VN Ultra 9 275HX,"Chuẩn AI Copilot+ PC, Tản nhiệt Cooler Boost 5, Thunderbolt 5 siêu tốc, Trả góp 0%",62990000,4,8/17/2025 13:33,8/17/2025 13:33,TRUE
+11,A16 AI+ A3XVGG-208VN,1,MSI Gaming Stealth A16 AI+ A3XVGG-208VN Ryzen AI 9 HX 370,"Laptop gaming với Ryzen AI 9 HX 370, GeForce RTX AI 4070, vỏ kim loại, chuẩn AI Copilot+ PC",59990000,4,8/17/2025 13:33,8/17/2025 13:33,TRUE
+12,21NX003BVN,4,Lenovo ThinkPad X1 Carbon Gen 13 Ultra 7 255H,"Laptop Lenovo ThinkPad X1 Carbon Gen 13 với màn hình 2.8K OLED, Windows 11 Pro, bảo hành 3 năm, trả góp 0%.",58990000,5,8/17/2025 13:34,8/17/2025 13:34,TRUE
+13,SKU-69925822,3,MacBook Pro 14 M4 Pro 2024 14CPU/20GPU/24GB/1TB,"Chip M4 Pro, chuyên nghiệp, Pin dài đến 24 tiếng, siêu mỏng, Màn hình sáng, khó tin.",58890000,5,8/17/2025 13:34,8/17/2025 13:34,TRUE
+14,PHN14-51-96HG,5,Acer Predator Helios Neo 14 Gaming PHN14-51-96HG Ultra 9 185H,"Laptop Acer Predator Helios Neo 14 Gaming trang bị card đồ họa GeForce RTX AI 4070, tản nhiệt cánh quạt 3D AeroBlade 5, bảo hành nhanh 3 ngày, trả góp 0%.",56990000,4,8/17/2025 13:34,8/17/2025 13:34,TRUE
+15,SKU-B40B3067,3,MacBook Pro 14 2023 M3 Pro 12 CPU/18 GPU/18GB/1TB,"MacBook Pro 14 inch với chip Apple M3 Pro, màn hình Liquid Retina XDR, hỗ trợ dò tia phần cứng.",56990000,5,8/17/2025 13:35,8/17/2025 13:35,TRUE
+16,83F3002GVN,4,Lenovo Gaming Legion Pro 5 16IAX10 Ultra 9 275HX,"Tản nhiệt Legion, Coldfront Hyper, Legion AI Engine+",55490000,4,8/17/2025 13:35,8/17/2025 13:35,TRUE
+17,GE68HX 13VF-050VN,1,MSI Gaming Raider GE68HX 13VF-050VN i7-13700HX,Laptop MSI Gaming Raider GE68HX với công nghệ OverBoost Ultra và tản nhiệt Cooler Boost 5,53990000,4,8/17/2025 13:36,8/17/2025 13:36,TRUE
+18,21QA006LVN,4,Lenovo ThinkPad X9-14 Gen 1 Ultra 7 258V,"Laptop Lenovo ThinkPad X9-14 Gen 1 với màn hình 2.8K OLED, bảo hành 3 năm, trả góp 0%.",53990000,5,8/17/2025 13:36,8/17/2025 13:36,TRUE
+19,UX8406CA-PZ109WS,2,Asus Zenbook Duo OLED UX8406CA-PZ109WS Ultra 9 285H,"Màn hình cảm ứng 2.8K OLED, tần số quét 120 Hz, tặng Office Home 2024.",52490000,5,8/17/2025 13:36,8/17/2025 13:36,TRUE
+20,SFX14-72G-79UW,5,Acer Swift X AI SFX14-72G-79UW Ultra 7 155H,"Laptop Acer Swift X AI trang bị GeForce RTX AI 4070, màn hình 2.8K OLED, bảo hành nhanh, trả góp 0%, tặng Balo Gaming SUV.",52490000,6,8/17/2025 13:37,8/17/2025 13:37,TRUE
+21,83F0003BVN,4,Lenovo Gaming Legion 5 15IAX10 U7 255HX,"Laptop gaming Lenovo Gaming Legion 5 15IAX10 U7 255HX với RTX 5070, chuẩn AI Copilot+ PC, tặng Office Home 2024.",51990000,4,8/17/2025 13:37,8/17/2025 13:37,TRUE
+22,83F3003VVN,4,Lenovo Gaming Legion Pro 5 16IAX10 Ultra 9 275HX (83F3003VVN),"Tản nhiệt Legion, Coldfront Hyper, Legion AI Engine+",49990000,4,8/17/2025 13:37,8/17/2025 13:37,TRUE
+23,MSI Gaming Stealth 14 AI Studio A1VFG-050VN,1,MSI Gaming Stealth 14 AI Studio A1VFG-050VN Ultra 7 155H,"Gaming mỏng nhẹ, 1.7kg, Vapor Champer, Màn hình 2.8K OLED",49990000,4,8/17/2025 13:38,8/17/2025 13:38,TRUE
+24,21KC008MVN,4,Lenovo ThinkPad X1 Carbon Gen 12 Ultra 7 155H (21KC008MVN),Lenovo ThinkPad X1 Carbon Gen 12 U7-155H (21KC008MVN),49490000,5,8/17/2025 13:38,8/17/2025 13:38,TRUE
+25,PHN14-51-99Y8,5,Acer Predator Helios Neo 14 PHN14-51-99Y8 Ultra 9 185H,"Laptop Acer Predator Helios Neo 14 với màn hình 3K 165Hz, GeForce RTX 4060 8GB, bảo hành nhanh 3 ngày, trả góp 0%.",49190000,4,8/17/2025 13:38,8/17/2025 13:38,TRUE
+26,MSI Gaming Vector 16 HX AI A2XWHG-010VN,1,MSI Gaming Vector 16 HX AI A2XWHG-010VN Ultra 7 255HX,"Chuẩn AI Copilot+ PC, Tản nhiệt Cooler Boost 5, Thunderbolt 5 siêu tốc, Trả góp 0%",48990000,4,8/17/2025 13:39,8/17/2025 13:39,TRUE
+27,MSI Gaming Crosshair 16 HX D2XWGKG-071VN,1,MSI Gaming Crosshair 16 HX D2XWGKG-071VN Ultra 9 275HX,"Bàn phím gaming, RGB 24 vùng, Chuẩn AI Copilot+ PC, Màn hình 16"", QHD+ 240Hz",48990000,4,8/17/2025 13:39,8/17/2025 13:39,TRUE
+28,PTN16-51-78JQ,5,Acer Predator Triton Neo 16 Gaming PTN16-51-78JQ Ultra 7 155H,"Laptop gaming Acer Predator Triton Neo 16 với card đồ họa GeForce RTX AI 4060, tản nhiệt cánh quạt 3D AeroBlade 5, bảo hành nhanh 3 ngày, trả góp 0%, giảm giá 2.500.000 ₫, tặng kèm Balo Gaming SUV.",48990000,4,8/17/2025 13:40,8/17/2025 13:40,TRUE
+29,SKU-E387BE24,3,MacBook Pro 14 M4 2024 10CPU/10GPU/24GB/1TB,"Chip M4 thế hệ mới, thời lượng pin dài lâu, Màn hình sáng khó tin",48890000,5,8/17/2025 13:40,8/17/2025 13:40,TRUE
+30,SKU-E8111D91,3,MacBook Pro 14 M4 Pro 2024 12CPU/16GPU/24GB/512GB,"Chip M4 Pro, chuyên nghiệp, Pin dài đến 24 tiếng, siêu mỏng, Màn hình sáng, khó tin, Trả góp 0%",47990000,5,8/17/2025 13:40,8/17/2025 13:40,TRUE
+31,83F0003CVN,4,Lenovo Gaming Legion 5 15IAX10 U7 255HX,"Laptop gaming Lenovo Legion 5 với RTX 5060, AI Copilot+, kèm Office Home 2024.",46990000,4,8/17/2025 13:41,8/17/2025 13:41,TRUE
+32,MSI Gaming Crosshair 16 HX D2XWGKG-072VN,1,MSI Gaming Crosshair 16 HX D2XWGKG-072VN Ultra 7 255HX,"Laptop gaming với bàn phím RGB 24 vùng, chuẩn AI Copilot+ PC, màn hình 16"" QHD+ 240Hz, trả góp 0%.",46990000,4,8/17/2025 13:41,8/17/2025 13:41,TRUE
+33,G615JPR-S5107W,2,Asus Gaming ROG Strix G16 G615JPR-S5107W i7-14650HX,"Laptop Asus Gaming ROG Strix G16 với màn hình 16"" 2.5K, 3 quạt tản nhiệt, NVIDIA GeForce RTX 5070.",46590000,4,8/17/2025 13:41,8/17/2025 13:41,TRUE
+34,83LY004GVN,4,Lenovo Gaming Legion 5 15IRX10 i7-14700HX,Lenovo Gaming Legion 5 15IRX10 i7-14700HX,46490000,4,8/17/2025 13:42,8/17/2025 13:42,TRUE
+35,MSI Gaming Crosshair 16 HX D2XWGKG-034VN,1,MSI Gaming Crosshair 16 HX D2XWGKG-034VN Ultra 7 255HX,"Bàn phím gaming, RGB 24 vùng, Chuẩn AI Copilot+ PC, Màn hình 16"", QHD+ 240Hz",45990000,4,8/17/2025 13:42,8/17/2025 13:42,TRUE
+36,83E2005DVN,4,Lenovo Yoga Pro 7 14IMH9 Ultra 7 155H,"Lenovo AI Engine+, Màn hình 2.8K OLED, Phím cứng Copilot, Trả góp 0%",44490000,5,8/17/2025 13:42,8/17/2025 13:42,TRUE
+37,SFX14-72G-77F9,5,Acer Swift X AI SFX14-72G-77F9 Ultra 7 155H,"Laptop Acer Swift X AI với màn hình 2.8K OLED, tích hợp AI Acer Sense, bảo hành nhanh 3 ngày, trả góp 0%.",44190000,6,8/17/2025 13:43,8/17/2025 13:43,TRUE
+38,SKU-E0765D1E,3,MacBook Pro 14 M4 2024 10CPU/10GPU/16GB/1TB,"Chip M4 thế hệ mới, thời lượng pin dài lâu, Màn hình sáng khó tin",43990000,5,8/17/2025 13:43,8/17/2025 13:43,TRUE
+39,83AC000SVN,4,Lenovo Yoga 9 2in1 14IMH9 Ultra 7 155H,"Lenovo AI Engine+, Màn hình 2.8K OLED, Phím cứng Copilot, Trả góp 0%",42990000,5,8/17/2025 13:44,8/17/2025 13:44,TRUE
+40,MSI Gaming Katana 15 HX B14WGK-023VN,1,MSI Gaming Katana 15 HX B14WGK-023VN i7-14650HX,"Laptop gaming với tần số quét 165Hz, Mux Switch, NVIDIA GeForce RTX 5070.",41990000,4,8/17/2025 13:44,8/17/2025 13:44,TRUE
+41,FX608JPR-RV044W,2,Asus TUF Gaming F16 FX608JPR-RV044W i7-14650HX,"Laptop Asus TUF Gaming F16 với RTX 5070, màn hình 16 inch 165Hz 100% sRGB.",41990000,4,8/17/2025 13:44,8/17/2025 13:44,TRUE
+42,FA401KM-RG010WS,2,Asus TUF Gaming A14 FA401KM-RG010WS Ryzen AI 7 350,"Laptop Asus TUF Gaming A14 Ryzen AI 7, NVIDIA GeForce RTX 5060, Chuẩn AI Copilot+ PC, Tặng Office Home 2024",41190000,4,8/17/2025 13:45,8/17/2025 13:45,TRUE
+43,83LY004JVN,4,Lenovo Gaming Legion 5 15IRX10 i7-14700HX,"Laptop gaming Lenovo Legion 5 với màn hình OLED, Mux Switch.",41090000,4,8/17/2025 13:45,8/17/2025 13:45,TRUE
+44,MSI Gaming Crosshair 16 HX D2XWFKG-070VN,1,MSI Gaming Crosshair 16 HX D2XWFKG-070VN Ultra 9 275HX,"Bàn phím gaming, RGB 24 vùng, Chuẩn AI Copilot+ PC, Màn hình 16"", QHD+ 240Hz",40990000,4,8/17/2025 13:45,8/17/2025 13:45,TRUE
+45,HX D2XWFKG-078VN,1,MSI Gaming Crosshair 16 HX D2XWFKG-078VN Ultra 7 255HX,"Bàn phím gaming, RGB 24 vùng, Chuẩn AI Copilot+ PC, Màn hình 16"", QHD+ 240Hz",40990000,4,8/17/2025 13:46,8/17/2025 13:46,TRUE
+46,SKU-4C14B7C8,3,Macbook Air 15 M4 2025 10CPU/10GPU/24GB/512GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ",40490000,6,8/17/2025 13:46,8/17/2025 13:46,TRUE
+47,UX5406SA-PV140WS,2,Asus Zenbook S 14 OLED UX5406SA-PV140WS Ultra 7 258V,"Chuẩn AI Copilot+ PC, Mỏng nhẹ 1.2kg, Lumina OLED 2.8K",39490000,5,8/17/2025 13:47,8/17/2025 13:47,TRUE
+48,MSI Gaming Crosshair 16 HX D2XWFKG-036VN,1,MSI Gaming Crosshair 16 HX D2XWFKG-036VN Ultra 7 255HX,"Laptop gaming với màn hình 16"" QHD+ 240Hz, chuẩn AI Copilot+ PC, bàn phím RGB 24 vùng",38990000,4,8/17/2025 13:47,8/17/2025 13:47,TRUE
+49,FX608JMR-RV048W,2,Asus TUF Gaming F16 FX608JMR-RV048W i7-14650HX,"Laptop Asus TUF Gaming F16 với màn hình 16 inch, 100% sRGB, tần số quét 165Hz, NVIDIA GeForce RTX 5060.",38990000,4,8/17/2025 13:47,8/17/2025 13:47,TRUE
+50,83HN0022VN,4,Lenovo Yoga Pro 7 14ASP9 R9 AI 365 (83HN0022VN),"Lenovo Yoga Pro 7, R9 AI 365, 100% sRGB, Chuẩn AI Copilot+ PC",38990000,5,8/17/2025 13:48,8/17/2025 13:48,TRUE
+51,SKU-27232718,3,MacBook Pro 14 2023 M3 8 CPU/10 GPU/16GB/512GB,"MacBook Pro 14 2023 với chip Apple M3, màn hình Liquid Retina XDR, pin lên đến 22 giờ.",38990000,5,8/17/2025 13:48,8/17/2025 13:48,TRUE
+52,SKU-7812698E,5,Acer Swift 14 AI SF14-51-75VP Ultra 7 258V,"Laptop với chuẩn AI Copilot+, màn hình 3K OLED, bảo hành nhanh trong 3 ngày, trả góp 0%.",38890000,6,8/17/2025 13:48,8/17/2025 13:48,TRUE
+53,SKU-E176AFE3,3,MacBook Pro 14 M4 2024 10CPU/10GPU/16GB/512GB,"Chip M4 thế hệ mới, thời lượng pin dài lâu, màn hình sáng khó tin.",38190000,5,8/17/2025 13:49,8/17/2025 13:49,TRUE
+54,83JQ0049VN,4,Lenovo Yoga 7 2-in-1 14ILL10 Ultra 7 285V,"Chuẩn AI Copilot+ PC, Màn hình cảm ứng, 2.8K OLED, Bản lề gập 360°, Trả góp 0%",37990000,6,8/17/2025 13:49,8/17/2025 13:49,TRUE
+55,UX3405CA-PZ204WS,2,Asus Zenbook 14 OLED UX3405CA-PZ204WS Ultra 9 285H,"Màn hình cảm ứng, 2.8K OLED, Tần số quét 120 Hz, Tặng Office Home 2024",37490000,5,8/17/2025 13:49,8/17/2025 13:49,TRUE
+56,UM5606KA-RK113WS,2,Asus Zenbook S 16 OLED UM5606KA-RK113WS Ryzen AI 7 350,"Laptop Asus Zenbook S 16 OLED với màn hình 2.8K OLED, chuẩn AI Copilot+ PC, đi kèm Office Home 2024.",37390000,5,8/17/2025 13:50,8/17/2025 13:50,TRUE
+57,83LY00A7VN,4,Lenovo Gaming Legion 5 15IRX10 i7-14700HX (83LY00A7VN),Lenovo Gaming Legion 5 15IRX10 i7 14700HX (83LY00A7VN) với tản nhiệt Legion Coldfront Hyper và Legion AI Engine+.,36990000,4,8/17/2025 13:50,8/17/2025 13:50,TRUE
+58,FX608JHR-RV037W,2,Asus TUF Gaming F16 FX608JHR-RV037W i7-14650HX,"Laptop Asus TUF Gaming F16 với màn hình 16 inch, 100% sRGB, tần số quét 165Hz, NVIDIA GeForce RTX 5050",36490000,4,8/17/2025 13:51,8/17/2025 13:51,TRUE
+59,MSI Prestige 13 AI+ Evo A2VMG-040VN,1,MSI Prestige 13 AI+ Evo A2VMG-040VN Ultra 7 258V,"Siêu mỏng - Siêu nhẹ, Vỏ kim loại, Pin lớn 75 Whr",35490000,5,8/17/2025 13:51,8/17/2025 13:51,TRUE
+60,SKU-5A132287,3,Macbook Air 13 M4 2025 10CPU/10GPU/24GB/512GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ",35190000,6,8/17/2025 13:51,8/17/2025 13:51,TRUE
+61,SKU-700155F5,3,Macbook Air 15 M4 2025 10CPU/10GPU/16GB/512GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ",34990000,6,8/17/2025 13:52,8/17/2025 13:52,TRUE
+62,MSI Gaming Katana 15HX B14WEK-027VN,1,MSI Gaming Katana 15HX B14WEK-027VN i7-14650HX,"Laptop MSI Gaming Katana 15HX B14WEK-027VN i7-14650HX với NVIDIA GeForce RTX 5050, tần số quét 165Hz, hỗ trợ Mux Switch, trả góp 0%.",34490000,4,8/17/2025 13:52,8/17/2025 13:52,TRUE
+63,SF14-51-53P9,5,Acer Swift 14 AI SF14-51-53P9 Ultra 5 226V,"Laptop Acer Swift 14 AI với chuẩn AI Copilot+, màn hình 3K OLED, bảo hành nhanh.",34190000,5,8/17/2025 13:52,8/17/2025 13:52,TRUE
+64,V3607VM-RP044W,2,Asus Vivobook Gaming V16 V3607VM-RP044W Core 7 240H,"Laptop Asus Vivobook Gaming V16 với tần số quét 144Hz, độ bền chuẩn quân đội, 2 quạt tản nhiệt.",33490000,4,8/17/2025 13:53,8/17/2025 13:53,TRUE
+65,SKU-60C723BE,3,MacBook Air 13 M3 2024 8CPU/10GPU/24GB/512GB,"Chip M3 đầy sức mạnh, Siêu nhẹ và siêu mỏng, Màn hình 1 tỷ màu rực rỡ",33190000,6,8/17/2025 13:53,8/17/2025 13:53,TRUE
+66,UX3405CA-PZ188WS,2,Asus Zenbook 14 UX3405CA-PZ188WS Ultra 7 255H,"Asus Zenbook 14, Vỏ kim loại, Mỏng nhẹ 1.2kg",32990000,7,8/17/2025 13:53,8/17/2025 13:53,TRUE
+67,AY8V2PA,7,HP Envy X360 14-fc0151TU Ultra 7 155U,"Laptop HP Envy X360 14-fc0151TU với màn hình cảm ứng 2.8K OLED, camera AI 5MP, kèm Office Home&Student.",32990000,7,8/17/2025 13:54,8/17/2025 13:54,TRUE
+68,SKU-FDAD955B,5,Acer Nitro V 15 ProPanel Gaming ANV15-51-78BG i7-13620H,"Laptop gaming Acer Nitro V 15 với card đồ họa GeForce RTX AI 4060, màn hình 100% sRGB, bảo hành nhanh, trả góp 0%, tặng balo gaming SUV.",32990000,4,8/17/2025 13:54,8/17/2025 13:54,TRUE
+69,FX608JH-RV039W,2,Asus TUF Gaming F16 FX608JH-RV039W i5-13450HX,"Laptop Asus TUF Gaming F16 với màn hình 16"" 165Hz, tản nhiệt hiệu quả, NVIDIA GeForce RTX 5050.",31990000,4,8/17/2025 13:55,8/17/2025 13:55,TRUE
+70,83JE006PVN,4,Lenovo Gaming LOQ 15IRX10 i7 13650HX,"Laptop Lenovo Gaming LOQ 15IRX10 i7 13650HX với màn hình 100% sRGB, hỗ trợ Mux Switch, card đồ họa NVIDIA GeForce RTX 5050.",31990000,4,8/17/2025 13:55,8/17/2025 13:55,TRUE
+71,A19BTPA,7,HP Envy X360 14-fc0084TU Ultra 7 155U,"Laptop HP Envy X360 màn hình cảm ứng 2.8K OLED, hỗ trợ trả góp 0%, giảm giá.",31890000,7,8/17/2025 13:55,8/17/2025 13:55,TRUE
+72,14-fc0153TU_AY8V4PA,7,HP Envy X360 14-fc0153TU Ultra 7 155U,"Laptop HP Envy X360 với màn hình cảm ứng 2.8K OLED, camera AI 5MP, đi kèm Office Home&Student, trả góp 0%.",31690000,5,8/17/2025 13:56,8/17/2025 13:56,TRUE
+73,SKU-0D5B1994,3,Macbook Air 13 M4 2025 10CPU/10GPU/16GB/512GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ",30990000,6,8/17/2025 13:56,8/17/2025 13:56,TRUE
+74,83JG0047VN,4,Lenovo Gaming LOQ 15AHP10 R7 250,"Chuẩn AI Copilot+ PC, Hỗ trợ Mux Switch, NVIDIA GeForce RTX 5050",30990000,4,8/17/2025 13:56,8/17/2025 13:56,TRUE
+75,ANV15-52-72BM,5,Acer Gaming Nitro V 15 ProPanel ANV15-52-72BM i7 13620H,"Acer Gaming Nitro V 15 ProPanel với i7 13620H, NVIDIA GeForce RTX 5050, 100% sRGB.",30990000,4,8/17/2025 13:57,8/17/2025 13:57,TRUE
+76,SKU-56DAC8DD,3,MacBook Air 15 inch M2 2023 8CPU 10GPU/8GB/512GB/Sạc 70W,"Màn hình lớn 15 inch, Chip Apple M2, Thời lượng pin 18 giờ",30990000,6,8/17/2025 13:57,8/17/2025 13:57,TRUE
+77,MSI Gaming Katana 15 B13VGK-2065VN,1,MSI Gaming Katana 15 B13VGK-2065VN i7-13620H,"Tản nhiệt, Cooler Boost 5, Bàn phím gaming RGB, Hỗ trợ Mux Switch, Trả góp 0%",30790000,4,8/17/2025 13:57,8/17/2025 13:57,TRUE
+78,S5406SA-PP059WS,2,Asus Vivobook S 14 OLED S5406SA-PP059WS Ultra 7 258V,"Lumina OLED 2.8K, Tặng Office Home 2024, Chuẩn AI Copilot+ PC, Trả góp 0%",30690000,7,8/17/2025 13:58,8/17/2025 13:58,TRUE
+79,SKU-EC650CAE,3,Macbook Air 15 M4 2025 10CPU/10GPU/16GB/256GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ, Trả góp 0%",30690000,6,8/17/2025 13:58,8/17/2025 13:58,TRUE
+80,8C5N2PA,7,HP Gaming Victus 16-r0127TX i7-13700H,"Laptop HP Gaming Victus 16-r0127TX i7-13700H với GeForce RTX AI 4060, 2 quạt tản nhiệt, Âm thanh B&O Play, Trả góp 0%",30690000,4,8/17/2025 13:59,8/17/2025 13:59,TRUE
+81,AY8U2PA,7,HP Envy X360 14-fa0092AU R7-8840HS,"Laptop HP Envy X360 màn hình cảm ứng 2.8K OLED, Camera AI 5MP, kèm Office Home&Student",30490000,5,8/17/2025 13:59,8/17/2025 13:59,TRUE
+82,M5406WA-PP071WS,2,Asus Vivobook S 14 OLED M5406WA-PP071WS Ryzen AI 9 HX 370,"Laptop Asus Vivobook S 14 OLED với Ryzen AI 9 HX 370, Lumina OLED 2.8K, 2 quạt tản nhiệt.",29990000,6,8/17/2025 13:59,8/17/2025 13:59,TRUE
+83,UX3405MA-PP152W,2,Asus Zenbook 14 OLED UX3405MA-PP152W Ultra 7 155H,"Mỏng nhẹ 1.2kg, Sound by harman/kardon, Lumina OLED 2.8K",29990000,7,8/17/2025 14:00,8/17/2025 14:00,TRUE
+84,AY8U3PA,7,HP Envy X360 14-fa0093AU R7-8840HS,"Laptop HP Envy X360 14-fa0093AU R7-8840HS với camera AI 5MP, màn hình cảm ứng 2.8K OLED, tặng Office Home&Student.",29990000,6,8/17/2025 14:00,8/17/2025 14:00,TRUE
+85,UX3405CA-PZ368WS,2,Asus Zenbook 14 OLED UX3405CA-PZ368WS Ultra 7 255H,"Laptop Asus Zenbook 14 OLED với màn hình cảm ứng 2.8K OLED, tần số quét 120 Hz, tặng Office Home 2024.",29990000,7,8/17/2025 14:00,8/17/2025 14:00,TRUE
+86,71053700,8,Dell Gaming G15 5530 i7-13650HX,"Màn hình bảo vệ mắt, độ bền chuẩn quân đội, tặng Office Home 2024 & Microsoft 365, trả góp 0%",29490000,4,8/17/2025 14:01,8/17/2025 14:01,TRUE
+87,UM3406KA-PP590WS,2,Asus Zenbook 14 UM3406KA-PP590WS Ryzen AI 7 350,"Laptop Asus Zenbook 14 với màn hình 3K OLED, chuẩn AI Copilot+ PC, Ryzen AI 7 350",29490000,7,8/17/2025 14:01,8/17/2025 14:01,TRUE
+88,B13VFK-2099VN,1,MSI Gaming Katana 15 B13VFK-2099VN i7-13620H,"Tản nhiệt, Cooler Boost 5, Hỗ trợ Mux Switch, Bàn phím gaming RGB",29490000,4,8/17/2025 14:01,8/17/2025 14:01,TRUE
+89,AY8W6PA,7,HP Envy x360 14-fc0158TU Ultra 7 155U,"Laptop HP Envy x360 14-fc0158TU Ultra 7 155U với màn hình cảm ứng 2.8K OLED, camera AI 5MP, kèm Office Home & Student. Trả góp 0%.",28990000,5,8/17/2025 14:02,8/17/2025 14:02,TRUE
+90,ANV15-52-59AA,5,Acer Gaming Nitro V 15 ProPanel ANV15-52-59AA i5 13420H,"Laptop Acer Gaming Nitro V 15 ProPanel ANV15-52-59AA i5 13420H với màn hình 100% sRGB, card đồ họa NVIDIA GeForce RTX 5050.",28990000,4,8/17/2025 14:02,8/17/2025 14:02,TRUE
+91,S5606CA-RI171WS,2,Asus Vivobook S16 S5606CA-RI171WS Ultra 7 255H,"Màn hình 2.8K OLED, Tần số quét 120 Hz, Tặng Office Home 2024",28990000,7,8/17/2025 14:03,8/17/2025 14:03,TRUE
+92,AY8Y0PA,7,HP Gaming Victus 16-r0367TX i7-13700HX,"Laptop gaming HP Victus với bộ vi xử lý Intel Core i7-13700HX, tần số quét 165Hz, âm thanh B&O Play, 2 quạt tản nhiệt.",28990000,4,8/17/2025 14:03,8/17/2025 14:03,TRUE
+93,UX3405CA-PZ187WS,2,Asus Zenbook 14 OLED UX3405CA-PZ187WS Ultra 5 225H,"Màn hình cảm ứng, 2.8K OLED, Tần số quét 120 Hz, Tặng Office Home 2024, Trả góp 0%",28990000,7,8/17/2025 14:03,8/17/2025 14:03,TRUE
+94,N4I5006W1,8,Dell Inspiron 14 7440 2in1 Core 5 120U,"Dell Inspiron 14 7440 2in1 Core 5 120U Màn hình cảm ứng, Độ bền chuẩn quân đội",27890000,7,8/17/2025 14:04,8/17/2025 14:04,TRUE
+95,SKU-D031DC90,2,Asus Vivobook S 16 OLED M5606KA-RI016WS Ryzen AI 7 350,"Lumina OLED 2.8K, Chuẩn AI Copilot+ PC",27890000,7,8/17/2025 14:04,8/17/2025 14:04,TRUE
+96,V3607VH-RP025W,2,Asus Gaming V16 V3607VH-RP025W Core 7-240H,"Laptop gaming với quạt tản nhiệt, tần số quét 144Hz và card đồ họa NVIDIA GeForce RTX 5050.",27490000,4,8/17/2025 14:04,8/17/2025 14:04,TRUE
+97,83CV00AJVN,4,Lenovo Yoga Slim 7 14IMH9 Ultra 7 155H (83CV00AJVN),"Phím cứng Copilot, Mở Khóa Khuôn Mặt, Màn hình OLED, Trả góp 0%",27490000,6,8/17/2025 14:05,8/17/2025 14:05,TRUE
+98,5MNK1,8,Dell Inspiron 14 5441 SnapX X1P-64-100 (5MNK1),"Tặng Office, Home 2024, Kim loại nguyên khối, Màn hình sáng, 300 nits, Trả góp 0%",27390000,7,8/17/2025 14:05,8/17/2025 14:05,TRUE
+99,MSI Gaming Katana 15 B13VFK-676VN,1,MSI Gaming Katana 15 B13VFK-676VN i7-13620H,"Tản nhiệt, Cooler Boost 5, Hỗ trợ Mux Switch, Bàn phím gaming RGB",27290000,4,8/17/2025 14:05,8/17/2025 14:05,TRUE
+100,ANV15-51-73UU,5,Acer Nitro V Gaming ANV15-51-73UU i7-13620H,"Laptop Acer Nitro V Gaming với màn hình 180Hz, sRGB 100%, GeForce RTX 3050 6GB, bảo hành nhanh.",27090000,4,8/17/2025 14:06,8/17/2025 14:06,TRUE
+101,V3607VU-RP216W,2,Asus Gaming V16 V3607VU-RP216W Core 7-240H,"2 quạt tản nhiệt, Độ bền chuẩn quân đội, Tần số quét 144Hz",26490000,4,8/17/2025 14:06,8/17/2025 14:06,TRUE
+102,A3HMG-017VN,1,MSI Venture A16 AI+ A3HMG-017VN Ryzen AI 7 350,"Laptop MSI Venture A16 AI+ với màn hình OLED 2K, 100% DCI-P3, trang bị Ryzen AI 7 350, chuẩn AI Copilot+ PC.",26490000,4,8/17/2025 14:07,8/17/2025 14:07,TRUE
+103,UM3406KA-PP113WS,2,Asus Zenbook 14 UM3406KA-PP113WS Ryzen AI 7 350,"Asus Zenbook 14 với Ryzen AI 7, màn hình 2.8K OLED, chuẩn AI Copilot+ PC, tặng Office Home 2024, trả góp 0%",26390000,7,8/17/2025 14:07,8/17/2025 14:07,TRUE
+104,UX3407QA-QD299WS,2,Asus Zenbook 14 OLED UX3407QA-QD299WS SnapX X1-26-100,"Tặng Office, Home 2024, Chuẩn AI Copilot+ PC, Màn hình 2.8K OLED, Trả góp 0%",26390000,6,8/17/2025 14:07,8/17/2025 14:07,TRUE
+105,A15 AI B8VF-419VN,1,MSI Gaming Katana A15 AI B8VF-419VN R7-8845HS,"Laptop gaming MSI Katana A15 AI B8VF với tản nhiệt Cooler Boost 5, hỗ trợ Mux Switch, bàn phím gaming RGB.",25990000,4,8/17/2025 14:08,8/17/2025 14:08,TRUE
+106,AY8X0PA,7,HP Envy X360 14-fc0161TU Ultra 5 125U,"Laptop HP Envy X360 14-fc0161TU Ultra 5 125U với màn hình cảm ứng 2.8K OLED, camera AI 5MP, tặng Office Home&Student.",25890000,6,8/17/2025 14:08,8/17/2025 14:08,TRUE
+107,AY8X1PA,7,HP Envy X360 14-fc01062TU Ultra 5 125U,"Laptop HP Envy X360 14-fc01062TU Ultra 5 125U với màn hình cảm ứng 2.8K OLED, camera AI 5MP, kèm Office Home&Student.",25890000,7,8/17/2025 14:08,8/17/2025 14:08,TRUE
+108,SKU-B08E1058,3,Macbook Air 13 M4 2025 10CPU/8GPU/16GB/256GB,"Pin lên đến 18 giờ, Apple Intelligence, tối ưu, Chip Apple M4 AI mạnh mẽ",25290000,6,8/17/2025 14:09,8/17/2025 14:09,TRUE
+109,KF-73VN853KH,9,Gigabyte Gaming G6 KF-73VN853KH i7-13700H,"Laptop Gigabyte Gaming G6 với tần số quét 165Hz, tản nhiệt Windforce, âm thanh Dolby Atmos, trả góp 0%.",25590000,4,8/17/2025 14:09,8/17/2025 14:09,TRUE
+110,FX607VU-RL045W,2,Asus TUF Gaming F16 FX607VU-RL045W Core 5 210H,"Laptop Asus TUF Gaming F16 với màn hình 144Hz, 16 inch, 100% sRGB, độ bền chuẩn quân đội.",25490000,4,8/17/2025 14:09,8/17/2025 14:09,TRUE
+111,V3607VH-RP024W,2,Asus Vivobook Gaming V16 V3607VH-RP024W Core 5 210H,"Độ bền chuẩn quân đội, 2 quạt tản nhiệt, Tần số quét 144Hz",25490000,4,8/17/2025 14:10,8/17/2025 14:10,TRUE
+112,B13VEK-2256VN,1,MSI Gaming Katana 15 B13VEK-2256VN i7-13620H,"Laptop gaming MSI Katana 15 với Mux Switch, bàn phím gaming RGB, tản nhiệt Cooler Boost 5.",25490000,4,8/17/2025 14:10,8/17/2025 14:10,TRUE
+113,A16-CMHI2VN893SH,9,Gigabyte Gaming A16-CMHI2VN893SH i7-13620H,"Laptop gaming với tần số quét 165Hz, hỗ trợ Mux Switch, âm thanh Dolby Atmos.",25190000,4,8/17/2025 14:11,8/17/2025 14:11,TRUE
+114,S5606CA-RI114WS,2,Asus Vivobook S 16 OLED S5606CA-RI114WS Ultra 5 225H,"Màn hình 2.8K OLED, Tần số quét 120 Hz, Tặng Office Home 2024",25190000,7,8/17/2025 14:11,8/17/2025 14:11,TRUE
+115,ANV15-51-534U,5,Acer Nitro V 15 ProPanel Gaming ANV15-51-534U i5-13420H,Acer Nitro V 15 ProPanel Gaming Laptop,25190000,4,8/17/2025 14:11,8/17/2025 14:11,TRUE
+116,83GS00DAVN,4,Lenovo Gaming LOQ 15IAX9 i5-12450HX,"Laptop Lenovo Gaming LOQ 15IAX9 i5-12450HX với tản nhiệt buồng hơi siêu mát, hỗ trợ Mux Switch và 100% sRGB.",24990000,4,8/17/2025 14:12,8/17/2025 14:12,TRUE
+117,SKU-D40B19BA,3,MacBook Air 15 inch M2 2023 8CPU 10GPU 8GB/256GB,"Màn hình lớn 15 inch, Chip Apple M2, Thời lượng pin 18 giờ",24990000,6,8/17/2025 14:12,8/17/2025 14:12,TRUE
+118,83HX001JVN,4,Lenovo Ideapad Slim 5 14AKP10 Ryzen AI 7 350,"Laptop Lenovo Ideapad Slim 5 với màn hình OLED, vỏ nhôm nguyên khối, chuẩn AI Copilot+ PC.",24890000,6,8/17/2025 14:12,8/17/2025 14:12,TRUE
+119,S5606MA-MX051W,2,Asus Vivobook S16 OLED S5606MA-MX051W Ultra 7 155H,"Vỏ nhôm cao cấp, 2 quạt tản nhiệt, Lumina OLED 2.8K",24890000,6,8/17/2025 14:13,8/17/2025 14:13,TRUE
+120,S5406SA-PP060WS,2,Asus Vivobook S 14 S5406SA-PP060WS Ultra 5 226V,"Lumina OLED 2.8K, Chuẩn AI Copilot+ PC, Tặng Office Home 2024",24690000,7,8/17/2025 14:13,8/17/2025 14:13,TRUE
+121,L3450-1355U-16512W,8,Dell Latitude 3450 i7 1355U,"Dell Latitude 3450 i7 1355U với sạc nhanh ExpressCharge, độ bền chuẩn quân đội và màn hình bảo vệ mắt.",24490000,7,8/17/2025 14:13,8/17/2025 14:13,TRUE
+122,A15 AI B8VE-402VN,1,MSI Gaming Katana A15 AI B8VE-402VN R7 8845HS,"Laptop gaming với tản nhiệt Cooler Boost 5, hỗ trợ Mux Switch, bàn phím gaming RGB",24490000,4,8/17/2025 14:14,8/17/2025 14:14,TRUE
+123,SKU-EB84E81F,3,MacBook Air 13 M3 2024 8CPU/8GPU/16GB/256GB,"Chip Apple M3, Pin lên đến 18 giờ, Mỏng nhẹ hoàn hảo, Trả góp 0%",23990000,6,8/17/2025 14:14,8/17/2025 14:14,TRUE
+124,N5440-C5U165W11IBD2,8,Dell Inspiron 14 5440 Core 5 120U (N5440-C5U165W11IBD2),"Dell Inspiron 14 5440 với màn hình 2.2K, độ bền chuẩn quân đội.",23990000,7,8/17/2025 14:15,8/17/2025 14:15,TRUE
+125,21SR002NVN,4,Lenovo ThinkPad E16 Gen 3 Ultra 5 225H (21SR002NVN),"Lenovo ThinkPad E16 Gen 3 Ultra 5 225H, độ bền chuẩn quân đội, mở khóa khuôn mặt.",23990000,7,8/17/2025 14:15,8/17/2025 14:15,TRUE
+126,V3607VU-RP343W,2,Asus Gaming V16 V3607VU-RP343W Core 5 210H,"Laptop gaming Asus với tần số quét 144Hz, độ bền chuẩn quân đội, 2 quạt tản nhiệt.",23790000,4,8/17/2025 14:15,8/17/2025 14:15,TRUE
+127,MF-72VN853KH,9,Gigabyte Gaming G6 MF-72VN853KH i7-13700H,"Laptop Gigabyte Gaming G6 MF-72VN853KH i7-13700H với tần số quét 165Hz, tản nhiệt Windforce, âm thanh Dolby Atmos.",23590000,4,8/17/2025 14:16,8/17/2025 14:16,TRUE
+128,S3407CA-LY096WS,2,Asus Vivobook S14 S3407CA-LY096WS Ultra 7 255H,"Tặng Office Home 2024, Vỏ kim loại, Mỏng nhẹ 1.4kg, Trả góp 0%",23490000,7,8/17/2025 14:16,8/17/2025 14:16,TRUE
+129,MSI Gaming Cyborg 14 A13UDX-099VN,1,MSI Gaming Cyborg 14 A13UDX-099VN i7-13620H,"Gaming mỏng nhẹ, 1.6kg, Màn hình 100% sRGB",23490000,4,8/17/2025 14:16,8/17/2025 14:16,TRUE
+130,83CV00AHVN,4,Lenovo Yoga Slim 7 14IMH9 Ultra 5 125H (83CV00AHVN),Lenovo Yoga Slim 7 14IMH9 Ultra 5 125H (83CV00AHVN) - Sản phẩm chất lượng từ Lenovo,23490000,7,8/17/2025 14:17,8/17/2025 14:17,TRUE
+131,83GS001QVN,4,Lenovo Gaming LOQ 15IAX9 i5-12450HX (83GS001QVN),"Tản nhiệt buồng hơi, siêu mát, Hỗ trợ Mux Switch, 100% sRGB",23490000,4,8/17/2025 14:17,8/17/2025 14:17,TRUE
+132,A16-CMHH2VN893SH,9,Gigabyte Gaming A16-CMHH2VN893SH i5-13420H,Laptop Gigabyte Gaming A16-CMHH2VN893SH i5-13420H,23290000,4,8/17/2025 14:17,8/17/2025 14:17,TRUE
+133,83DA006UVN,4,Lenovo IdeaPad Slim 5 14IMH9 Ultra 7 155H,"Lenovo Smart Power, 100% DCI-P3, Phím cứng Copilot, Trả góp 0%",23290000,6,8/17/2025 14:18,8/17/2025 14:18,TRUE
+134,83DV012LVN,4,Lenovo Gaming LOQ 15IRX9 i5-13450HX (83DV012LVN) Ram 12GB + 16GB,"Hỗ trợ Mux Switch, 100% sRGB, Tản nhiệt buồng hơi, siêu mát, Trả góp 0%",23190000,4,8/17/2025 14:18,8/17/2025 14:18,TRUE
+135,SFG14-73-53X7,5,Acer Swift Go AI SFG14-73-53X7 Ultra 5 125H,"Laptop Acer Swift Go AI SFG14-73-53X7 Ultra 5 125H, RAM 16GB",23090000,6,8/17/2025 14:19,8/17/2025 14:19,TRUE
+136,K3607VJ-RP106W,2,Asus Vivobook Gaming V16 K3607VJ-RP106W Core 7 240H,"Laptop Asus Vivobook Gaming V16 với tần số quét 144Hz, độ bền chuẩn quân đội, 2 quạt tản nhiệt.",22690000,4,8/17/2025 14:19,8/17/2025 14:19,TRUE
+138,KF5-53VN353SH,9,Gigabyte Gaming G5 KF5-53VN353SH i5-13500H,"Laptop gaming Gigabyte Gaming G5 KF5-53VN353SH i5-13500H với 2 quạt tản nhiệt, tần số quét 165Hz, âm thanh Dolby Atmos.",22590000,4,8/17/2025 14:20,8/17/2025 14:20,TRUE
+139,SKU-16F6D3C4,5,Acer Aspire 7 Gaming A715-59G-73LB i7-12650H,Laptop Acer Aspire 7 Gaming A715-59G-73LB i7-12650H với màn hình 144Hz và 2 quạt tản nhiệt.,22490000,4,8/17/2025 14:20,8/17/2025 14:20,TRUE
+140,NL16-71G-71UJ,5,Acer Gaming Nitro Lite 16 NL16-71G-71UJ i7-13620H,"Laptop Acer Gaming Nitro Lite 16 với i7-13620H, tần số quét 165Hz, 2 quạt tản nhiệt.",22490000,4,8/17/2025 14:20,8/17/2025 14:20,TRUE
+141,MSI Gaming Katana 15 B13UDXK-2411VN,1,MSI Gaming Katana 15 B13UDXK-2411VN i7-13620H,"Laptop MSI Gaming Katana 15 B13UDXK-2411VN i7-13620H với tản nhiệt Cooler Boost 5, hỗ trợ Mux Switch, bàn phím gaming RGB.",22090000,4,8/17/2025 14:21,8/17/2025 14:21,TRUE
+142,MSI Gaming Katana 15 B13VEK-2415VN,1,MSI Gaming Katana 15 B13VEK-2415VN i5 13420H,"Tản nhiệt, Cooler Boost 5, Hỗ trợ Mux Switch, Bàn phím gaming RGB",22090000,4,8/17/2025 14:21,8/17/2025 14:21,TRUE
+143,MF5-H2PH353KH,9,Gigabyte Gaming G5 MF5-H2PH353KH i7-13620H,Gigabyte Gaming G5 MF5-H2PH353KH i7 13620H,22090000,4,8/17/2025 14:21,8/17/2025 14:21,TRUE
+144,MF5-H2VN353KH,9,Gigabyte Gaming G5 MF5-H2VN353KH i7-13620H,"Laptop Gigabyte Gaming G5 với i7-13620H, tần số quét 144Hz, âm thanh Dolby Atmos, 2 quạt tản nhiệt.",22090000,4,8/17/2025 14:22,8/17/2025 14:22,TRUE
+145,N4I5211W1,8,Dell Inspiron N5440 Core 5 120U (N4I5211W1),"Dell Inspiron N5440 Core 5 120U với các tính năng Tặng Office Home&Student, Sạc nhanh ExpressCharge, Màn hình bảo vệ mắt, Trả góp 0%.",22090000,7,8/17/2025 14:22,8/17/2025 14:22,TRUE
+146,P16WD,8,Dell Inspiron 15 3530 i7-1355U (P16WD),"Dell Inspiron 15 3530 i7-1355U với màn hình bảo vệ mắt, độ bền chuẩn quân đội.",21990000,7,8/17/2025 14:23,8/17/2025 14:23,TRUE
+148,B85LPPA,7,HP Gaming Victus 15-fa2732TX i5-13420H,"Laptop HP Gaming Victus 15-fa2732TX i5-13420H với 2 quạt tản nhiệt, tần số quét 144Hz, âm thanh B&O Play, trả góp 0%.",21990000,4,8/17/2025 14:23,8/17/2025 14:23,TRUE
+149,83J3002SVN,4,Lenovo IdeaPad Slim 5 OLED 15ARP10 R7-7735HS Ram 32GB,"Màn hình sáng, 500 nits, Lenovo AI Engine+, Màn hình 2.8K OLED, Trả góp 0%",21990000,6,8/17/2025 14:24,8/17/2025 14:24,TRUE
+150,NX.KABSV.002,5,Acer Swift Edge SFA16-41-R3L6 R7-6800U,"Laptop Acer Swift Edge với vỏ kim loại, màn hình OLED, bảo hành nhanh, trả góp 0%.",21990000,6,8/17/2025 14:24,8/17/2025 14:24,TRUE
+151,AY8Z4PA,7,HP Gaming Victus 16-r0378TX i5-13500HX (AY8Z4PA),"Laptop gaming với quạt tản nhiệt, âm thanh B&O Play, tần số quét 165Hz.",21490000,4,8/17/2025 14:24,8/17/2025 14:24,TRUE
+152,83HR0001VN,4,Lenovo IdeaPad Slim 5 OLED 14IRH10 i5-13420H,"Màn hình sáng, 500 nits, Lenovo AI Engine+, Màn hình 2.8K OLED",21490000,7,8/17/2025 14:25,8/17/2025 14:25,TRUE
+153,K3605ZU-RP296W,2,Asus Gaming Vivobook K3605ZU-RP296W i5-12500H,"Laptop Asus Gaming Vivobook với tần số quét 144Hz, mặt A kim loại, độ bền chuẩn quân đội, trả góp 0%",21490000,4,8/17/2025 14:25,8/17/2025 14:25,TRUE
+154,KF-E3VN313SH,9,Gigabyte Gaming G5 KF-E3VN313SH i5-12500H,"Laptop Gigabyte Gaming G5 KF-E3VN313SH i5-12500H với 2 quạt tản nhiệt, tần số quét 144Hz, âm thanh Dolby Atmos.",21490000,4,8/17/2025 14:25,8/17/2025 14:25,TRUE
+155,A1505VA-MA469W,2,Asus Vivobook 15 OLED A1505VA-MA469W i9-13900H,"Laptop Asus Vivobook 15 OLED, màn hình OLED 2.8K, bảo mật vân tay, độ bền chuẩn quân đội, trả góp 0%.",21390000,7,8/17/2025 14:26,8/17/2025 14:26,TRUE
+156,NL16-71G-56WQ,5,Acer Gaming Nitro Lite 16 NL16-71G-56WQ i5-13420H,"Acer Gaming Nitro Lite 16 inch với i5-13420H, tần số quét 165Hz, 2 quạt tản nhiệt.",21390000,4,8/17/2025 14:26,8/17/2025 14:26,TRUE
+157,SFL14-51M-78XZ,5,Acer Swift Lite 14 AI SFL14-51M-78XZ Ultra 7 155U,"Laptop Acer Swift Lite 14 AI với Ultra 7 155U, camera AI, Acer PurifiedView, vỏ kim loại.",21090000,7,8/17/2025 14:27,8/17/2025 14:27,TRUE
+158,71053721,8,Dell Inspiron 15 3530 i7-1355U,"Dell Inspiron 15 3530 i7-1355U với màn hình bảo vệ mắt, độ bền chuẩn quân đội.",20990000,7,8/17/2025 14:27,8/17/2025 14:27,TRUE
+159,S3407CA-LY095WS,2,Asus Vivobook S14 S3407CA-LY095WS Ultra 5 225H,"Sạc nhanh tới 60% trong 49 phút, Vỏ kim loại, Mỏng nhẹ 1.4kg",20990000,7,8/17/2025 14:27,8/17/2025 14:27,TRUE
+160,N5I7305W1,8,Dell Inspiron 15 N3530 i7-1355U (N5I7305W1),"Laptop Dell Inspiron 15 N3530 i7-1355U với các tính năng: Tặng Office Home 2024 & Microsoft 365, độ bền chuẩn quân đội, bảo mật vân tay, trả góp 0%.",20990000,7,8/17/2025 14:28,8/17/2025 14:28,TRUE
+162,83GH001FVN,4,Lenovo IdeaPad 5 2-in-1 14Q8X9 SnapX Plus X1P-42-100,"Lenovo IdeaPad 5 2-in-1 14Q8X9 với AI Copilot+, màn hình 100% DCI-P3, mở khóa vân tay, trả góp 0%.",20990000,6,8/17/2025 14:28,8/17/2025 14:28,TRUE
+163,SKU-0A1544D5,3,Macbook Air M2 13 inch 2022 8CPU 10GPU/16GB/256GB,"Mỏng nhẹ thời trang, Màn hình Liquid Retina, Chip Apple M2",20990000,6,8/17/2025 14:29,8/17/2025 14:29,TRUE
+164,83HX001KVN,4,Lenovo Ideapad Slim 5 14AKP10 Ryzen AI 5 340,"Laptop Lenovo Ideapad Slim 5 14AKP10 Ryzen AI 5 340 với màn hình OLED, mở khóa khuôn mặt, trả góp 0%, giảm giá và nhiều ưu đãi khác.",20890000,7,8/17/2025 14:29,8/17/2025 14:29,TRUE
+165,MSI Modern 15 H AI C2HMG-220VN Ultra 7 255H,1,MSI Modern 15 H AI C2HMG-220VN Ultra 7 255H,"Laptop MSI Modern 15 H AI C2HMG-220VN Ultra 7 255H với các tính năng: Chuẩn AI Copilot, Độ bền chuẩn quân đội, Đèn nền dưới phím, Trả góp 0%",20690000,7,8/17/2025 14:30,8/17/2025 14:30,TRUE
+166,MSI Gaming Thin 15 B13VE-2824VN,1,MSI Gaming Thin 15 B13VE-2824VN i5-13420H,"Gaming mỏng nhẹ, thiết kế kim loại cao cấp, Tần số quét 144 Hz, Trả góp 0%",20590000,4,8/17/2025 14:30,8/17/2025 14:30,TRUE
+167,83JC00HYVN,4,Lenovo Gaming LOQ 15ARP9 R5-7235HS (83JC00HYVN),"100% sRGB, Âm thanh Nahimic, Hỗ trợ Mux Switch, Trả góp 0%",20490000,4,8/17/2025 14:30,8/17/2025 14:30,TRUE
+168,21SG007SVN,4,Lenovo ThinkBook 14 Gen 8 IRL Core 5 210H (21SG007SVN),"Laptop Lenovo ThinkBook 14 Gen 8 với độ bền chuẩn quân đội, bảo mật vân tay.",20490000,7,8/17/2025 14:31,8/17/2025 14:31,TRUE
+169,AN515-58-5193,5,Acer Nitro 5 Tiger Gaming AN515-58-5193 i5-12450H,"Laptop Acer Nitro 5 Tiger Gaming với 2 quạt tản nhiệt, màn hình 144Hz, bảo hành nhanh, trả góp 0%.",20490000,4,8/17/2025 14:31,8/17/2025 14:31,TRUE
+170,83DA001NVN,4,"Laptop Lenovo IdeaPad Slim 5 14IMH9 Ultra 5 125H/AI/16GB/512GB/14""WUXGA/OLED/Win 11","Lenovo Smart Power, 100% DCI-P3, Phím cứng Copilot, Trả góp 0%, Giảm 2.000.000 ₫, Chủ thẻ OCB: Giảm 500,000đ cho hóa đơn 10 triệu",20290000,6,8/17/2025 14:31,8/17/2025 14:31,TRUE
+171,K3605VC-RP491W,2,Asus Vivobook Gaming 16 K3605VC-RP491W i7-13620H,"Laptop Asus Vivobook Gaming 16 với độ bền chuẩn quân đội, tần số quét 144Hz, mặt A kim loại.",20090000,4,8/17/2025 14:32,8/17/2025 14:32,TRUE
+172,MSI Gaming Katana 15 B13UDXK-2213VN,1,MSI Gaming Katana 15 B13UDXK-2213VN i5-13500H,"Laptop gaming với tản nhiệt Cooler Boost 5, hỗ trợ Mux Switch và bàn phím gaming RGB.",20090000,4,8/17/2025 14:32,8/17/2025 14:32,TRUE
+173,MF5-52VN353SH,9,Gigabyte Gaming G5 MF5-52VN353SH i5-13500H,"Laptop Gigabyte Gaming G5 MF5-52VN353SH i5-13500H với 2 quạt tản nhiệt, tần số quét 144Hz, âm thanh Dolby Atmos.",20090000,4,8/17/2025 14:32,8/17/2025 14:32,TRUE
+174,B85LNPA,7,HP Gaming Victus 15-fa2731TX i5-13420H,"Laptop gaming HP Victus 15-fa2731TX với 2 quạt tản nhiệt, tần số quét 144Hz, âm thanh B&O Play.",19990000,4,8/17/2025 14:33,8/17/2025 14:33,TRUE
+175,A715-59G-57TU,5,Acer Aspire 7 Gaming A715-59G-57TU i5-12450H,"Laptop Acer Aspire 7 Gaming với i5-12450H, tần số quét 144Hz",19990000,4,8/17/2025 14:33,8/17/2025 14:33,TRUE
+176,9Z2X8PA,7,HP 15-fd1060TU Ultra 7 155H,"Laptop HP với nút gạt tắt camera, lọc tạp âm AI, viền màn hình siêu mỏng.",19990000,6,8/17/2025 14:34,8/17/2025 14:34,TRUE
+177,SKU-B20DFA32,3,Macbook Air 13 M2 2024 8CPU/8GPU/16GB/256GB,"Chip Apple M2, Mỏng nhẹ thời trang, Màn hình Liquid Retina",19690000,6,8/17/2025 14:34,8/17/2025 14:34,TRUE
+178,83HL005AVN,4,Lenovo IdeaPad Slim 5 14Q8X9 SnapX X1-26-100 (83HL005AVN),"Laptop Lenovo IdeaPad Slim 5 với AI Copilot+, màn hình 400 nits, bảo mật vân tay, trả góp 0%.",19990000,6,8/17/2025 14:34,8/17/2025 14:34,TRUE
+179,SKU-6A972710,5,Acer Aspire Lite 16 AI AL16-71P-71WU Ultra 7 155H,"Laptop Acer Aspire Lite 16 AI AL16-71P-71WU Ultra 7 155H với 2 quạt tản nhiệt, bản lề mở 180°, bảo hành nhanh 3 ngày, trả góp 0%.",19990000,6,8/17/2025 14:35,8/17/2025 14:35,TRUE
+180,21MR006YVN,4,Lenovo ThinkBook 14 G7 Ultra 5 125U (21MR006YVN),"Laptop Lenovo ThinkBook 14 G7 Ultra 5 125U với độ bền chuẩn quân đội, bảo mật vân tay.",19990000,7,8/17/2025 14:35,8/17/2025 14:35,TRUE
+181,A1407CA-LY008WS,2,Asus Vivobook 14 A1407CA-LY008WS Ultra 5 225H,Laptop Asus Vivobook 14 A1407CA-LY008WS Ultra 5 225H,19890000,7,8/17/2025 14:35,8/17/2025 14:35,TRUE
+182,M1607KA-MB091WS,2,Asus Vivobook 16 M1607KA-MB091WS Ryzen AI 7 350,Laptop Asus Vivobook 16 M1607KA-MB091WS Ryzen AI 7 350,19690000,7,8/17/2025 14:36,8/17/2025 14:36,TRUE
+183,8U6L9PA,7,HP Pavilion 15-eg3112TU i7-1355U,"Laptop HP Pavilion 15-eg3112TU với vỏ nhôm cao cấp, âm thanh B&O Play, viền màn hình siêu mỏng.",19690000,7,8/17/2025 14:36,8/17/2025 14:36,TRUE
+184,MSI Gaming Katana 15 B13UDXK-2410VN,1,MSI Gaming Katana 15 B13UDXK-2410VN i5-13420H,"Laptop MSI Gaming Katana 15 B13UDXK-2410VN i5-13420H với tản nhiệt Cooler Boost 5, hỗ trợ Mux Switch, bàn phím gaming RGB.",19490000,4,8/17/2025 14:36,8/17/2025 14:36,TRUE
+185,83JC00HXVN,4,Lenovo Gaming LOQ 15ARP9 R5-7235HS (83JC00HXVN),"100% sRGB, Hỗ trợ Mux Switch, Âm thanh Nahimic, Trả góp 0%",19490000,4,8/17/2025 14:37,8/17/2025 14:37,TRUE
+186,SKU-01AF2932,7,HP ProBook 450 G10 i5-1340P,"Laptop HP ProBook 450 G10 i5-1340P với nút gạt tắt camera, độ bền chuẩn quân đội, vỏ nhôm cao cấp.",19490000,7,8/17/2025 14:37,8/17/2025 14:37,TRUE
+187,83JC007HVN,4,Lenovo Gaming LOQ 15ARP9 R5-7235HS,"Laptop Lenovo Gaming LOQ 15ARP9 R5-7235HS với màn hình 100% sRGB, tản nhiệt buồng hơi siêu mát, hỗ trợ Mux Switch.",19490000,4,8/17/2025 14:38,8/17/2025 14:38,TRUE
+188,A2HMG-003VN,1,MSI Venture A15 AI A2HMG-003VN R7 260,"Laptop MSI Venture A15 AI với tần số quét 144 Hz, độ bền chuẩn quân đội, bản lề mở 180°, trả góp 0%.",19490000,4,8/17/2025 14:38,8/17/2025 14:38,TRUE
+189,NDY5V1,8,Dell Inspiron 14 N5440 i5-1334U,"Laptop Dell Inspiron 14 N5440 i5-1334U với các tính năng Tặng Office Home&Student, Sạc nhanh ExpressCharge, Bảo mật vân tay, Trả góp 0%.",19490000,7,8/17/2025 14:38,8/17/2025 14:38,TRUE
+190,83J3001DVN,4,Lenovo IdeaPad Slim 5 OLED 15ARP10 R7-7735HS Ram 16GB,"Màn hình sáng, 500 nits, Lenovo AI Engine+, Màn hình 2.8K OLED",19390000,6,8/17/2025 14:39,8/17/2025 14:39,TRUE
+191,MSI Gaming Thin15 B13UC-2044VN,1,MSI Gaming Thin15 B13UC-2044VN i7-13620H,"Laptop gaming mỏng nhẹ với mặt A kim loại, tần số quét 144Hz.",19090000,4,8/17/2025 14:39,8/17/2025 14:39,TRUE
+192,83GS001RVN,4,Lenovo Gaming LOQ 15IAX9 i5-12450HX,"Tản nhiệt buồng hơi, siêu mát, Hỗ trợ Mux Switch, 100% sRGB",19090000,4,8/17/2025 14:39,8/17/2025 14:39,TRUE
+193,K3605VC-RP431W,2,Asus Vivobook Gaming K3605VC-RP431W i5-13420H,"Laptop Asus Vivobook Gaming với tần số quét 144Hz, mặt A kim loại, độ bền chuẩn quân đội.",18990000,4,8/17/2025 14:40,8/17/2025 14:40,TRUE
+194,A1505VA-L1688W,2,Asus Vivobook 15 OLED A1505VA-L1688W i7-13620H,"Bảo mật vân tay, Độ bền chuẩn quân đội, Màn hình OLED FHD",18990000,7,8/17/2025 14:40,8/17/2025 14:40,TRUE
+195,SKU-54D779FF,5,Acer Aspire 7 Gaming A715-59G-57TU i5-12450H Ram 16GB,"Laptop gaming Acer Aspire 7 với bộ vi xử lý i5-12450H, RAM 16GB, tần số quét 144Hz, 2 quạt tản nhiệt.",18990000,4,8/17/2025 14:40,8/17/2025 14:40,TRUE
+196,S3407VA-LY053W,2,Asus Vivobook S14 S3407VA-LY053W i7-13620H,"Sạc nhanh tới 60% trong 49 phút, Chuẩn AI Copilot+ PC, Màn hình 2.8K OLED, Trả góp 0%",18990000,7,8/17/2025 14:41,8/17/2025 14:41,TRUE
+197,A9LG9PA,7,HP Gaming Victus 16-s0173AX R5-7640HS,"Laptop gaming HP Victus với tần số quét 144Hz, 2 quạt tản nhiệt và âm thanh B&O Play.",18990000,4,8/17/2025 14:41,8/17/2025 14:41,TRUE
+198,83HL000KVN,4,Lenovo IdeaPad Slim 5 14Q8X9 SnapX Plus X1P-42-100,"Chuẩn AI Copilot+, Lenovo Smart Power, 100% DCI-P3, Trả góp 0%",18990000,6,8/17/2025 14:42,8/17/2025 14:42,TRUE
+199,83LK0079VN,4,Lenovo Gaming LOQ E 15IAX9E i5-12450HX,"Laptop Lenovo Gaming LOQ E 15IAX9E i5-12450HX với tần số quét 144 Hz, hỗ trợ Mux Switch, GeForce RTX 3050 6GB.",18790000,4,8/17/2025 14:42,8/17/2025 14:42,TRUE
+200,SFL14-51M-56HS,5,Acer Swift Lite 14 AI SFL14-51M-56HS Ultra 5 125U,"Camera AI, Acer PurifiedView, Vỏ 1 mặt kim loại, Trả góp 0%",18690000,6,8/17/2025 14:42,8/17/2025 14:42,TRUE
+201,83HR0000VN,4,Lenovo IdeaPad Slim 5 - 14IRH10 i5-13420H,Laptop Lenovo IdeaPad Slim 5 với bộ vi xử lý i5-13420H.,18590000,7,8/17/2025 14:43,8/17/2025 14:43,TRUE
+202,83K00009VN,4,Lenovo IdeaPad Slim 3 14IRH10 i7-13620H,"Laptop Lenovo IdeaPad Slim 3 với độ bền chuẩn quân đội, thiết kế nhẹ 1.43 kg, trả góp 0%, giảm giá và bảo hành 2 năm.",18490000,7,8/17/2025 14:43,8/17/2025 14:43,TRUE
+203,83K1002NVN,4,Lenovo IdeaPad Slim 3 15IRH10 i5-13420H (83K1002NVN),"Laptop Lenovo IdeaPad Slim 3 15IRH10 với màn hình sáng, tần số quét 165Hz, mở khóa bằng khuôn mặt.",18490000,7,8/17/2025 14:43,8/17/2025 14:43,TRUE
+204,FA506NCR-HN097W,2,Asus TUF Gaming A15 FA506NCR-HN097W R7-7435HS,"Laptop Asus TUF Gaming A15 với tần số quét 144Hz, độ bền chuẩn quân đội, 2 quạt tản nhiệt, trả góp 0%.",18490000,4,8/17/2025 14:44,8/17/2025 14:44,TRUE
+205,FA506NCR-HN047W,2,Asus TUF Gaming A15 FA506NCR-HN047W R7-7435HS,"Laptop Asus TUF Gaming A15 với tần số quét 144Hz, độ bền chuẩn quân đội, bảo hành 2 năm quốc tế, trả góp 0%.",18490000,4,8/17/2025 14:44,8/17/2025 14:44,TRUE
+206,83K20004VN,4,Lenovo IdeaPad Slim 3 16IRH10 i7-13620H,"Laptop Lenovo IdeaPad Slim 3 16IRH10 i7-13620H với độ bền chuẩn quân đội, mặt A kim loại, bảo hành 2 năm.",18490000,7,8/17/2025 14:45,8/17/2025 14:45,TRUE
+207,FX507ZC4-HN095W,2,Asus TUF Gaming FX507ZC4-HN095W i5-12500H,"Laptop Asus TUF Gaming với 2 quạt tản nhiệt Arc Flow, độ bền chuẩn quân đội.",18490000,4,8/17/2025 14:45,8/17/2025 14:45,TRUE
+208,83GS00DBVN,4,Lenovo Gaming LOQ 15IAX9 i5-12450HX,"Tản nhiệt buồng hơi, siêu mát, Hỗ trợ Mux Switch, 100% sRGB",18390000,4,8/17/2025 14:45,8/17/2025 14:45,TRUE
+209,16512W UMC,8,Dell Latitude 3450 i5-1335U,"Laptop Dell Latitude 3450 i5-1335U với sạc nhanh ExpressCharge, độ bền chuẩn quân đội, màn hình chống chói, trả góp 0%.",18190000,7,8/17/2025 14:46,8/17/2025 14:46,TRUE
+210,8D736PA,7,HP 15-fd0083TU i7-1355U (8D736PA),"Laptop HP với các tính năng: Nút gạt tắt camera, Lọc tạp âm AI, Viền màn hình siêu mỏng, Trả góp 0%",18190000,6,8/17/2025 14:46,8/17/2025 14:46,TRUE
+211,83K1002PVN,4,Lenovo IdeaPad Slim 3 15IRH10 i5-13420H,"Laptop Lenovo IdeaPad Slim 3 với màn hình sáng, tần số quét 165Hz, mở khóa khuôn mặt.",17990000,7,8/17/2025 14:46,8/17/2025 14:46,TRUE
+212,N5I5530W1,8,Dell Inspiron 15 3530 i5 1334U,"Dell Inspiron 15 3530 i5 1334U (N5I5530W1) với các tính năng Tặng Office, Home 2024, Độ bền chuẩn quân đội, Màn hình bảo vệ mắt.",17990000,7,8/17/2025 14:47,8/17/2025 14:47,TRUE
+213,71043885,8,Dell Inspiron N3530 i5-1334U (71043885),"Dell Inspiron N3530 i5-1334U với màn hình chống chói, tặng Office Home&Student, giữ ổ cứng, trả góp 0%.",17990000,7,8/17/2025 14:47,8/17/2025 14:47,TRUE
+214,83GS005KVN,4,Lenovo Gaming LOQ 15IAX9 i5-12450HX,"Tản nhiệt buồng hơi, siêu mát, Hỗ trợ Mux Switch, 100% sRGB",17990000,4,8/17/2025 14:47,8/17/2025 14:47,TRUE
+215,NH.QMFSV.002,5,Acer Aspire 7 Gaming A715-76G-5806 i5-12450H,"Laptop gaming Acer Aspire 7 với 2 quạt tản nhiệt, micro lọc tạp âm, bảo hành nhanh, trả góp 0%.",17990000,4,8/17/2025 14:48,8/17/2025 14:48,TRUE
+216,71053696,8,Dell Inspiron 15 3530 i5-1334U,"Laptop Dell Inspiron 15 3530 i5-1334U với màn hình chống chói, độ bền chuẩn quân đội, trả góp 0%, tặng Office Home 2024 & Microsoft 365.",17990000,7,8/17/2025 14:48,8/17/2025 14:48,TRUE
+217,MSI Modern 15 H C13M-216VN,1,MSI Modern 15 H C13M-216VN i7-13700H,"Laptop mỏng nhẹ 1.7kg, đèn nền dưới phím, 2 khe RAM, tối đa 64GB, trả góp 0%.",17990000,7,8/17/2025 14:49,8/17/2025 14:49,TRUE
+218,TP3402VA-LZ632W,2,Asus Vivobook Flip TP3402VA-LZ632W i5-13420H,"Laptop Asus Vivobook Flip màn hình cảm ứng xoay 360°, độ bền chuẩn quân đội.",17890000,7,8/17/2025 14:49,8/17/2025 14:49,TRUE
+219,83K00007VN,4,Lenovo IdeaPad Slim 3 14IRH10 i7-13620H,Laptop Lenovo IdeaPad Slim 3 14IRH10 i7-13620H,17790000,7,8/17/2025 14:49,8/17/2025 14:49,TRUE
+220,83K1000JVN,4,Lenovo Ideapad Slim 3 15IRH10 i7-13620H,"Laptop Lenovo Ideapad Slim 3 với độ bền chuẩn quân đội, mặt A kim loại, trả góp 0%.",17790000,6,8/17/2025 14:50,8/17/2025 14:50,TRUE
+221,83K20001VN,4,Lenovo IdeaPad Slim 3 16IRH10 i7-13620H,"Laptop Lenovo IdeaPad Slim 3 với i7-13620H, màn hình 16 inch.",17790000,7,8/17/2025 14:50,8/17/2025 14:50,TRUE
+222,ANV15-41-R7AP,5,Acer Gaming Nitro V 15 ProPanel ANV15-41-R7AP R5 7535HS,"Acer Gaming Nitro V 15 ProPanel với RTX 2050 4GB, màn hình 100% sRGB.",17790000,4,8/17/2025 14:50,8/17/2025 14:50,TRUE
+223,D13MG-217VN,1,MSI Modern 14 H D13MG-217VN i7-13700H,"Laptop mỏng nhẹ 1.6kg, 2 khe RAM, tối đa 64GB, Thunderbolt 4",17690000,7,8/17/2025 14:51,8/17/2025 14:51,TRUE
+224,SKU-A73323D2,5,Acer Gaming Aspire 5 A515-58GM-53CM i5-13420H,"Laptop Acer Gaming Aspire 5 A515-58GM-53CM i5-13420H với 2 quạt tản nhiệt, màn hình 144Hz, bảo hành nhanh, trả góp 0%.",17490000,4,8/17/2025 14:51,8/17/2025 14:51,TRUE
+225,MSI Gaming Thin 15 B13UC-2081VN,1,MSI Gaming Thin 15 B13UC-2081VN i5-13420H,"Laptop MSI Gaming Thin 15 B13UC-2081VN i5-13420H với mặt lưng kim loại, tần số quét 144 Hz.",17490000,4,8/17/2025 14:51,8/17/2025 14:51,TRUE
+226,K3605ZC-RP564W,2,Asus Vivobook Gaming K3605ZC-RP564W i5-12500H,"Laptop Asus Vivobook Gaming với tần số quét 144Hz, mặt A kim loại và độ bền chuẩn quân đội.",17490000,4,8/17/2025 14:52,8/17/2025 14:52,TRUE
+227,FA706NFR-HX025W,2,Asus TUF Gaming A17 FA706NFR-HX025W R7-7435HS,"Laptop Asus TUF Gaming A17 FA706NFR-HX025W R7-7435HS với tần số quét 144Hz, độ bền chuẩn quân đội, 2 quạt tản nhiệt.",17490000,4,8/17/2025 14:52,8/17/2025 14:52,TRUE
+228,82XX00DLVN,4,Lenovo IdeaPad Flex 5 14ABR8 R7 7730U,"Lenovo IdeaPad Flex 5 14ABR8 R7 7730U với các tính năng: Bảo mật vân tay, Dolby Audio, Nắp che webcam.",17490000,6,8/17/2025 14:52,8/17/2025 14:52,TRUE
+229,21KH00WCVN,4,Lenovo ThinkBook 16 G6 IRL i5-13420H (21KH00WCVN),"Màn hình 16"" WUXGA, Độ bền chuẩn quân đội, Nắp che webcam vật lí",17290000,7,8/17/2025 14:53,8/17/2025 14:53,TRUE
+230,SKU-F4F78850,5,Acer Aspire Lite 16 AI AL16-71P-5674 Ultra 5 125H,"Laptop Acer Aspire Lite 16 AI AL16-71P-5674 Ultra 5 125H với 2 quạt tản nhiệt, bản lề mở 180°, trả góp 0%, bảo hành nhanh 3 ngày.",16990000,6,8/17/2025 14:53,8/17/2025 14:53,TRUE
+231,X1502VA-BQ886W,2,Asus Vivobook 15 X1502VA-BQ886W i7-13620H,"Laptop Asus Vivobook 15 với bản lề mở 180°, công nghệ khử tiếng ồn AI.",16990000,6,8/17/2025 14:54,8/17/2025 14:54,TRUE
+232,B73TSAT,7,HP Probook 445 G10 R5-7530U,"Laptop HP Probook 445 G10 với độ bền chuẩn quân đội, nút gạt tắt camera và vỏ nhôm cao cấp.",16990000,7,8/17/2025 14:54,8/17/2025 14:54,TRUE
+233,S3407VA-LY046W,2,Asus Vivobook S14 S3407VA-LY046W i5-13420H,"Sạc nhanh tới 60% trong 49 phút, Vỏ kim loại, Mỏng nhẹ 1.4kg",16990000,7,8/17/2025 14:54,8/17/2025 14:54,TRUE
+234,83A100RHVN,4,Lenovo V15 G4 IRU i7-13620H,Laptop Lenovo V15 G4 IRU i7-13620H,16990000,7,8/17/2025 14:55,8/17/2025 14:55,TRUE
+235,MSI Gaming Thin A15 B7UC-261VN,1,MSI Gaming Thin A15 B7UC-261VN R5-7535HS,"Laptop gaming mỏng nhẹ với mặt A kim loại, tần số quét 144 Hz.",16990000,4,8/17/2025 14:55,8/17/2025 14:55,TRUE
+236,83K0000BVN,4,Lenovo Ideapad Slim 3 14IRH10 i5-13420H,"Laptop Lenovo Ideapad Slim 3 14IRH10 i5-13420H với màn hình OLED, độ sáng 400 nits, mở khóa khuôn mặt, trả góp 0%.",16990000,7,8/17/2025 14:55,8/17/2025 14:55,TRUE
+237,MSI Gaming Thin 15 B12UC-1416VN,1,MSI Gaming Thin 15 B12UC-1416VN i5-12450H,"Laptop gaming mỏng nhẹ với mặt A kim loại, tần số quét 144 Hz.",16990000,4,8/17/2025 14:56,8/17/2025 14:56,TRUE
+238,X1605VA-MB1795W,2,Asus Vivobook X1605VA-MB1795W i7-13620H,Asus Vivobook i7-13620H,16990000,7,8/17/2025 14:56,8/17/2025 14:56,TRUE
+239,SKU-5EF5A1D9,3,MacBook Air 13 inch M1 2020 8CPU 7GPU 16GB/256GB,"MacBook Air 13"" 2020 M1 16GB/256GB",16990000,7,8/17/2025 14:56,8/17/2025 14:56,TRUE
+240,ANV15-51-53NE,5,Acer Nitro V Gaming ANV15-51-53NE i5-13420H,"Laptop gaming Acer Nitro V với i5-13420H, màn hình 144Hz và 2 quạt tản nhiệt.",16890000,4,8/17/2025 14:57,8/17/2025 14:57,TRUE
+241,A1505VA-MA466W,2,Asus Vivobook 15 OLED A1505VA-MA466W i5-13500H,"Laptop Asus Vivobook 15 OLED với màn hình OLED 2.8K, bảo mật vân tay, độ bền chuẩn quân đội, hỗ trợ trả góp 0%.",16490000,7,8/17/2025 14:57,8/17/2025 14:57,TRUE
+242,83N3002PVN,4,Lenovo IdeaPad Slim 3 15Q8X10 SnapX X1-26-100,"Laptop Lenovo IdeaPad Slim 3 với chuẩn AI Copilot+, nắp che webcam vật lí, bảo mật vân tay.",16490000,7,8/17/2025 14:58,8/17/2025 14:58,TRUE
+243,8U6L8PA,7,HP Pavilion 15-eg3111TU i5-1335U,"Laptop HP Pavilion 15-eg3111TU với vỏ nhôm cao cấp, âm thanh B&O Play, viền màn hình siêu mỏng.",16390000,7,8/17/2025 14:58,8/17/2025 14:58,TRUE
+244,NX.KG3SV.001,5,Acer Swift Go SFG14-41-R19Z R5-7530U,"Laptop mỏng nhẹ với màn hình bảo vệ mắt, bảo hành nhanh trong 3 ngày, trả góp 0%.",15990000,7,8/17/2025 14:58,8/17/2025 14:58,TRUE
+245,71054775,8,Dell Inspiron 15 3520 i5-1235U,"Dell Inspiron 15 3520 i5 1235U/16GB/512GB. Màn hình chống chói, độ bền chuẩn quân đội.",15690000,7,8/17/2025 14:59,8/17/2025 14:59,TRUE
+246,8D10NK,8,Dell Inspiron 15 3520 i5 1235U,"Laptop Dell Inspiron 15 3520 i5 1235U/16GB/512GB/15.6""FHD/Win11/Office HS24/OS365, Màn hình bảo vệ mắt, Độ bền chuẩn quân đội",15690000,7,8/17/2025 14:59,8/17/2025 14:59,TRUE
+247,i5U165W11SLU,8,Dell Inspiron 15 3520 i5-1235U (i5U165W11SLU),"Màn hình bảo vệ mắt, độ bền chuẩn quân đội, tặng Office Home 2024 & Microsoft 365, trả góp 0%",15690000,7,8/17/2025 14:59,8/17/2025 14:59,TRUE
+248,i5U165W11BLU-FP,8,Dell Inspiron N3520 i5-1235U,"Dell Inspiron N3520 i5-1235U (i5U165W11BLU-FP) với các tính năng Tặng Office Home&Student, Bảo mật vân tay, Màn hình chống chói, Trả góp 0%.",15690000,7,8/17/2025 15:00,8/17/2025 15:00,TRUE
+251,71061229,8,Dell Inspiron 15 3520 i5-1235U,"Tặng Office, Home 2024, Độ bền chuẩn quân đội, Màn hình chống chói, Trả góp 0%",15690000,7,8/17/2025 15:01,8/17/2025 15:01,TRUE
+252,71045026,8,Dell Inspiron N3520 i5-1235U,Laptop Dell Inspiron N3520 i5-1235U,15690000,7,8/17/2025 15:01,8/17/2025 15:01,TRUE
+253,71030559,8,Dell Vostro V3520 i5-1235U,Laptop Dell Vostro V3520 i5-1235U,15690000,7,8/17/2025 15:02,8/17/2025 15:02,TRUE
+254,i5U165W11GRU,8,Dell Vostro V3520 i5-1235U,"Laptop Dell Vostro V3520 i5-1235U với màn hình chống chói, âm thanh Realtek Audio.",15690000,7,8/17/2025 15:02,8/17/2025 15:02,TRUE
+255,N5I5203W1,8,Dell Inspiron N3520 i5-1235U (N5I5203W1),Laptop Dell Inspiron N3520 i5-1235U,15690000,7,8/17/2025 15:02,8/17/2025 15:02,TRUE
+256,83K1000GVN,4,Lenovo Ideapad Slim 3 15IRH10 i5-13420H (83K1000GVN),"Laptop Lenovo Ideapad Slim 3 - 15IRH10 i5 13420H (83K1000GVN), nhẹ 1.63Kg, độ bền chuẩn quân đội, trả góp 0%, giảm giá.",15590000,7,8/17/2025 15:03,8/17/2025 15:03,TRUE
+257,83K0000AVN,4,Lenovo IdeaPad Slim 3 14IRH10 i5-13420H (83K0000AVN),Lenovo IdeaPad Slim 3 14IRH10 i5-13420H (83K0000AVN) - Sản phẩm chất lượng từ Lenovo,15590000,6,8/17/2025 15:03,8/17/2025 15:03,TRUE
+258,9Q970PA,7,HP 15-fd0235TU i5-1334U,"Laptop HP với các tính năng: Nút gạt tắt camera, Lọc tạp âm AI, Viền màn hình siêu mỏng, Trả góp 0%",15490000,6,8/17/2025 15:03,8/17/2025 15:03,TRUE
+259,A515-58GM-51LB,5,Acer Gaming Aspire 5 A515-58GM-51LB i5 13420H,Máy tính xách tay Acer Gaming Aspire 5 A515-58GM-51LB i5 13420H/16GB/512GB/RTX2050 4GB/Win11_Xám,15490000,4,8/17/2025 15:04,8/17/2025 15:04,TRUE
+260,8C5L1PA,7,HP 14-ep0112TU i5-1335U,"Laptop HP 14-ep0112TU i5-1335U với RAM 16GB, Intel Core i5-1335U.",15290000,6,8/17/2025 15:04,8/17/2025 15:04,TRUE
+261,83EM003EVN,4,Lenovo Ideapad Slim 3 15IRH8 i7-13620H (83EM003EVN),"Laptop Lenovo Ideapad Slim 3 với bộ vi xử lý i7-13620H, độ bền chuẩn quân đội, sạc nhanh 15 phút dùng tới 2 giờ.",15190000,7,8/17/2025 15:04,8/17/2025 15:04,TRUE
+262,X1504VA-BQ165W,2,Asus Vivobook 15 X1504VA-BQ165W Core 5 120U,"Laptop Asus Vivobook 15 với bản lề mở 180°, bảo mật vân tay, độ bền chuẩn quân đội.",14990000,7,8/17/2025 15:05,8/17/2025 15:05,TRUE
+263,AL14-52M-52UU,5,Acer Aspire Lite 14 AL14-52M-52UU i5-1335U,"Laptop Acer Aspire Lite 14 với vỏ nhôm cao cấp, màn hình 2.2K bảo vệ mắt.",14990000,6,8/17/2025 15:05,8/17/2025 15:05,TRUE
+264,MSI Gaming Thin 15 B13UCX-2080VN,1,MSI Gaming Thin 15 B13UCX-2080VN i5-13420H,"Laptop gaming mỏng nhẹ với mặt A kim loại, tần số quét 144Hz",14990000,4,8/17/2025 15:06,8/17/2025 15:06,TRUE
+265,SKU-E0DF17A9,5,Acer Aspire Lite 16 AL16-51P-72S2 i7-1255U,"Mặt lưng kim loại, Loa âm thanh vòm, Màn hình sáng, 300 nits",14990000,6,8/17/2025 15:06,8/17/2025 15:06,TRUE
+266,SKU-D11B2514,5,Acer Aspire 5 A515-58GM-53PZ i5-13420H,"Laptop Acer Aspire 5 A515-58GM-53PZ i5-13420H với 2 quạt tản nhiệt, loa âm thanh vòm, bảo hành nhanh, trả góp 0%.",14990000,6,8/17/2025 15:06,8/17/2025 15:06,TRUE
+267,SKU-29FEB160,2,Asus Vivobook 14 X1405VA-LY623W i5-13420H,"Laptop Asus Vivobook 14 X1405VA-LY623W i5-13420H với bản lề mở 180°, bảo mật vân tay, độ bền chuẩn quân đội.",14690000,7,8/17/2025 15:07,8/17/2025 15:07,TRUE
+268,X1502VA-BQ885W,2,Asus Vivobook X1502VA-BQ885W i5-13420H,"Laptop Asus Vivobook với bản lề mở 180°, công nghệ khử tiếng ồn AI, bảo hành 2 năm, trả góp 0%.",14690000,7,8/17/2025 15:07,8/17/2025 15:07,TRUE
+269,83A100PMVN,4,Lenovo V15 G4 IRU i5-13420H,Laptop Lenovo V15 G4 IRU i5-13420H,14590000,6,8/17/2025 15:07,8/17/2025 15:07,TRUE
+270,83K20002VN,4,Lenovo IdeaPad Slim 3 16IRH10 i5-13420H,"Laptop Lenovo IdeaPad Slim 3 với tấm nền IPS, độ bền chuẩn quân đội, trả góp 0%.",14590000,7,8/17/2025 15:08,8/17/2025 15:08,TRUE
+271,83K00008VN,4,Lenovo IdeaPad Slim 3 14IRH10 i5-13420H,Laptop Lenovo IdeaPad Slim 3 14IRH10 i5-13420H,14590000,6,8/17/2025 15:08,8/17/2025 15:08,TRUE
+272,83A000FQVN,4,Lenovo V14 G4 IRU I5-13420H,Laptop Lenovo V14 G4 IRU I5-13420H,14590000,7,8/17/2025 15:08,8/17/2025 15:08,TRUE
+273,83A100G0VN,4,Lenovo V15 G4 IRU i5-13420H,Lenovo V15 G4 IRU i5-13420H (83A100G0VN),14590000,7,8/17/2025 15:09,8/17/2025 15:09,TRUE
+274,8F157PA,7,HP 245 G10 R7-7730U,"Laptop HP 245 G10 R7-7730U với nút gạt tắt camera, màn hình chống chói, độ bền chuẩn quân đội.",14490000,7,8/17/2025 15:09,8/17/2025 15:09,TRUE
+275,A94XWPA,7,HP 15-fc0089AU R7-7730U,"Laptop HP 15-fc0089AU R7-7730U với các tính năng: Nút gạt tắt camera, Lọc tạp âm AI, Viền màn hình siêu mỏng, Trả góp 0%.",14490000,6,8/17/2025 15:10,8/17/2025 15:10,TRUE
+276,A715-76-728X,5,Acer Aspire 7 A715-76-728X i7-12650H,"Laptop Acer Aspire 7 với CPU i7-12650H, bảo mật vân tay, màn hình bảo vệ mắt, cổng Type C.",14490000,4,8/17/2025 15:10,8/17/2025 15:10,TRUE
+277,SKU-A6D1A7D5,5,Acer Aspire 7 A715-76G-59MW i5-12450H,"Acer Aspire 7 A715-76G-59MW i5-12450H với 2 quạt tản nhiệt, Loa âm thanh vòm, bảo hành nhanh trong 3 ngày.",14490000,4,8/17/2025 15:10,8/17/2025 15:10,TRUE
+278,A515-58M-56YX,5,Acer Aspire 5 A515-58M-56YX i5-13420H,"Laptop Acer Aspire 5 với micro lọc tạp âm, màn hình bảo vệ mắt, loa âm thanh vòm.",14490000,7,8/17/2025 15:11,8/17/2025 15:11,TRUE
+279,82XM00MCVN,4,Lenovo Ideapad Slim 3 15ABR8 R7 5825U,Laptop Lenovo Ideapad Slim 3 15ABR8 R7 5825U,14390000,7,8/17/2025 15:11,8/17/2025 15:11,TRUE
+280,AG2K7AT,7,HP 250 G9 i5-1235U,"Laptop HP 250 G9 i5-1235U với độ bền chuẩn quân đội, màn hình chống chói và nút gạt tắt camera.",13990000,7,8/17/2025 15:11,8/17/2025 15:11,TRUE
+281,AL16-52P-572A,5,Acer Aspire Lite 16 Gen 2 AL16-52P-572A i5-1334U,"Màn hình sáng, 300 nits, viền màn hình siêu mỏng, Acer PurifiedVoice",13990000,6,8/17/2025 15:12,8/17/2025 15:12,TRUE
+282,MSI Gaming Thin A15 B7UCX-240VN R5-7535HS,1,MSI Gaming Thin A15 B7UCX-240VN R5-7535HS,"Laptop gaming mỏng nhẹ với mặt A kim loại, tần số quét 144 Hz",13990000,4,8/17/2025 15:12,8/17/2025 15:12,TRUE
+283,X1504VA-NJ526W,2,Asus Vivobook X1504VA-NJ526W i5-1335U,"Nút gạt tắt camera, Độ bền chuẩn quân đội",13690000,7,8/17/2025 15:12,8/17/2025 15:12,TRUE
+284,MSI Modern 15 F13MG-666VN i5-1334U,1,MSI Modern 15 F13MG-666VN i5-1334U,"Nắp che webcam, vật lí, Độ bền chuẩn quân đội, Bảo hành 2 năm",13190000,7,8/17/2025 15:14,8/17/2025 15:14,TRUE
+285,NX.AYKSV.002,5,Acer Swift X SFX16-51G-516Q i5-11320H,"Laptop Acer Swift X với 2 quạt tản nhiệt, vỏ kim loại.",13090000,7,8/17/2025 15:14,8/17/2025 15:14,TRUE
+286,AL14-52M-54CJ,5,Acer Aspire Lite AL14-52M-54CJ i5-1334U,"Màn hình sáng, 300 nits, vỏ 1 mặt kim loại, màn hình bảo vệ mắt.",13490000,4,8/17/2025 15:44,8/17/2025 15:44,TRUE
+287,INOI240M4G,13,Inoi 240 Modern 4G,Điện thoại Inoi 240 Modern 4G,339000,5,8/17/2025 16:40,8/17/2025 16:40,TRUE
+288,SKU-2761229D,13,Inoi 240 Modern 4G,Điện thoại Inoi 240 Modern 4G với pin 1000 mAh và màn hình 1.8 inch.,339000,5,8/17/2025 16:41,8/17/2025 16:41,TRUE
+289,XI14TP12512,26,Xiaomi 14T Pro 5G 12GB 512GB,"Điện thoại Xiaomi 14T Pro 5G với camera Leica, chip Dimensity 9300+, sạc không dây 50W.",14870000,2,8/17/2025 19:23,8/17/2025 19:23,TRUE
+290,SGS25_12GB_256GB,28,Samsung Galaxy S25 5G 12GB 256GB,"Điện thoại Samsung Galaxy S25 5G với màn hình 6.2'' Dynamic AMOLED 2X FHD+, chip Snapdragon 8 Elite, bộ nhớ 12GB RAM và 256GB ROM.",18690000,2,8/18/2025 15:57,8/18/2025 15:57,TRUE
+291,AL16-51P-55N7,5,Acer Aspire Lite AL16-51P-55N7 i5-1235U,"Laptop Acer Aspire Lite với màn hình sáng, viền siêu mỏng, loa âm thanh vòm",12990000,7,8/17/2025 15:15,8/17/2025 15:15,TRUE
+292,NH.QGESV.007,5,Acer Aspire 7 A715-76-53PJ i5-12450H,"Màn hình bảo vệ mắt, 2 quạt tản nhiệt, Bảo hành nhanh",13490000,5,8/17/2025 15:45,8/17/2025 15:45,TRUE
+293,MBM1394G,14,Mobell M139 4G,Điện thoại Mobell M139 4G với pin 1000 mAh và màn hình 1.77 inch.,339000,5,8/17/2025 16:40,8/17/2025 16:40,TRUE
+294,SKU-21D7ED7F,3,iPhone 15 128GB,"Điện thoại iPhone 15 với camera 48MP siêu nét, kính pha màu nhôm bền bỉ, màn hình Dynamic Island.",15390000,2,8/17/2025 19:24,8/17/2025 19:24,TRUE
+295,SKU-2D34FCAE,3,iPhone 16 128GB,"Điện thoại iPhone 16 với chip Apple A18 mạnh mẽ, thời lượng pin 22 giờ.",18890000,2,8/18/2025 15:58,8/18/2025 15:58,TRUE
+296,IT8010-4G,15,Itel IT8010 4G,Điện thoại Itel IT8010 4G với pin 1000 mAh và màn hình 2 inch.,339000,5,8/17/2025 16:42,8/17/2025 16:42,TRUE
+297,OPR145G12256,27,OPPO Reno14 5G 12GB 256GB,"Điện thoại OPPO Reno14 5G với sạc nhanh 80W, pin 6000 mAh, kháng nước & bụi IP69.",15700000,2,8/17/2025 19:24,8/17/2025 19:24,TRUE
+298,IP15P128GB-001,3,iPhone 15 Plus 128GB,"Camera 48MP siêu nét, Màn hình lớn 6,7 inch, Pin lên đến 26 giờ",18990000,2,8/18/2025 15:58,8/18/2025 15:58,TRUE
+299,SKU-26AC58AD,11,Masstel Izi 15 4G,Điện thoại Masstel Izi 15 4G với pin 1000 mAh và màn hình 1.77 inch.,390000,5,8/17/2025 16:42,8/17/2025 16:42,TRUE
+300,SKU-55FECC10,3,iPhone 16e 128GB,"Điện thoại iPhone 16e với chip Apple A18 mạnh mẽ, camera 48MP siêu nét, thời lượng pin 21 giờ.",15990000,2,8/17/2025 19:24,8/17/2025 19:24,TRUE
+301,IP16P128,3,iPhone 16 Plus 128GB,"Điện thoại iPhone 16 Plus với chip Apple A18 mạnh mẽ, thời lượng pin 27 giờ, nút Camera Control mới.",21990000,2,8/18/2025 15:58,8/18/2025 15:58,TRUE
+302,SKU-CB5648E6,11,Masstel Izi 16 4G,"Điện thoại Masstel Izi 16 4G với pin 1000 mAh, màn hình 1.77 inch.",390000,5,8/17/2025 16:42,8/17/2025 16:42,TRUE
+303,HONOR400PRO5G,23,Honor 400 Pro 5G 12GB 512GB,"Điện thoại Honor 400 Pro 5G với pin 6000 mAh, chip Snapdragon 8 Gen 3, camera 200MP.",17690000,2,8/17/2025 19:25,8/17/2025 19:25,TRUE
+304,RM10Pro5G16512,29,RedMagic 10 Pro 5G 16GB 512GB,Gaming Phone với pin kép 7050 mAh và làm mát ICE-X,21990000,1,8/18/2025 15:59,8/18/2025 15:59,TRUE
+305,AsusVivobookX1504VA-NJ1969W,2,Asus Vivobook X1504VA-NJ1969W i5-1334U,"Laptop Asus Vivobook với bảo mật vân tay, độ bền chuẩn quân đội, bản lề mở 180°, trả góp 0%.",12990000,4,8/17/2025 15:46,8/17/2025 15:46,TRUE
+306,INOI244MP4G,13,Inoi 244 Modern Plus 4G,Điện thoại Inoi 244 Modern Plus 4G với pin 1200 mAh và màn hình 2.4 inch.,439000,7,8/17/2025 16:43,8/17/2025 16:43,TRUE
+307,RM10PRO5G12256,29,RedMagic 10 Pro 5G 12GB 256GB,Gaming phone with 7050 mAh battery and ICE-X cooling.,17990000,1,8/17/2025 19:25,8/17/2025 19:25,TRUE
+308,SKU-E4F31731,28,Samsung Galaxy S25 Plus 5G 12GB 256GB,"Armor Aluminum, 6.7'' Dynamic AMOLED 2X 2K, Snapdragon 8 Elite",22200000,2,8/18/2025 15:59,8/18/2025 15:59,TRUE
+309,MSI_Modern_14_F13MG-027VN_i5-1335U,1,MSI Modern 14 F13MG-027VN i5-1335U,"Laptop MSI Modern 14 với bản lề mở 180°, 2 khe RAM, hỗ trợ tối đa 64GB RAM, nút gạt tắt camera.",12690000,4,8/17/2025 15:46,8/17/2025 15:46,TRUE
+310,SKU-BE5D8D50,16,Viettel Sumo T2 4G,Điện thoại Viettel Sumo T2 4G với pin 1400 mAh và màn hình 2.4 inch.,449000,5,8/17/2025 16:43,8/17/2025 16:43,TRUE
+311,RM10SPro12256,29,RedMagic 10S Pro 12GB 256GB,"Điện thoại gaming với Snapdragon 8 Elite Leading, pin kép 7050 mAh, làm mát ICE-X.",18490000,1,8/17/2025 19:26,8/17/2025 19:26,TRUE
+312,XIAOMI15_12_256,26,Xiaomi 15 5G 12GB 256GB,"Điện thoại Xiaomi 15 5G với camera Leica, chip Snapdragon 8 Elite, pin 5240 mAh.",22540000,2,8/18/2025 16:00,8/18/2025 16:00,TRUE
+313,MSI Modern 14 F13MG-466VN i5 1334U,1,MSI Modern 14 F13MG-466VN i5 1334U,"Laptop MSI Modern 14 F13MG-466VN i5 1334U với nắp che webcam vật lí, độ bền chuẩn quân đội.",12690000,4,8/17/2025 15:47,8/17/2025 15:47,TRUE
+314,IT9310,15,Itel IT9310 4G,Điện thoại Itel IT9310 4G với pin 2000 mAh và màn hình 3 inch.,559000,5,8/17/2025 16:43,8/17/2025 16:43,TRUE
+315,S25Ultra12256,28,Samsung Galaxy S25 Ultra 5G 12GB 256GB,"Điện thoại Samsung Galaxy S25 Ultra với khung Titan, màn hình 6.9'' Dynamic AMOLED 2X 2K, chip Snapdragon 8 Elite.",28120000,2,8/17/2025 19:31,8/17/2025 19:31,TRUE
+316,OPPOFX85G16512,27,OPPO Find X8 5G 16GB 512GB,"Điện thoại OPPO Find X8 5G với hệ thống AI vượt trội, chip MediaTek D9400, camera tele tiềm vọng và trả góp 0%.",22580000,2,8/18/2025 16:00,8/18/2025 16:00,TRUE
+317,MSI Modern 14 C13M-608VN i5-1335U,1,MSI Modern 14 C13M-608VN i5-1335U,"Mỏng nhẹ chỉ 1.4kg, Bảo hành 2 năm, Trả góp 0%",12690000,4,8/17/2025 15:47,8/17/2025 15:47,TRUE
+318,NHMD1054G,17,Nokia HMD 105 4G,Điện thoại Nokia HMD 105 4G với pin 1450 mAh và màn hình 2.4 inch.,640000,7,8/17/2025 16:44,8/17/2025 16:44,TRUE
+319,SKU-7821FAFD,29,RedMagic 10S Pro 5G 16GB 512GB,"Điện thoại gaming với Snapdragon 8 Elite Leading, pin kép 7050 mAh, làm mát ICE-X.",22990000,1,8/18/2025 16:00,8/18/2025 16:00,TRUE
+320,82XM00MDVN,4,Lenovo Ideapad Slim 3 15ABR8 R5 5625U (82XM00MDVN),"Laptop Lenovo Ideapad Slim 3 với độ bền chuẩn quân đội, trọng lượng nhẹ, bảo hành 2 năm, trả góp 0%.",12390000,4,8/17/2025 15:47,8/17/2025 15:47,TRUE
+321,NOK105DS4G,17,Nokia 105 DS Pro 4G,Điện thoại Nokia 105 DS Pro 4G với màn hình 1.77 inch và pin 1450 mAh,670000,7,8/17/2025 16:44,8/17/2025 16:44,TRUE
+322,S24Ultra256GB,28,Samsung Galaxy S24 Ultra 5G 256GB,"Điện thoại Samsung Galaxy S24 Ultra 5G với màn hình 6.8"" Dynamic AMOLED 2X QHD, chip Snapdragon 8 Gen 3, RAM 12GB, khung Titan và bộ nhớ 256GB/512GB.",23850000,2,8/18/2025 16:01,8/18/2025 16:01,TRUE
+323,AL15-41P-R3U5,5,Acer Aspire Lite 15 AL15-41P-R3U5 R7-5700U,"Màn hình bảo vệ mắt, Bản lề mở 180°, Cổng sạc Type C, Trả góp 0%",12290000,4,8/17/2025 15:48,8/17/2025 15:48,TRUE
+324,MF60S4G,11,Masstel Fami 60S 4G,Điện thoại Masstel Fami 60S 4G với màn hình 2 inch và pin 2300 mAh,700000,5,8/17/2025 16:44,8/17/2025 16:44,TRUE
+325,IP14P512,3,iPhone 14 Plus 512GB,"Điện thoại iPhone 14 Plus 512GB với màn hình lớn, pin khủng, camera siêu chụp đêm và chip Apple A15 Bionic mạnh mẽ.",23990000,2,8/18/2025 16:01,8/18/2025 16:01,TRUE
+326,HP14s-em0086AU,6,HP 14s-em0086AU R5-7520U (835T9PA),"Laptop với nút gạt tắt camera, màn hình chống chói, viền màn hình siêu mỏng.",12190000,4,8/17/2025 15:48,8/17/2025 15:48,TRUE
+327,Nokia2204G-001,17,Nokia 220 4G,"Điện thoại Nokia 220 4G với pin 1450 mAh, màn hình 2.8 inch",930000,7,8/17/2025 16:45,8/17/2025 16:45,TRUE
+328,IP16PRO128,3,iPhone 16 Pro 128GB,"Điện thoại iPhone 16 Pro với chip A18 Pro cực mạnh, nút camera Control mới, viền màn hình siêu mỏng.",25090000,2,8/18/2025 16:01,8/18/2025 16:01,TRUE
+329,ASUSVivobook15X1504ZA-NJ517W,9,ASUS Vivobook 15 X1504ZA-NJ517W i5-1235U,"Laptop ASUS Vivobook 15 với bộ vi xử lý i5-1235U, nút gạt tắt camera, độ bền chuẩn quân đội.",12190000,4,8/17/2025 15:49,8/17/2025 15:49,TRUE
+330,INOIA34,13,Inoi A34 12GB (3+9GB) 128GB,"Điện thoại Inoi A34 với pin 5000 mAh, màn hình 6.5 inch, RAM 12GB và bộ nhớ trong 128GB.",1390000,5,8/17/2025 16:45,8/17/2025 16:45,TRUE
+331,SKU-92286DAC,28,Samsung Galaxy Z Flip7 5G 256GB,"Điện thoại Samsung Galaxy Z Flip7 5G với màn hình gập 6.9'', Dynamic AMOLED 2X, Camera AI 50MP, kháng nước bụi IPX8.",26990000,2,8/18/2025 16:02,8/18/2025 16:02,TRUE
+332,82YU016SVN,4,Lenovo V15 G4 AMN R5 7520U,"Nắp che webcam, vật lí, độ bền chuẩn quân đội",11990000,4,8/17/2025 15:49,8/17/2025 15:49,TRUE
+333,NOK32104G,17,Nokia 3210 4G,Điện thoại Nokia 3210 4G,1570000,5,8/17/2025 16:46,8/17/2025 16:46,TRUE
+334,S25Ultra5G12256,28,Samsung Galaxy S25 Ultra 5G 12GB 256GB,"Điện thoại Samsung Galaxy S25 Ultra 5G với khung Titan, màn hình 6.9'' Dynamic AMOLED 2X 2K, chip Snapdragon 8 Elite, bộ nhớ trong 256GB/512GB.",28120000,2,8/18/2025 16:02,8/18/2025 16:02,TRUE
+335,AsusVivobookE1504FA-NJ454W-R5-7520U,2,Asus Vivobook E1504FA-NJ454W R5-7520U,"Laptop Asus Vivobook với độ bền chuẩn quân đội, nút gạt tắt camera, trả góp 0%.",11890000,4,8/17/2025 15:49,8/17/2025 15:49,TRUE
+336,ZTE Blade A35 4GB 64GB,18,ZTE Blade A35,"Điện thoại ZTE Blade A35 với màn hình 6.75 inch 90Hz, pin 5000 mAh và mở khóa bằng khuôn mặt.",1590000,5,8/17/2025 16:46,8/17/2025 16:46,TRUE
+337,S25EDGE5G256,28,Samsung Galaxy S25 Edge 5G 256GB,"Galaxy S mỏng nhất, Snapdragon 8 Elite, Camera 200MP",28450000,2,8/18/2025 16:03,8/18/2025 16:03,TRUE
+338,E1404FA-NK177W,2,Asus Vivobook Go 14 E1404FA-NK177W R5-7520U,"Asus Vivobook Go 14 với độ bền chuẩn quân đội, nút gạt tắt camera, trả góp 0%",11690000,4,8/17/2025 15:50,8/17/2025 15:50,TRUE
+339,TCL503_3GB_64GB,19,TCL 503 3GB-64GB,"Điện thoại TCL 503 với RAM 6GB (3GB + 3GB), pin 5000 mAh, mở khóa khuôn mặt và vân tay.",1590000,5,8/17/2025 16:46,8/17/2025 16:46,TRUE
+340,IP15PM256,3,iPhone 15 Pro Max 256GB,"Màn hình lớn, Thiết kế Titan, Camera chuyên nghiệp",28490000,2,8/18/2025 16:03,8/18/2025 16:03,TRUE
+341,A20TFPT,6,HP 245 G10 R5-7530U,"Nút gạt tắt camera, Màn hình chống chói, Độ bền chuẩn quân đội",11490000,4,8/17/2025 15:50,8/17/2025 15:50,TRUE
+342,NUBIAA36-4GB64GB-RANDOM,20,Nubia A36 4GB 64GB,"Điện thoại Nubia A36 với màn hình lớn 6.75 inch, RAM 12GB, Pin 5000mAh.",1890000,5,8/17/2025 16:47,8/17/2025 16:47,TRUE
+343,IP16PM256,3,iPhone 16 Pro Max 256GB,"Màn hình cực lớn, Chip A18 Pro cực mạnh, Nút Camera Control mới",29990000,2,8/18/2025 16:03,8/18/2025 16:03,TRUE
+344,E1404FA-NK186W,2,Asus Vivobook E1404FA-NK186W R5 7520U,"Laptop Asus Vivobook với nút gạt tắt camera, độ bền chuẩn quân đội, trả góp 0%.",10690000,4,8/17/2025 15:50,8/17/2025 15:50,TRUE
+345,ZTE_Blade_A55_4GB_128GB,18,ZTE Blade A55 4GB 128GB,"Điện thoại ZTE Blade A55 với màn hình 6.75 inch 90Hz, pin 5000 mAh, mở khóa bằng khuôn mặt và vân tay.",1890000,5,8/17/2025 16:47,8/17/2025 16:47,TRUE
+346,HONOR_MAGIC_V3_5G_12GB_512GB,23,Honor Magic V3 5G 12GB 512GB,"Điện thoại Honor Magic V3 5G với màn hình 7.9"", chip Snapdragon 8 Gen 3, pin 5150 mAh, sạc nhanh 66W.",31990000,2,8/18/2025 16:04,8/18/2025 16:04,TRUE
+347,B73VWPA,6,HP 14-ep0220TU i3-1315U,"Laptop với nút gạt tắt camera, màn hình chống chói, viền màn hình mỏng, trả góp 0%.",10490000,4,8/17/2025 15:51,8/17/2025 15:51,TRUE
+348,MS74128,11,Masstel S7 4GB 128GB,"Điện thoại Masstel S7 với bộ nhớ 128GB, màn hình lớn 6.75 inch, pin 5000mAh.",1990000,5,8/17/2025 16:47,8/17/2025 16:47,TRUE
+349,SKU-FE6A8CAC,26,Xiaomi 15 Ultra 5G 16GB 512GB,"Điện thoại Xiaomi 15 Ultra 5G với camera Leica, Snapdragon 8 Elite và pin 5410 mAh.",32360000,2,8/18/2025 16:04,8/18/2025 16:04,TRUE
+350,X1605VA-MB1826W,2,Asus Vivobook X1605VA-MB1826W i3-1315U,"Laptop Asus Vivobook với độ bền chuẩn quân đội, nút gạt tắt camera.",10290000,4,8/17/2025 15:51,8/17/2025 15:51,TRUE
+351,TECSPARKGO1464,21,Tecno Spark Go 1 4GB 64GB,"Màn hình 6.67 inch, Pin 5000 mAh, Loa kép, tăng âm lượng",2060000,5,8/17/2025 16:48,8/17/2025 16:48,TRUE
+352,SKU-E9A66832,28,Samsung Galaxy Z Fold6 5G 256GB,"Điện thoại Samsung Galaxy Z Fold6 5G với màn hình gập, chip Snapdragon 8 Gen 3, RAM 12GB, kháng nước bụi IPX8.",32390000,2,8/18/2025 16:04,8/18/2025 16:04,TRUE
+353,A2NL6PA,6,HP 15-fd0305TU i3-1315U,"Laptop HP với viền màn hình mỏng, màn hình chống chói, nút gạt tắt camera.",10190000,4,8/17/2025 15:51,8/17/2025 15:51,TRUE
+354,BV91C4128,22,Benco V91c 4GB 128GB,"Điện thoại Benco V91c với màn hình 90Hz, RAM 8GB (4GB + 4GB), ROM 128GB, trả góp 0%.",2090000,5,8/17/2025 16:48,8/17/2025 16:48,TRUE
+355,IP15P1TB-RANDOM,3,iPhone 15 Pro 1TB,"Điện thoại iPhone 15 Pro với chip A17 Pro, thiết kế Titan và camera chuyên nghiệp.",33990000,2,8/18/2025 16:05,8/18/2025 16:05,TRUE
+356,X1404VA-NK394W,2,Asus Vivobook X1404VA-NK394W i3-1315U,"Laptop Asus Vivobook với độ bền chuẩn quân đội, nút gạt tắt camera.",10190000,4,8/17/2025 15:52,8/17/2025 15:52,TRUE
+357,SKU-5A44F412,23,Honor X5b 4GB 64GB,"Điện thoại Honor X5b với màn hình 6.56 inch, pin 5200 mAh, RAM 8GB (4GB + 4GB), bộ nhớ trong 64GB.",2160000,5,8/17/2025 16:48,8/17/2025 16:48,TRUE
+358,FINDN5-16-512,27,OPPO Find N5 5G 16GB 512GB,"Điện thoại OPPO Find N5 5G với chip Snapdragon 8 Elite, pin 5600 mAh, kháng nước IPX9",44180000,2,8/18/2025 16:05,8/18/2025 16:05,TRUE
+359,A315-44P-R5QG,5,Acer Aspire 3 A315-44P-R5QG R7-5700U,"Laptop Acer Aspire 3 với micro lọc tạp âm, màn hình bảo vệ mắt và loa âm thanh vòm.",10090000,4,8/17/2025 15:52,8/17/2025 15:52,TRUE
+360,NUBIAA56-4GB-128GB,20,Nubia A56 4GB 128GB,"Điện thoại Nubia A56 với màn hình lớn 6.75 inch, RAM 12GB, Pin 5000mAh.",2190000,5,8/17/2025 16:49,8/17/2025 16:49,TRUE
+361,SGFZFOLD75G256,28,Samsung Galaxy Z Fold7 5G 256GB,Điện thoại màn hình gập với camera AI 200MP và chip Snapdragon 8 Elite,44990000,2,8/18/2025 16:06,8/18/2025 16:06,TRUE
+362,SKU-A8F6A619,10,Huawei MateBook D15 R7-5700U,"Mỏng chỉ 29.9mm, Vỏ kim loại, Bảo hành 12 tháng, Trả góp 0%",9490000,4,8/17/2025 15:53,8/17/2025 15:53,TRUE
+363,INOIA54-12GB-256GB,13,Inoi A54 12GB (4+8GB) 256GB,"Điện thoại Inoi A54 với pin 5000 mAh, màn hình 6.75 inch và RAM 12GB.",2190000,5,8/17/2025 16:49,8/17/2025 16:49,TRUE
+364,REDMAGIC10SPROPLUS5G,29,RedMagic 10s Pro Plus 5G,Điện thoại thông minh RedMagic 10s Pro Plus 5G (thông tin dựa trên tin đồn),0,1,8/18/2025 16:06,8/18/2025 16:06,TRUE
+365,AL14-52M-32KV,5,Acer Aspire Lite 14 Gen 2 AL14-52M-32KV i3-1305U,"Màn hình sáng, 300 nits, Cổng kết nối USB-C, Vỏ nhôm cao cấp",8990000,4,8/17/2025 15:53,8/17/2025 15:53,TRUE
+366,REALMEC604GB64GB,24,Realme C60 4GB-64GB,"Điện thoại Realme C60 với pin 5000 mAh, màn hình 6.74 inch, kháng nước IP54.",2240000,5,8/17/2025 16:50,8/17/2025 16:50,TRUE
+367,NN34G-RND,20,Nubia Neo 3 4G,Sản phẩm Nubia Neo 3 4G,0,5,8/18/2025 16:06,8/18/2025 16:06,TRUE
+368,AsusVivobookX1404ZA-NK387W,2,Asus Vivobook X1404ZA-NK387W i3-1215U,"Laptop Asus Vivobook với nút gạt tắt camera, độ bền chuẩn quân đội.",8990000,4,8/17/2025 15:53,8/17/2025 15:53,TRUE
+369,NUBIAA764GB128GBNFC,20,Nubia A76 4GB 128GB (NFC),"Điện thoại Nubia A76 với NFC, RAM 4GB và bộ nhớ trong 128GB, camera AI 50MP, pin 5000mAh.",2290000,5,8/17/2025 16:50,8/17/2025 16:50,TRUE
+370,ZXNF001,18,ZTE nubia Flip,Điện thoại ZTE nubia Flip,0,2,8/18/2025 16:07,8/18/2025 16:07,TRUE
+371,E1504GA-BQ1141W,2,Asus Vivobook Go 15 E1504GA-BQ1141W i3-N305,Asus Vivobook Go 15 với bộ vi xử lý i3-N305,8790000,4,8/17/2025 15:54,8/17/2025 15:54,TRUE
+372,TECNO_SPARK_20C_4GB_128GB,21,Tecno Spark 20C 4GB 128GB,"Điện thoại Tecno Spark 20C với màn hình 6.56 inch, pin 5000 mAh, loa kép và tăng âm lượng.",2390000,5,8/17/2025 16:50,8/17/2025 16:50,TRUE
+373,SKU_NubiaNeo3_5G,20,Nubia Neo 3 5G,Sản phẩm Nubia Neo 3 5G,0,5,8/18/2025 16:07,8/18/2025 16:07,TRUE
+374,SKU-8E7FD4FC,11,Masstel E140 Celeron N4120 Win 10,Laptop Masstel E140 với bộ vi xử lý Celeron N4120 và hệ điều hành Windows 10.,3590000,4,8/17/2025 15:54,8/17/2025 15:54,TRUE
+375,VY03-464,25,Vivo Y03 4GB 64GB,"Điện thoại Vivo Y03 với màn hình 6.56inch, RAM 4GB, kháng bụi và nước IP54",2440000,5,8/17/2025 16:51,8/17/2025 16:51,TRUE
+376,HONOR_MAGIC_V5_RANDOM,23,Honor Magic V5,Điện thoại Honor Magic V5,0,2,8/18/2025 16:07,8/18/2025 16:07,TRUE
+377,SKU-F2EAAA90,5,Acer Predator Helios 18 Gaming AI PH18-73-98AQ Ultra 9 275HX,"Laptop gaming Acer Predator Helios 18 trang bị RTX AI 5090, tản nhiệt cánh quạt 3D AeroBlade 6.",0,1,8/17/2025 15:54,8/17/2025 15:54,TRUE
+378,SKU-4E34EB18,23,Honor X5b Plus 4GB 128GB,"Màn hình 6.56inch, Pin 5200 mAh, RAM 8GB (4GB + 4GB)",2440000,5,8/17/2025 16:51,8/17/2025 16:51,TRUE
+379,HP5G-RND,23,Honor Power 5G,Điện thoại Honor Power 5G,0,5,8/18/2025 16:08,8/18/2025 16:08,TRUE
+380,GU605CX-QR083W,2,Asus ROG Zephyrus G16 GU605CX-QR083W Ultra 9 285H,"Laptop gaming với màn hình Nebula OLED 240Hz, 3 quạt tản nhiệt, card đồ họa GeForce RTX AI 5090.",0,1,8/17/2025 15:55,8/17/2025 15:55,TRUE
+381,REALMEC61_4GB_128GB,24,Realme C61 4GB 128GB,"Điện thoại Realme C61 với pin 5000 mAh, màn hình 6.74 inch và kháng nước IP54.",2520000,5,8/17/2025 16:51,8/17/2025 16:51,TRUE
+382,NUBIANEO3GT-001,20,Nubia Neo 3 GT,Điện thoại Nubia Neo 3 GT (dựa trên tin đồn),0,5,8/18/2025 16:08,8/18/2025 16:08,TRUE
+383,G635LW-RW175W,2,Asus ROG Strix Scar 16 G635LW-RW175W Ultra 9 275HX,"Laptop gaming với màn hình Mini-LED, tần số quét 240Hz, 3 quạt tản nhiệt và card đồ họa GeForce RTX AI 5080.",0,1,8/17/2025 15:55,8/17/2025 15:55,TRUE
+384,BV91P6128,22,Benco V91 Plus 6GB 128GB,"Điện thoại Benco V91 Plus với màn hình 90Hz, RAM 12GB, ROM 128GB",2590000,5,8/17/2025 16:52,8/17/2025 16:52,TRUE
+385,SGZF_FE_RAND,28,Samsung Galaxy Z Flip FE,Điện thoại gập Samsung Galaxy Z Flip phiên bản Fan Edition (FE),0,2,8/18/2025 16:08,8/18/2025 16:08,TRUE
+386,APH18-73-93P0,5,Acer Predator Helios 18 Gaming AI PH18-73-93P0 Ultra 9 275HX,"Laptop gaming cao cấp với card đồ họa GeForce RTX AI 5080, tản nhiệt AeroBlade 6",0,1,8/17/2025 15:55,8/17/2025 15:55,TRUE
+387,NV70M6128,20,Nubia V70 Max 6GB 128GB,"Điện thoại Nubia V70 Max với RAM 6GB, bộ nhớ trong 128GB, màn hình 6.9 inch 120Hz và NFC.",2590000,5,8/17/2025 16:52,8/17/2025 16:52,TRUE
+388,REDMAGIC10AIR5G_16_512,29,RedMagic 10 Air 5G 16GB 512GB,Điện thoại RedMagic 10 Air 5G với 16GB RAM và 512GB bộ nhớ trong.,0,1,8/18/2025 16:09,8/18/2025 16:09,TRUE
+389,MSI Gaming Stealth 18 HX AI A2XWIG-017VN,1,MSI Gaming Stealth 18 HX AI A2XWIG-017VN Ultra 9 275HX,"Laptop gaming cao cấp với màn hình MiniLED 18 inch, tản nhiệt buồng hơi siêu mát, vỏ kim loại.",0,1,8/17/2025 15:56,8/17/2025 15:56,TRUE
+390,RN60-4GB-64GB,24,Realme Note 60 4GB 64GB,"Realme Note 60 với pin 5000 mAh, màn hình 6.74 inch và kháng nước IP64.",2730000,5,8/17/2025 16:52,8/17/2025 16:52,TRUE
+391,SKU-4EF451CB,21,Tecno Spark 30C 4GB 128GB,"Điện thoại Tecno Spark 30C với màn hình 6.7"" Super AMOLED FHD+, pin 5000 mAh và chip Helio G81.",0,5,8/18/2025 16:09,8/18/2025 16:09,TRUE
+392,MSI-Gaming-Stealth-A16-Mercedes-AMG,1,MSI Gaming Stealth A16 Mercedes AMG AI+ A3XWGG-032VN Ryzen AI 9 HX 370,"Laptop gaming với màn hình OLED 240Hz, card đồ họa NVIDIA GeForce RTX 5070, chuẩn AI Copilot+ PC.",0,1,8/17/2025 15:56,8/17/2025 15:56,TRUE
+393,HX6B6128,23,Honor X6b 6GB 128GB,"Điện thoại Honor X6b với pin 5200 mAh, màn hình 6.56"" HD+, RAM 6GB.",2750000,5,8/17/2025 16:53,8/17/2025 16:53,TRUE
+394,TECSPARK30,21,Tecno Spark 30 8GB 128GB,"Tecno Spark 30 với Helio G91, kháng nước IP64, pin 5000 mAh.",0,5,8/18/2025 16:10,8/18/2025 16:10,TRUE
+395,G615LW-S5135W,2,Asus Gaming ROG Strix G16 G615LW-S5135W Ultra 9-275HX,"Màn hình 16"" 2.5K, 3 quạt tản nhiệt, GeForce RTX AI 5080",0,1,8/17/2025 15:56,8/17/2025 15:56,TRUE
+396,SKU-06815B4A,20,Nubia V70 Design 8GB 128GB,Điện thoại Nubia V70 Design với RAM 8GB và bộ nhớ trong 128GB.,2790000,5,8/17/2025 16:53,8/17/2025 16:53,TRUE
+397,SKU-04577179,21,Tecno Camon 30S 256GB,"Điện thoại Tecno Camon 30S với pin 5000 mAh, camera 50MP OIS, kết nối NFC.",0,5,8/18/2025 16:10,8/18/2025 16:10,TRUE
+398,A16AI+A3XWHG-085VN,1,MSI Gaming Stealth A16 AI+ A3XWHG-085VN R9 HX 370,"Laptop gaming với tản nhiệt Cooler Boost 5, chuẩn AI Copilot+ PC và tần số quét 240Hz",0,1,8/17/2025 15:57,8/17/2025 15:57,TRUE
+399,SKU-5AE4070A,26,Xiaomi Poco C71 4GB 128GB,"Điện thoại Xiaomi Poco C71 với màn hình 6.9 inch 120Hz, pin 5200 mAh, mở khóa vân tay, trả góp 0%.",2850000,5,8/17/2025 16:53,8/17/2025 16:53,TRUE
+400,SKU-84632CC2,28,Samsung Galaxy XCover7 5G 6GB 128GB,"Điện thoại Samsung Galaxy XCover7 5G với chip MediaTek Dimensity 6100+, kháng nước & bụi IP68, kết nối 5G vượt trội.",0,5,8/18/2025 16:10,8/18/2025 16:10,TRUE
+401,A16AI+A3XWFG-018VN,1,MSI Gaming Stealth A16 AI+ A3XWFG-018VN Ryzen AI 9 HX 370,"Gaming laptop with Ryzen AI 9 HX processor, OLED display, 240Hz refresh rate, and NVIDIA GeForce RTX 5060 graphics.",0,1,8/17/2025 15:57,8/17/2025 15:57,TRUE
+402,SKU-1127DC94,24,Realme C61 6GB 128GB,"Điện thoại Realme C61 với pin 5000 mAh, màn hình 6.74 inch, kháng nước IP54.",2920000,5,8/17/2025 16:54,8/17/2025 16:54,TRUE
+403,SKU-0A41430D,28,Samsung Galaxy XCover7 Pro 5G 6GB 128GB,"Điện thoại Samsung Galaxy XCover7 Pro 5G với MediaTek Dimensity 6100+, kháng nước & bụi IP68, kết nối 5G vượt trội.",0,5,8/18/2025 16:11,8/18/2025 16:11,TRUE
+404,PHN16S-71-94T0,5,Acer Predator Helios Neo 16S Gaming AI PHN16S-71-94T0 Ultra 9 275HX,"Laptop gaming Acer Predator Helios Neo 16S với màn hình 16 inch OLED 2K, trang bị GeForce RTX AI 5070Ti",0,1,8/17/2025 15:58,8/17/2025 15:58,TRUE
+405,SKU-7CFBEC92,26,Xiaomi Redmi 14C 4GB 128GB,"Điện thoại Xiaomi Redmi 14C với camera AI 50MP, pin 5160 mAh, màn hình 6.88 inch.",2930000,5,8/17/2025 16:54,8/17/2025 16:54,TRUE
+406,GU605CM-QR078W,2,Asus Gaming ROG Zephyrus G16,"Màn hình 16"" OLED 2.5K, 3 quạt tản nhiệt, NVIDIA GeForce RTX 5060",0,1,8/17/2025 15:58,8/17/2025 15:58,TRUE
+407,TCL60R5G4GB128GB,19,TCL 60R 5G 4GB 128GB,"Điện thoại TCL 60R 5G với NFC, pin 5200 mAh.",2990000,5,8/17/2025 16:55,8/17/2025 16:55,TRUE
+408,XPS9350-U5IA165W11GR-FP,7,Dell XPS 13 9350 Ultra 5 226V,"Laptop Dell XPS 13 với màn hình cảm ứng, bảo mật vân tay, trả góp 0%.",0,2,8/17/2025 15:58,8/17/2025 15:58,TRUE
+409,SKU-ABE58744,27,OPPO A18 4GB 64GB,"Điện thoại OPPO A18 với màn hình 6.56 inch, tần số quét 90Hz, pin 5000 mAh, kháng bụi & nước IP54.",2990000,5,8/17/2025 16:55,8/17/2025 16:55,TRUE
+410,MSI-KTN15-HX-B14WGK-022VN,1,MSI Gaming Katana 15 HX B14WGK-022VN i9-14900HX,"Laptop gaming với tần số quét 165Hz, Mux Switch, NVIDIA GeForce RTX 5070.",0,1,8/17/2025 15:59,8/17/2025 15:59,TRUE
+411,SKU-7CFAC5B8,28,Samsung Galaxy A06 4GB 128GB,"Điện thoại Samsung Galaxy A06 với màn hình 6.7 inch HD+, chip MediaTek Helio G85, sạc nhanh 25W.",3130000,5,8/17/2025 16:55,8/17/2025 16:55,TRUE
+412,G615JMR-S5155W,2,Asus ROG Strix 16 G615JMR-S5155W i7-14650HX,"Laptop Asus ROG Strix 16 với i7-14650HX, RTX 5060, tần số quét 240Hz, 3 quạt tản nhiệt.",0,1,8/17/2025 15:59,8/17/2025 15:59,TRUE
+413,OPPOA5i4GB64GB-RANDOM,27,OPPO A5i 4GB 64GB,"Điện thoại OPPO A5i với pin 5100 mAh, kháng nước IPX4, màn hình siêu sáng 1000 nits, trả góp 0%, bộ nhớ 64GB/128GB",3290000,5,8/17/2025 16:56,8/17/2025 16:56,TRUE
+414,MSI-Katana-15-HX-B14WFK-294VN,1,MSI Gaming Katana 15 HX B14WFK-294VN i9-14900HX,"Laptop gaming với tần số quét 165Hz, hỗ trợ Mux Switch, trang bị NVIDIA GeForce RTX 5060",0,1,8/17/2025 15:59,8/17/2025 15:59,TRUE
+415,A05S128,28,Samsung Galaxy A05s 128GB,"Điện thoại Samsung Galaxy A05s 128GB với màn hình 6.7 inch, pin 5000mAh, sạc 25W, và chip Snapdragon 680.",3290000,7,8/17/2025 16:56,8/17/2025 16:56,TRUE
+416,MSI-Katana-15-HX-B14WEK-295VN,1,MSI Gaming Katana 15 HX B14WEK-295VN i9-14900HX,"Laptop gaming với tần số quét 165Hz, hỗ trợ Mux Switch, NVIDIA GeForce RTX 5050.",0,1,8/17/2025 16:00,8/17/2025 16:00,TRUE
+417,TECNO_SPARK_30_5G_6GB_128GB,21,Tecno Spark 30 5G 6GB 128GB,"Điện thoại Tecno Spark 30 5G với chip MediaTek Dimensity 6300, màn hình 6.67 inch, tích hợp NFC, trả góp 0%.",3410000,5,8/17/2025 16:56,8/17/2025 16:56,TRUE
+418,AY8X9PA,6,HP Gaming Victus 16-r0366TX i7-13700HX,"Laptop gaming với 2 quạt tản nhiệt, tần số quét 165Hz và âm thanh B&O Play",0,1,8/17/2025 16:00,8/17/2025 16:00,TRUE
+419,A06-5G-4GB-128GB,28,Samsung Galaxy A06 5G 4GB 128GB,"Điện thoại Samsung Galaxy A06 5G với chip MediaTek Dimensity 6300, màn hình 6.7 inch, camera 50MP.",3420000,5,8/17/2025 16:57,8/17/2025 16:57,TRUE
+420,AY8Y2PA,6,HP Gaming Victus 16-r0369TX i7-13700HX,"Laptop gaming với 2 quạt tản nhiệt, tần số quét 165Hz và âm thanh B&O Play.",0,1,8/17/2025 16:00,8/17/2025 16:00,TRUE
+421,SKU-6E72C3C2,24,Realme C71 4GB 128GB,"Tích hợp tính năng AI, kết nối NFC, pin 6300 mAh, sạc nhanh 45W",3720000,5,8/17/2025 16:57,8/17/2025 16:57,TRUE
+422,B53KBPA,6,HP OmniBook X 14-fe1010QU SnapX X1P-42-100,"Camera AI 5MP, Màn hình cảm ứng xoay 360°, Tặng Office Home&Student",0,4,8/17/2025 16:01,8/17/2025 16:01,TRUE
+423,SKU-BB42DCAA,23,Honor X7b 8GB 256GB,"Điện thoại Honor X7b với pin 6000 mAh, camera 108MP, RAM 8GB.",3790000,5,8/17/2025 16:57,8/17/2025 16:57,TRUE
+424,N6I7512W1,7,Dell Inspiron 16 5640 Core 7 150U,"Dell Inspiron 16 inch, Core i7 150U, bảo mật vân tay, độ bền chuẩn quân đội, trả góp 0%, tặng Office Home 2024.",0,4,8/17/2025 16:01,8/17/2025 16:01,TRUE
+425,REDMI13X8128,26,Xiaomi Redmi 13x 8GB 128GB,"Điện thoại Xiaomi Redmi 13x với camera 108MP, pin 5030 mAh và chip Helio G91 Ultra.",3810000,5,8/17/2025 16:58,8/17/2025 16:58,TRUE
+426,N7440-C7U161W11IBU,7,Dell Inspiron 14 7440 Core 7 150U,"Laptop Dell Inspiron 14 inch với Core i7 150U, màn hình cảm ứng, bảo mật vân tay.",0,4,8/17/2025 16:02,8/17/2025 16:02,TRUE
+427,HX6C6128,23,Honor X6c 6GB 128GB,"Điện thoại Honor X6c với kháng nước IP64, tích hợp AI, pin 5300 mAh.",3890000,5,8/17/2025 16:58,8/17/2025 16:58,TRUE
+428,SFG14-74T-55HD,5,Acer Swift Go 14 AI SFG14-74T-55HD Ultra 5 225H,"Vỏ kim loại mỏng nhẹ, Màn hình cảm ứng",0,4,8/17/2025 16:02,8/17/2025 16:02,TRUE
+429,SKU-729BFA03,21,Tecno Pova 7 8GB 128GB,"Điện thoại Tecno Pova 7 với pin 7000 mAh, màn hình 6.78"" FHD+ 120Hz, kết nối NFC/OTG, bộ nhớ 128GB.",3990000,1,8/17/2025 16:59,8/17/2025 16:59,TRUE
+430,SFG14-74-58FJ,5,Acer Swift Go 14 AI SFG14-74-58FJ Ultra 5 225H,"Vỏ kim loại mỏng nhẹ, Màn hình OLED",0,4,8/17/2025 16:02,8/17/2025 16:02,TRUE
+431,TECNO_POVA_6_NEO_8_128,21,Tecno Pova 6 Neo 8GB 128GB,"Điện thoại Tecno Pova 6 Neo với Helio G99, màn hình AMOLED 6.78 inch, pin 7000 mAh.",3990000,1,8/17/2025 16:59,8/17/2025 16:59,TRUE
+432,A74BHPT,6,HP ProBook 440 G11 Ultra 7 155U,"Laptop HP ProBook 440 G11 với nút gạt tắt camera, độ bền chuẩn quân đội, vỏ nhôm cao cấp.",0,4,8/17/2025 16:03,8/17/2025 16:03,TRUE
+433,OPPOA58-6GB-128GB-RANDOM,27,OPPO A58 6GB-128GB,"Điện thoại OPPO A58 với màn hình 6.7"" FHD+, loa kép âm thanh nổi, pin 5000mAh, sạc 33W.",4090000,5,8/17/2025 16:59,8/17/2025 16:59,TRUE
+434,ACR-ASP-14-AI-71YQ,5,Acer Aspire 14 AI A14-52M-71YQ Ultra 7 256V,"Màn hình bảo vệ mắt, vỏ nhôm cao cấp.",0,5,8/17/2025 16:03,8/17/2025 16:03,TRUE
+435,A16-4GB-128GB-RANDOM,28,Samsung Galaxy A16 4GB 128GB,"Camera 50MP, góc siêu rộng, Kháng nước IP54, 6.7"" Super AMOLED, FHD+, Trả góp 0%",4300000,5,8/17/2025 17:00,8/17/2025 17:00,TRUE
+436,ANV15-51-73BT,5,Acer Gaming Nitro V ANV15-51-73BT i7-13620H,"Laptop gaming Acer Nitro V với i7-13620H, 2 quạt tản nhiệt, 100% sRGB.",0,1,8/17/2025 16:03,8/17/2025 16:03,TRUE
+437,OPPOA58-8GB-128GB,27,OPPO A58 8GB 128GB,"Màn hình 6.7"" FHD+, Loa Kép Âm Thanh Nổi, Pin 5000mAh, Sạc 33 W",4390000,5,8/17/2025 17:00,8/17/2025 17:00,TRUE
+438,N5640-C7U161W11IBU,7,Dell Inspiron 16 5640 Core 7 150U,"Laptop Dell Inspiron 16 inch với Core i7 150U, bảo mật vân tay, trả góp 0%, độ phủ màu 45% NTSC.",0,4,8/17/2025 16:04,8/17/2025 16:04,TRUE
+439,OPPOA5i6GB128GB,27,OPPO A5i 6GB 128GB,"Điện thoại OPPO A5i với pin 5100 mAh, kháng nước chuẩn IPX4, màn hình siêu sáng 1000 nits.",4490000,5,8/17/2025 17:00,8/17/2025 17:00,TRUE
+440,A14-52M-585Y,5,Acer Aspire 14 AI A14-52M-585Y Ultra 5 226V,"Màn hình bảo vệ mắt, Vỏ nhôm cao cấp, Bảo hành nhanh, Trả góp 0%",0,5,8/17/2025 16:04,8/17/2025 16:04,TRUE
+441,OPPOA3-6GB-128GB,27,OPPO A3 6GB 128GB,"Điện thoại OPPO A3 với các tính năng: Kháng Đa Chất Lỏng, Sạc Nhanh SUPERVOOC 45W, Độ Bền Chuẩn Quân Đội",4500000,5,8/17/2025 17:01,8/17/2025 17:01,TRUE
+442,N4I7204W1,7,Dell Inspiron 14 5440 Core 7 150U,"Laptop Dell Inspiron 14 5440 với CPU Core i7 150U, màn hình chống chói, độ bền chuẩn quân đội.",0,4,8/17/2025 16:04,8/17/2025 16:04,TRUE
+443,XRMN146128,26,Xiaomi Redmi Note 14 6GB 128GB,"Điện thoại Xiaomi Redmi Note 14 với NFC, Camera AI 108MP, Pin 5500 mAh.",4700000,5,8/17/2025 17:01,8/17/2025 17:01,TRUE
+444,MSI_Venture_14_AI_A1MG-005VN,1,MSI Venture 14 AI A1MG-005VN Ultra 5 125H,"Laptop với màn hình 2.8K OLED, tần số quét 120Hz, 100% DCI-P3",0,4,8/17/2025 16:05,8/17/2025 16:05,TRUE
+445,SKU-039D23B2,23,Honor X7c 8GB 256GB,"Điện thoại Honor X7c với pin 6000 mAh, loa kép, tăng âm lượng, chứng nhận 5* SGS.",4700000,5,8/17/2025 17:01,8/17/2025 17:01,TRUE
+446,A74B5PT,6,HP ProBook 440 G11 Ultra 5 125U,"Laptop HP ProBook 440 G11 với vỏ nhôm cao cấp, độ bền chuẩn quân đội, nút gạt tắt camera.",0,4,8/17/2025 16:05,8/17/2025 16:05,TRUE
+447,A25_5G_128GB,28,Samsung Galaxy A25 5G 128GB,"Điện thoại Samsung Galaxy A25 5G với Exynos 1280, màn hình 6.5 inch, loa kép.",4890000,5,8/17/2025 17:02,8/17/2025 17:02,TRUE
+448,ANV15-51-500A,5,Acer Gaming Nitro V ANV15-51-500A i5-13420H,"Laptop gaming Acer Nitro V với i5-13420H, 2 quạt tản nhiệt, 100% sRGB.",0,1,8/17/2025 16:06,8/17/2025 16:06,TRUE
+449,POCOM6PRO8256,26,Xiaomi Poco M6 Pro 8GB 256GB,"Điện thoại Xiaomi Poco M6 Pro với camera chống rung OIS, pin 5000 mAh, màn hình 6.67 inch.",4990000,5,8/17/2025 17:02,8/17/2025 17:02,TRUE
+450,N3530-i7U161W11BLU-FP,7,Dell Inspiron 15 3530 i7-1355U,"Dell Inspiron 15 3530 với i7-1355U, màn hình bảo vệ mắt, độ bền chuẩn quân đội.",0,4,8/17/2025 16:06,8/17/2025 16:06,TRUE
+451,TECNO_POVA_6_8GB_256GB,21,Tecno Pova 6 8GB 256GB,"Điện thoại Tecno Pova 6 với Helio G99, màn hình AMOLED 6.78 inch, pin 6000 mAh.",5180000,1,8/17/2025 17:03,8/17/2025 17:03,TRUE
+452,N3530-i7U161W11SLU-BL,7,Dell Inspiron 15 3530 i7-1355U,"Laptop Dell Inspiron 15 3530 với bộ vi xử lý i7-1355U, độ bền chuẩn quân đội, độ phủ màu 45% NTSC.",0,4,8/17/2025 16:06,8/17/2025 16:06,TRUE
+453,TC40-8128,21,Tecno Camon 40 8GB 128GB,"Tecno Camon 40 với 8GB RAM và 128GB bộ nhớ trong, hỗ trợ NFC, kháng nước và bụi IP66, chip Helio G100 Ultimate.",5190000,5,8/17/2025 17:03,8/17/2025 17:03,TRUE
+454,9Z2Y1PA,6,HP 15-fd1063TU Ultra 5 125H,"Laptop HP 15-fd1063TU với Ultra 5 125H, nắp che webcam vật lí, lọc tạp âm AI, viền màn hình siêu mỏng.",0,4,8/17/2025 16:07,8/17/2025 16:07,TRUE
+455,HONORX8C8GB512GB,23,Honor X8c 8GB 512GB,"Điện thoại Honor X8c với camera 108MP, RAM 16GB (8GB+8GB), tính năng xóa vật thể Honor AI Eraser.",5360000,5,8/17/2025 17:03,8/17/2025 17:03,TRUE
+456,MSI_Gaming_Thin_15_B13UC-1411VN,1,MSI Gaming Thin 15 B13UC-1411VN i7-13620H Ram 24GB,"Laptop với mặt lưng kim loại, tần số quét 144 Hz.",0,1,8/17/2025 16:07,8/17/2025 16:07,TRUE
+457,SKU-CAEC9771,27,OPPO A5i Pro 8GB 128GB,"Điện thoại OPPO A5i Pro với pin 6000 mAh, kháng bụi và nước IP65, kết nối NFC, trả góp 0%.",5490000,5,8/17/2025 17:04,8/17/2025 17:04,TRUE
+458,A1505VA-MA505W,2,Asus Vivobook 15 OLED A1505VA-MA505W i5-13420H,"Laptop Asus Vivobook 15 OLED với màn hình OLED, bảo mật vân tay và độ bền chuẩn quân đội.",0,4,8/17/2025 16:07,8/17/2025 16:07,TRUE
+459,POCOM6PRO12512,26,Xiaomi Poco M6 Pro 12GB 512GB,"Điện thoại Xiaomi Poco M6 Pro với camera chống rung OIS, pin 5000 mAh và màn hình 6.67 inch.",5490000,5,8/17/2025 17:04,8/17/2025 17:04,TRUE
+460,MSI Modern 15 H C2RMG-292VN,1,MSI Modern 15 H C2RMG-292VN Core 5 210H,"Laptop MSI Modern 15 H C2RMG-292VN Core 5 210H với độ bền chuẩn quân đội, đèn nền dưới phím.",0,4,8/17/2025 16:08,8/17/2025 16:08,TRUE
+461,A78-8GB-256GB-RANDOM,27,OPPO A78 8GB-256GB,"Điện thoại OPPO A78 với chip Snapdragon 680, RAM 8GB + 8GB mở rộng, màn hình 6.4 inch 90Hz.",5490000,5,8/17/2025 17:04,8/17/2025 17:04,TRUE
+462,MSI Modern 15 H C2RMG-287VN,1,MSI Modern 15 H C2RMG-287VN Core 7 240H,"Laptop với độ bền chuẩn quân đội, đèn nền dưới phím.",0,4,8/17/2025 16:08,8/17/2025 16:08,TRUE
+463,SKU-ECB39EC6,27,OPPO A3 8GB 256GB,"Điện thoại OPPO A3 với các tính năng: Kháng Đa Chất Lỏng, Sạc Nhanh SUPERVOOC 45W, Độ Bền Chuẩn Quân Đội.",5680000,5,8/17/2025 17:05,8/17/2025 17:05,TRUE
+464,A515-58P-71EJ,5,Acer Aspire 5 A515-58P-71EJ i7-1355U,"Laptop Acer Aspire 5 với bộ vi xử lý i7-1355U, micro lọc tạp âm, màn hình bảo vệ mắt, loa âm thanh vòm.",0,4,8/17/2025 16:08,8/17/2025 16:08,TRUE
+465,TC40P8256,21,Tecno Camon 40 Pro 8GB 256GB,"Điện thoại Tecno Camon 40 Pro với Helio G100 Ultimate, kháng nước & bụi IP68, kết nối NFC.",5770000,5,8/17/2025 17:05,8/17/2025 17:05,TRUE
+466,N5440-i5U085W11IBU,7,Dell Inspiron 14 5440 i5-1334U (N5440-i5U085W11IBU),"Laptop Dell Inspiron 14 inch với CPU Intel Core i5-1334U, độ bền chuẩn quân đội, độ phủ màu 45% NTSC.",0,4,8/17/2025 16:09,8/17/2025 16:09,TRUE
+467,SGA165G8128,28,Samsung Galaxy A16 5G 8GB 128GB,"Điện thoại Samsung Galaxy A16 5G với màn hình 6.7'' Dynamic AMOLED 2X FHD+, chip MediaTek Dimensity, pin 5000 mAh.",5780000,5,8/17/2025 17:05,8/17/2025 17:05,TRUE
+468,82XX00FWVN,4,Lenovo IdeaPad Flex 5 14ABR8 R7 5825U,"Laptop Lenovo IdeaPad Flex 5 với các tính năng Dolby Audio, bảo mật vân tay, nắp che webcam vật lí.",0,4,8/17/2025 16:09,8/17/2025 16:09,TRUE
+469,XIAOMIPOCOM7PRO5G8256,26,Xiaomi Poco M7 Pro 5G 8GB 256GB,"Điện thoại Xiaomi Poco M7 Pro 5G với kết nối 5G, chip Dimensity 7025 Ultra, màn hình AMOLED 120Hz.",5990000,5,8/17/2025 17:06,8/17/2025 17:06,TRUE
+470,83K20003VN,4,Lenovo IdeaPad Slim 3 16IRH10 i5-13420H,"Laptop Lenovo IdeaPad Slim 3 với độ bền chuẩn quân đội, mặt lưng kim loại, trả góp 0%, bảo hành 2 năm.",0,4,8/17/2025 16:10,8/17/2025 16:10,TRUE
+471,A35-128-RANDOM,28,Samsung Galaxy A35 5G 128GB,"Điện thoại Samsung Galaxy A35 5G với màn hình 6.6 inch Super AMOLED, chip Exynos 1380, pin 5000mAh, sạc 25W.",6390000,8,8/17/2025 17:06,8/17/2025 17:06,TRUE
+472,DC5R5802W1,7,Dell 15 DC15255 R5 7530U,"Laptop Dell 15 inch với CPU R5 7530U, màn hình bảo vệ mắt, độ bền chuẩn quân đội, trả góp 0%, tặng Office Home 2024 & Microsoft 365.",0,4,8/17/2025 16:10,8/17/2025 16:10,TRUE
+473,SGA265G8128,28,Samsung Galaxy A26 5G 8GB 128GB,"Điện thoại Samsung Galaxy A26 5G với chip Exynos 1380, camera 50MP và màn hình Super AMOLED.",6570000,8,8/17/2025 17:07,8/17/2025 17:07,TRUE
+474,82XX00FVVN,4,Lenovo IdeaPad Flex 5 14ABR8 R5 5625U,"Laptop Lenovo IdeaPad Flex 5 14ABR8 với các tính năng bảo mật vân tay, nắp che webcam vật lí, Dolby Audio.",0,4,8/17/2025 16:10,8/17/2025 16:10,TRUE
+475,HONORX9B5G12256,23,Honor X9B 5G 12GB-256GB,"Điện thoại Honor X9B 5G với pin 5800 mAh, camera 108MP, RAM 12GB.",6830000,5,8/17/2025 17:07,8/17/2025 17:07,TRUE
+476,AL15-72P-581V,5,Acer Aspire Lite 15 AL15-72P-581V i5 13500H,"Laptop Acer Aspire Lite 15 với i5 13500H, 2 quạt tản nhiệt, bản lề mở 180 độ.",0,4,8/17/2025 16:11,8/17/2025 16:11,TRUE
+477,OPPOReno11F5G8GB256GB,27,OPPO Reno11 F 5G 8GB-256GB,"Điện thoại OPPO Reno11 F 5G với camera AI 64MP, màn hình 6.7 inch 120Hz, kháng bụi & nước IP65.",6990000,5,8/17/2025 17:07,8/17/2025 17:07,TRUE
+478,AL14-71P-55P9,5,Acer Aspire Lite 14 AL14-71P-55P9 i5 13500H,"Laptop Acer Aspire Lite 14 với bộ vi xử lý i5 13500H, 2 quạt tản nhiệt, bản lề mở 180 độ.",0,4,8/17/2025 16:11,8/17/2025 16:11,TRUE
+479,OPPO_Reno12_F_5G_8GB_256GB,27,OPPO Reno12 F 5G 8GB 256GB,"Điện thoại OPPO Reno12 F 5G với camera AI 50MP, màn hình 6.7 inch 120Hz, pin 5000mAh và sạc 45W.",7120000,5,8/17/2025 17:08,8/17/2025 17:08,TRUE
+480,SKU-9A8A0AC0,5,Acer Aspire Lite 14 AL14-71M-52GQ i5-12500H,"Bản lề mở 180°, 2 quạt tản nhiệt, Cổng kết nối Type C",0,4,8/17/2025 16:11,8/17/2025 16:11,TRUE
+481,SKU-41500F3F,26,Xiaomi Redmi Note 14 5G 8GB 256GB,"Điện thoại Xiaomi Redmi Note 14 5G với camera AI 108MP, NFC, kết nối 5G.",7160000,5,8/17/2025 17:08,8/17/2025 17:08,TRUE
+482,N3530-i3U085W11SLU,7,Dell Inspiron 15 3530 i3-1305U,"Laptop Dell Inspiron 15 3530 với CPU i3-1305U, màn hình bảo vệ mắt, độ bền chuẩn quân đội.",0,4,8/17/2025 16:12,8/17/2025 16:12,TRUE
+483,REALME13-5G-8-256,24,Realme 13+ 5G 8GB 256GB,"Điện thoại Realme 13+ 5G với chip Dimensity 7300, camera chống rung OIS, màn hình 6.67 inch.",7220000,5,8/17/2025 17:08,8/17/2025 17:08,TRUE
+484,CE50016512C-G-E1AC,12,Colorful Rimbook L1 i5-12450H,"Vỏ nhôm cao cấp, tản nhiệt hiệu quả.",0,5,8/17/2025 16:12,8/17/2025 16:12,TRUE
+485,SM-M556BZKDV,28,Samsung Galaxy M55 5G 256GB,"Điện thoại Samsung Galaxy M55 5G với Snapdragon 7 Gen 1, màn hình 6.7"" Super AMOLED Plus, pin 5000mAh, sạc 45W.",7290000,7,8/17/2025 17:09,8/17/2025 17:09,TRUE
+486,CA30016512C-G-E1AC,12,Colorful RimBook L1 i3-1220P,"Vỏ nhôm cao cấp, tản nhiệt hiệu quả",0,5,8/17/2025 16:12,8/17/2025 16:12,TRUE
+487,A36-5G-8GB-128GB,28,Samsung Galaxy A36 5G 8GB 128GB,"Điện thoại Samsung Galaxy A36 5G với chip Snapdragon 6 gen 3, thiết kế mỏng nhẹ, camera 50MP.",7640000,8,8/17/2025 17:09,8/17/2025 17:09,TRUE
+488,POCO_X7_5G_12GB_512GB,26,Xiaomi Poco X7 5G 12GB 512GB,"Điện thoại Xiaomi Poco X7 5G với màn hình cong AMOLED CrystalRes, chip Dimensity 7300-Ultra, hỗ trợ trả góp 0%.",7990000,1,8/17/2025 17:09,8/17/2025 17:09,TRUE
+489,HX9C5G12256,23,Honor X9c 5G 12GB 256GB,"Điện thoại Honor X9c 5G với 12GB RAM và 256GB bộ nhớ trong, pin 6600mAh, sạc nhanh 66W, loa kép.",7990000,5,8/17/2025 17:10,8/17/2025 17:10,TRUE
+490,HONOR400LITE5G,23,Honor 400 Lite 5G 12GB 256GB,"Điện thoại Honor 400 Lite 5G với pin 5230 mAh, màn hình 6.7"" FHD+ và chip Dimensity 7025 Ultra.",8130000,5,8/17/2025 17:10,8/17/2025 17:10,TRUE
+491,SKU-5799FAB9,23,Honor 90 5G 12GB 512GB,"Điện thoại Honor 90 5G với RAM 12GB và bộ nhớ trong 512GB, pin 5000 mAh, sạc 66W, chip Snapdragon 7 Gen 1.",8270000,5,8/17/2025 17:11,8/17/2025 17:11,TRUE
+492,SKU-9349AB60,27,OPPO Reno13 F 8GB 256GB,"OPPO AI Phone, Chụp ảnh dưới nước, Sạc Nhanh SUPERVOOC 45W, Trả góp 0%",8530000,5,8/17/2025 17:11,8/17/2025 17:11,TRUE
+493,SKU-DC7ED2DE,28,Samsung Galaxy A56 5G 8GB 128GB,"Điện thoại Samsung Galaxy A56 5G với thiết kế mỏng nhẹ, camera 50MP, trả góp 0%, chip Exynos 1580.",8890000,5,8/17/2025 17:11,8/17/2025 17:11,TRUE
+494,REALME145G8256,24,Realme 14 5G 8GB 256GB,"Điện thoại Realme 14 5G với màn hình AMOLED 120Hz, pin 6000 mAh, chip Snapdragon 6 Gen 4.",9020000,5,8/17/2025 17:12,8/17/2025 17:12,TRUE
+495,RN14P5G8256,26,Xiaomi Redmi Note 14 Pro Plus 5G 8GB 256GB,"Điện thoại Xiaomi Redmi Note 14 Pro Plus 5G với NFC, kháng nước & bụi IP68, camera AI 200MP.",9290000,2,8/17/2025 17:12,8/17/2025 17:12,TRUE
+496,SKU-92AC3D31,23,Honor 200 5G 12GB 256GB,"Điện thoại Honor 200 5G với camera 50MP, chip Snapdragon 7 Gen 3, RAM 12GB, bộ nhớ trong 256GB.",10250000,5,8/17/2025 17:12,8/17/2025 17:12,TRUE
+497,OPPOReno14F5G8256,27,OPPO Reno14 F 5G 8GB 256GB,"OPPO Reno14 F 5G với pin 6000 mAh, kháng nước & bụi IP69, sạc nhanh 80W.",10300000,5,8/17/2025 17:13,8/17/2025 17:13,TRUE
+498,OPROR13F5G12256,27,OPPO Reno13 F 5G 12GB 256GB,"OPPO AI Phone, chụp ảnh dưới nước, sạc nhanh SUPERVOOC 45W",10300000,2,8/17/2025 17:13,8/17/2025 17:13,TRUE
+499,IP13-128-RANDOM,3,iPhone 13 128GB,"Camera kép xuất sắc, Apple A15 Bionic mạnh mẽ, Màn hình siêu sáng",11390000,2,8/17/2025 17:13,8/17/2025 17:13,TRUE
+500,SKU-F32FD48C,28,Samsung Galaxy S24 FE 5G 128GB,"Điện thoại Samsung Galaxy S24 FE 5G với chip Exynos 2400, màn hình 6.7'' Dynamic AMOLED 2X FHD+, kháng nước & bụi IP68.",12090000,2,8/17/2025 17:14,8/17/2025 17:14,TRUE
+501,SKU-2D1B8846,23,Honor 400 5G 12GB 256GB,"Điện thoại Honor 400 5G với camera 200MP, pin 6000 mAh và chip Snapdragon 7 Gen 3.",12450000,5,8/17/2025 17:14,8/17/2025 17:14,TRUE
+502,IP14-128,3,iPhone 14 128GB,Điện thoại iPhone 14 128GB với camera siêu chụp đêm và chip Apple A15 Bionic mạnh mẽ.,12590000,2,8/17/2025 17:15,8/17/2025 17:15,TRUE

@@ -1,0 +1,7 @@
+"id","name","address","geo_location_id","capacity_sqm","manager","contact_phone","is_active","created_at","updated_at"
+1,"Kho Thành phố Hải Phòng - Huyện Vĩnh Bảo","Xã Tân Hưng, Huyện Vĩnh Bảo, Thành phố Hải Phòng","11857","370.00","Trần Thị B","0941612589",True,"2025-01-29 16:18:53.835482","2025-02-13 16:18:53.835482"
+2,"Kho Thành phố Cần Thơ - Huyện Cờ Đỏ","Xã Thới Xuân, Huyện Cờ Đỏ, Thành phố Cần Thơ","31277","671.00","Nguyễn Văn A","0921456827",True,"2025-01-06 16:18:53.83554","2025-01-27 16:18:53.83554"
+3,"Kho Thành phố Huế - Huyện Phú Lộc","Xã Lộc Trì, Huyện Phú Lộc, Thành phố Huế","20149","801.00","Vũ Văn G","0920848871",True,"2024-10-04 16:18:53.835557","2024-10-12 16:18:53.835557"
+4,"Kho Tỉnh Bến Tre - Huyện Ba Tri","Xã Bảo Thuận, Huyện Ba Tri, Tỉnh Bến Tre","29152","575.00","Ngô Thị F","0995245563",True,"2024-11-08 16:18:53.835575","2024-11-25 16:18:53.835575"
+5,"Kho Tỉnh Tiền Giang - Huyện Cai Lậy","Xã Thạnh Lộc, Huyện Cai Lậy, Tỉnh Tiền Giang","28438","526.00","Vũ Văn G","0922992169",True,"2024-12-20 16:18:53.835593","2025-01-10 16:18:53.835593"
+6,"Kho Tỉnh Khánh Hòa - Huyện Cam Lâm","Xã Cam Hiệp Nam, Huyện Cam Lâm, Tỉnh Khánh Hòa","22456","622.00","Nguyễn Văn A","0968773529",True,"2024-12-30 16:18:53.835612","2025-01-05 16:18:53.835612"

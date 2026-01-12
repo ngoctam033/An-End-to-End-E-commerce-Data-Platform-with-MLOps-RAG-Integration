@@ -1,0 +1,30 @@
+id,name,country,description,is_active,created_at,updated_at
+1,MSI,Vietnam,Thương hiệu MSI,TRUE,2025-08-17 13:20:12,2025-08-17 13:20:12
+2,Asus,Vietnam,Thương hiệu Asus,TRUE,2025-08-17 13:20:13,2025-08-17 13:20:13
+3,Apple,Vietnam,Thương hiệu Apple,TRUE,2025-08-17 13:20:18,2025-08-17 13:20:18
+4,Lenovo,Vietnam,Thương hiệu Lenovo,TRUE,2025-08-17 13:20:41,2025-08-17 13:20:41
+5,Acer,Vietnam,Thương hiệu Acer,TRUE,2025-08-17 13:21:14,2025-08-17 13:21:14
+6,HP,Vietnam,Thương hiệu HP,TRUE,2025-08-17 13:54:19,2025-08-17 13:54:19
+7,Dell,Vietnam,Thương hiệu Dell,TRUE,2025-08-17 14:01:14,2025-08-17 14:01:14
+8,Gigabyte,Vietnam,Thương hiệu Gigabyte,TRUE,2025-08-17 14:09:36,2025-08-17 14:09:36
+9,ASUS,Vietnam,Thương hiệu ASUS,TRUE,2025-08-17 15:49:02,2025-08-17 15:49:02
+10,Huawei,Vietnam,Thương hiệu Huawei,TRUE,2025-08-17 15:53:00,2025-08-17 15:53:00
+11,Masstel,Vietnam,Thương hiệu Masstel,TRUE,2025-08-17 15:54:27,2025-08-17 15:54:27
+12,Colorful,Vietnam,Thương hiệu Colorful,TRUE,2025-08-17 16:12:32,2025-08-17 16:12:32
+13,Inoi,Vietnam,Thương hiệu Inoi,TRUE,2025-08-17 16:35:32,2025-08-17 16:35:32
+14,Mobell,Vietnam,Thương hiệu Mobell,TRUE,2025-08-17 16:35:53,2025-08-17 16:35:53
+15,Itel,Vietnam,Thương hiệu Itel,TRUE,2025-08-17 16:36:15,2025-08-17 16:36:15
+16,Viettel,Việt Nam,Nhà mạng viễn thông Việt Nam,TRUE,2025-08-17 16:37:41,2025-08-17 16:37:41
+17,Nokia,Vietnam,Thương hiệu Nokia,TRUE,2025-08-17 16:38:24,2025-08-17 16:38:24
+18,ZTE,Vietnam,Thương hiệu ZTE,TRUE,2025-08-17 16:46:23,2025-08-17 16:46:23
+19,TCL,Vietnam,Thương hiệu TCL,TRUE,2025-08-17 16:46:45,2025-08-17 16:46:45
+20,Nubia,Vietnam,Thương hiệu Nubia,TRUE,2025-08-17 16:47:07,2025-08-17 16:47:07
+21,Tecno,Vietnam,Thương hiệu Tecno,TRUE,2025-08-17 16:48:12,2025-08-17 16:48:12
+22,Benco,Vietnam,Thương hiệu Benco,TRUE,2025-08-17 16:48:34,2025-08-17 16:48:34
+23,Honor,Vietnam,Thương hiệu Honor,TRUE,2025-08-17 16:48:55,2025-08-17 16:48:55
+24,Realme,Vietnam,Thương hiệu Realme,TRUE,2025-08-17 16:50:00,2025-08-17 16:50:00
+25,Vivo,Vietnam,Thương hiệu Vivo,TRUE,2025-08-17 16:51:05,2025-08-17 16:51:05
+26,Xiaomi,Vietnam,Thương hiệu Xiaomi,TRUE,2025-08-17 16:53:59,2025-08-17 16:53:59
+27,OPPO,Vietnam,Thương hiệu OPPO,TRUE,2025-08-17 16:55:26,2025-08-17 16:55:26
+28,Samsung,Hàn Quốc,Tập đoàn công nghệ đa quốc gia của Hàn Quốc.,TRUE,2025-08-17 16:55:48,2025-08-17 16:55:48
+29,RedMagic,Vietnam,Thương hiệu RedMagic,TRUE,2025-08-17 19:25:50,2025-08-17 19:25:50
