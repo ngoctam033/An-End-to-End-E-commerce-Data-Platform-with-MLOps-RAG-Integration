@@ -5,6 +5,7 @@ class Database:
     def __init__(self, config=postgres_config):
         self.config = config
         self.conn = None
+        self.connect()
 
     def connect(self):
         """Creates and returns a connection to the PostgreSQL database."""
