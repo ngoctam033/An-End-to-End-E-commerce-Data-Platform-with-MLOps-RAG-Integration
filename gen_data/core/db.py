@@ -1,20 +1,21 @@
 import psycopg2
 from db_config import postgres_config
+from logger import logger
 
 class Database:
     def __init__(self, config=postgres_config):
         self.config = config
-        self.conn = None
-        self.connect()
+        self.conn = self.connect()
 
     def connect(self):
         """Creates and returns a connection to the PostgreSQL database."""
         try:
             if not self.conn or self.conn.closed:
                 self.conn = psycopg2.connect(**self.config)
+                logger.info(f"Connected to database {self.config['dbname']} at {self.config['host']}")
             return self.conn
         except Exception as e:
-            print(f"Error connecting to database: {e}")
+            logger.error(f"Error connecting to database: {e}")
             return None
 
     def close(self):
