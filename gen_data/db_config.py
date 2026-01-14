@@ -1,5 +1,5 @@
 postgres_config = {
-    "host": "localhost",       # Địa chỉ máy chủ (thường là localhost hoặc IP)
+    "host": "db",       # Địa chỉ Postgresql trong Docker Compose
     "port": 5432,              # Cổng mặc định của PostgreSQL là 5432
     "database": "ecommerce_db", # Tên cơ sở dữ liệu
     "user": "postgres",    # Tên người dùng database
