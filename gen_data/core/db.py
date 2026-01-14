@@ -10,10 +10,9 @@ class Database:
     def connect(self):
         """Creates and returns a connection to the PostgreSQL database."""
         try:
-            if not self.conn or self.conn.closed:
-                self.conn = psycopg2.connect(**self.config)
-                logger.info(f"Connected to database {self.config['dbname']} at {self.config['host']}")
-            return self.conn
+            conn = psycopg2.connect(**self.config)
+            logger.info(f"Connected to database {self.config['database']} at {self.config['host']}:{self.config['port']}")
+            return conn
         except Exception as e:
             logger.error(f"Error connecting to database: {e}")
             return None
