@@ -15,6 +15,14 @@ services:
     networks:
       - ecommerce_network
 
+  gen_data:
+    build: ./gen_data
+    container_name: gen_data
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./gen_data:/app
+
 volumes:
   postgres_data:
 
