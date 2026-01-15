@@ -20,9 +20,9 @@ class CustomLogger:
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
             
-        # Định dạng log: Thời gian - Tên logger - Mức độ - Thông báo
+        # Định dạng log: Thời gian - Tên logger - [File:Dòng] - Mức độ - Thông báo
         formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            '%(asctime)s - %(name)s - [%(filename)s:%(lineno)d] - %(levelname)s - %(message)s',
             datefmt='%Y-%m-%d %H:%M:%S'
         )
 
