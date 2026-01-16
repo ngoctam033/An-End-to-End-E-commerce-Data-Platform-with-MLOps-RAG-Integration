@@ -43,8 +43,8 @@ class Database:
         cursor = None
         try:
             cursor = self.conn.cursor()
-            logger.info(f"Query: {query}")
-            logger.info(f"Params: {params}")
+            # logger.info(f"Query: {query}")
+            # logger.info(f"Params: {params}")
             cursor.execute(query, params)
 
             # Check if the query returns rows (e.g., SELECT)
