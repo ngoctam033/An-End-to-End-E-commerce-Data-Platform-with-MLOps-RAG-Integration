@@ -1,15 +1,12 @@
-from core.db import db
 from logger import logger
-from generators.customers import CustomersGenerator
-from generators.orders import OrderGenerator
+from scenarios.normal_day import NormalDaySimulator
 
-def main():    
-    customers_generator = CustomersGenerator()
-    order_generator = OrderGenerator()
+def main(): 
+    normal_day_simulator = NormalDaySimulator()
     is_success = False
     try:
-        customers_generator.generate()
-        order_generator.generate()
+        normal_day_simulator.run()
+        is_success = True
     except Exception as e:
         logger.error(f"An error occurred during generation: {e}")
 
