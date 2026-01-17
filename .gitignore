@@ -1,2 +1,5 @@
 .venv
 gen_data/logs/
+airflow/config/
+airflow/logs/
+airflow/plugins/
