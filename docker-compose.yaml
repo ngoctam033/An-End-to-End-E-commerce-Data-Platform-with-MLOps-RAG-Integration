@@ -2,7 +2,6 @@ services:
   db:
     image: postgres:16-alpine
     container_name: ecommerce_postgres
-    restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -10,8 +9,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
+    cpus: "2.0"
     networks:
       - ecommerce_network
 
@@ -20,6 +19,9 @@ services:
     container_name: gen_data
     networks:
       - ecommerce_network
+    depends_on:
+      - db
+    cpus: "2.0"
     volumes:
       - ./gen_data:/app
 
