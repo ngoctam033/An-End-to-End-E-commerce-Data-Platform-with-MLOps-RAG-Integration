@@ -57,7 +57,7 @@ class OrderItemsGenerator(BaseGenerator):
                     LIMIT 1;
 
                     -- Random số lượng mua (quantity) cho mỗi loại
-                    _quantity := FLOOR(RANDOM() * 10 + 1)::INT;
+                    _quantity := FLOOR(RANDOM() + 1)::INT;
 
                     -- Tính thành tiền
                     _item_amount := _unit_price * _quantity;

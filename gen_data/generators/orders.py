@@ -39,20 +39,22 @@ class OrderGenerator(BaseGenerator):
 
                 _order_date := NOW();
                 -- Sinh mã đơn hàng: ORD + YYYYMMDD + Random 4 số
-                _order_code := 'ORD' || TO_CHAR(_order_date, 'YYYYMMDD') || TRUNC(RANDOM() * 9000 + 1000)::TEXT;
+                -- _order_code := 'ORD' || TO_CHAR(_order_date, 'YYYYMMDD') || TRUNC(RANDOM() * 9000 + 1000)::TEXT;
 
                 -- ==================================================================
                 -- BƯỚC 2: INSERT ORDER HEADER
                 -- ==================================================================
                 INSERT INTO orders (
                     customer_id, payment_id, shipping_id, discount_id, location_id,
-                    logistics_partner_id, order_channel_id, order_code,
+                    logistics_partner_id, order_channel_id,
+                    -- order_code,
                     order_date, status, created_at, updated_at,
                     total_price, profit
                 )
                 VALUES (
                     _customer_id, _random_payment_id, _random_shipping_id, NULL, _random_location_id,
-                    _random_logistics_id, _order_channel_id, _order_code,
+                    _random_logistics_id, _order_channel_id,
+                    -- _order_code,
                     _order_date, 'completed', NOW(), NOW(),
                     0, 0 -- Giá trị khởi tạo là 0
                 )
