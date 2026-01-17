@@ -10,7 +10,7 @@ CREATE TABLE orders (
     location_id BIGINT ,
     logistics_partner_id BIGINT ,
     order_channel_id BIGINT ,
-    order_code VARCHAR(50)  UNIQUE,
+    order_code VARCHAR(50)  UNIQUE NOT NULL,
     order_date TIMESTAMP ,
     status VARCHAR(50) ,
     is_active BOOLEAN  DEFAULT TRUE,

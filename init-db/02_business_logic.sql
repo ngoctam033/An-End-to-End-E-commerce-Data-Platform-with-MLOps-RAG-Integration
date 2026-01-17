@@ -111,6 +111,26 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- TRIGGER C: Generate Unique Order Code
+CREATE SEQUENCE IF NOT EXISTS order_code_seq;
+CREATE OR REPLACE FUNCTION generate_order_code()
+RETURNS TRIGGER AS $$
+DECLARE
+    v_date_part TEXT;
+    v_seq_part TEXT;
+BEGIN
+    -- Lấy định dạng YYYYMMDD
+    v_date_part := to_char(CURRENT_DATE, 'YYYYMMDD');
+    
+    -- Lấy giá trị sequence tiếp theo và format thành 5 chữ số (vd: 00001)
+    v_seq_part := lpad(nextval('order_code_seq')::TEXT, 5, '0');
+    
+    -- Gán mã vào cột order_code
+    NEW.order_code := 'ORD_' || v_date_part || '_' || v_seq_part;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 -- 3. ORDER STATE MACHINE
 -- =============================================================================
 
@@ -144,6 +164,10 @@ DROP TRIGGER IF EXISTS trg_order_item_insert ON order_items;
 CREATE TRIGGER trg_order_item_insert
 BEFORE INSERT ON order_items
 FOR EACH ROW EXECUTE FUNCTION process_order_item_insert();
+DROP TRIGGER IF EXISTS trg_generate_order_code ON orders;
+CREATE TRIGGER trg_generate_order_code
+BEFORE INSERT ON orders
+FOR EACH ROW EXECUTE FUNCTION generate_order_code();
 
 DROP TRIGGER IF EXISTS trg_order_item_after_change ON order_items;
 CREATE TRIGGER trg_order_item_after_change
