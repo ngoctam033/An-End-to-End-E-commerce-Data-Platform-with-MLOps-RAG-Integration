@@ -1,0 +1,72 @@
+services:
+  # 1. User Code Service: Chạy gRPC server chứa code của bạn
+  dagster_user_code:
+    build:
+      context: ./dagster
+      dockerfile: Dockerfile_user_code
+    container_name: dagster_user_code
+    environment:
+      DAGSTER_POSTGRES_USER: postgres
+      DAGSTER_POSTGRES_PASSWORD: password
+      DAGSTER_POSTGRES_DB: ecommerce_db
+      DAGSTER_POSTGRES_HOST: db # Trỏ về service 'db' chung
+    cpus: "2.0"
+    volumes:
+      # Mount code để dev tiện lợi, thay đổi code không cần rebuild
+      - ./dagster/workspace:/opt/dagster/app
+    networks:
+      - ecommerce_network
+
+  # 2. Webserver: Giao diện UI của Dagster
+  dagster_webserver:
+    build:
+      context: ./dagster
+      dockerfile: Dockerfile_dagster
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - '0.0.0.0'
+      - -p
+      - '3000'
+      - -w
+      - workspace.yaml
+    container_name: dagster_webserver
+    cpus: "2.0"
+    ports:
+      - '3030:3000'
+    environment:
+      DAGSTER_POSTGRES_USER: postgres
+      DAGSTER_POSTGRES_PASSWORD: password
+      DAGSTER_POSTGRES_DB: ecommerce_db
+      DAGSTER_POSTGRES_HOST: db
+    networks:
+      - ecommerce_network
+    depends_on:
+      # db:
+      dagster_user_code:
+        condition: service_healthy
+
+  # 3. Daemon: Bộ scheduler chạy ngầm
+  dagster_daemon:
+    build:
+      context: ./dagster
+      dockerfile: Dockerfile_dagster
+    entrypoint:
+      - dagster-daemon
+      - run
+    container_name: dagster_daemon
+    cpus: "2.0"
+    # restart: on-failure
+    environment:
+      DAGSTER_POSTGRES_USER: postgres
+      DAGSTER_POSTGRES_PASSWORD: password
+      DAGSTER_POSTGRES_DB: ecommerce_db
+      DAGSTER_POSTGRES_HOST: db
+    networks:
+      - ecommerce_network
+    depends_on:
+      # db:
+      #   condition: service_healthy
+      dagster_user_code:
+        condition: service_started
+  # --- DAGSTER NEW DEPLOYMENT END ---
