@@ -1,0 +1,12 @@
+services:
+  # 3. COMPUTE: Spark (Hỗ trợ Iceberg sẵn)
+  spark:
+    image: tabulario/spark-iceberg:latest
+    container_name: spark-iceberg
+    environment:
+      - SPARK_DEFAULTS_CONF=spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
+    ports:
+      - "8888:8888" # Jupyter Notebook
+      - "8080:8080" # Spark UI
+    networks:
+      - ecommerce_network
