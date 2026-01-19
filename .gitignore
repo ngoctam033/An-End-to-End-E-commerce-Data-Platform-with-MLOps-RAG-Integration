@@ -3,3 +3,14 @@ gen_data/logs/
 airflow/config/
 airflow/logs/
 airflow/plugins/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+.env
+.env.*
+.vscode/
+.idea/
