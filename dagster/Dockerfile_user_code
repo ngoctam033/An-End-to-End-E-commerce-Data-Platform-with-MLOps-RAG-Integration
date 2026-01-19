@@ -1,0 +1,22 @@
+FROM python:3.10-slim
+
+# Cài đặt thư viện cần thiết cho code của bạn
+RUN pip install \
+    dagster \
+    dagster-postgres \
+    dagster-docker
+
+# Thiết lập thư mục làm việc
+WORKDIR /opt/dagster/app
+
+# Copy source code của bạn vào image
+# Lưu ý: Folder 'workspace' phải nằm cùng cấp với Dockerfile này khi build
+COPY workspace/ /opt/dagster/app
+
+HEALTHCHECK --timeout=1s --start-period=3s --interval=3s --retries=20 CMD ["dagster", "api", "grpc-health-check", "-p", "4000"]
+
+# Mở port 4000 cho gRPC server
+EXPOSE 4000
+
+# Lệnh khởi chạy code server
+CMD ["dagster", "code-server", "start", "-h", "0.0.0.0", "-p", "4000", "-f", "runs.py"]

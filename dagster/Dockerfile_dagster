@@ -1,0 +1,18 @@
+FROM python:3.10-slim
+
+# Cài đặt các thư viện lõi của Dagster
+RUN pip install \
+    dagster \
+    dagster-graphql \
+    dagster-webserver \
+    dagster-postgres \
+    dagster-docker
+
+# Thiết lập DAGSTER_HOME và copy file cấu hình vào
+ENV DAGSTER_HOME=/opt/dagster/dagster_home/
+
+RUN mkdir -p $DAGSTER_HOME
+
+COPY dagster.yaml workspace.yaml $DAGSTER_HOME
+
+WORKDIR $DAGSTER_HOME
