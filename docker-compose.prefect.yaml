@@ -1,0 +1,20 @@
+services:
+  prefect_server:
+    image: prefecthq/prefect:2-latest
+    restart: always
+    volumes:
+      - ./prefect:/opt/prefect/flows # Mount code của bạn vào đây
+    entrypoint: ["/opt/prefect/entrypoint.sh", "prefect", "server", "start"]
+    environment:
+      # Cấu hình kết nối DB
+      - PREFECT_API_DATABASE_CONNECTION_URL=postgresql+asyncpg://postgres:password@db:5432/ecommerce_db
+      - PREFECT_API_URL=http://0.0.0.0:4200/api
+      # Cho phép truy cập từ ngoài
+      - PREFECT_SERVER_API_HOST=0.0.0.0
+    ports:
+      - "4200:4200"
+    cpus: "2.0"
+    # depends_on:
+      # - db
+    networks:
+      - ecommerce_network
