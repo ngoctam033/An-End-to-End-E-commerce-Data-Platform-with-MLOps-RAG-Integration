@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 class CustomLogger:
-    def __init__(self, name="app_logger", log_dir="logs", level=logging.INFO):
+    def __init__(self, name="gen_data", log_dir="logs", level=logging.INFO):
         """
         Khởi tạo logger tùy chỉnh.
         
