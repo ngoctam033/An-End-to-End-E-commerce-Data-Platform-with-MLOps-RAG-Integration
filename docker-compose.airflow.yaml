@@ -79,7 +79,7 @@ x-airflow-common:
     # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
     AIRFLOW_CONN_SPARK_DEFAULT: "spark://local?deploy-mode=client"
-    AIRFLOW_CONN_MINIO_S3_CONN: 'aws://admin:admin123@?endpoint_url=http%3A%2F%2Fminio%3A9000'
+    AIRFLOW_CONN_MINIO_DEFAULT: 'aws://admin:admin123@?endpoint_url=http%3A%2F%2Fminio1%3A9000'
     AIRFLOW_CONN_POSTGRES_DEFAULT: 'postgres://postgres:password@db:5432/ecommerce_db'
   volumes:
     - ./airflow/dags:/opt/airflow/dags
