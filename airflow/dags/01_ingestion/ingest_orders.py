@@ -3,6 +3,7 @@ import pendulum
 from airflow.decorators import dag
 from common.ingestion_tasks import extract_and_load_to_minio, ingest_task
 from utils.path_node import path_manager
+# from common.dag_registry import dag_registry
 # Cấu hình logging
 logger = logging.getLogger("airflow.task")
 
@@ -12,8 +13,8 @@ default_args = {
 }
 
 @dag(
-    dag_id='etl_postgres_to_minio_parquet',
-    description='Extract data from Postgres and load to MinIO as Parquet',
+    dag_id='ingest_orders_to_minio',
+    description='Extract data from Postgres orders and load to MinIO as Parquet',
     schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
@@ -28,8 +29,10 @@ def load_orders_to_minio_parquet():
         bucket_name='datalake',
         extraction_date=ds,
         folder=path_manager.lakehouse.raw.orders.get(),
-        file_name = f"orders_{ds}.parquet"
+        file_name = f"orders_{ds}.parquet",
+        date_column='created_at'
     )
 
 # Khởi tạo DAG
 load_orders_to_minio_parquet()
+# dag_registry.register_dag('ingest_orders_to_minio')
