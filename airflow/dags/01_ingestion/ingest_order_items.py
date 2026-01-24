@@ -9,7 +9,7 @@ logger = logging.getLogger("airflow.task")
 
 default_args = {
     'owner': 'ngoctam',
-    'retries': 1,
+    'retries': 0,
 }
 
 @dag(
