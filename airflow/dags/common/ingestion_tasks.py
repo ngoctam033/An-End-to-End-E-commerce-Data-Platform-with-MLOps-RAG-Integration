@@ -28,7 +28,8 @@ def extract_and_load_to_minio(table_name: str,
                               bucket_name: str,
                               extraction_date: datetime,
                               folder: PathManager,
-                              file_name: str):
+                              file_name: str,
+                              date_column: str = None):
     """
     Quy trình: Extract (Postgres) -> Transform (Pandas to Parquet) -> Load (MinIO)
     Có xử lý ngoại lệ và raise lỗi để Airflow task failure.
@@ -38,10 +39,14 @@ def extract_and_load_to_minio(table_name: str,
     try:
         pg_hook = PostgresHook(postgres_conn_id='postgres_default')
         # Sử dụng parameter binding để an toàn hơn thay vì f-string trực tiếp cho value
-        sql = f"SELECT * FROM {table_name} WHERE DATE(created_at) = %s;"
-        # date_str = extraction_date.strftime('%Y-%m-%d')
-        logger.info(f"Trích xuất dữ liệu từ bảng {table_name} cho ngày {extraction_date}...")
-        df = pg_hook.get_pandas_df(sql, parameters=(extraction_date,))
+        if date_column:
+            sql = f"SELECT * FROM {table_name} WHERE DATE({date_column}) = %s;"
+            logger.info(f"Trích xuất dữ liệu từ bảng {table_name} cho ngày {extraction_date} dùng cột {date_column}...")
+            df = pg_hook.get_pandas_df(sql, parameters=(extraction_date,))
+        else:
+            sql = f"SELECT * FROM {table_name};"
+            logger.info(f"Trích xuất TOÀN BỘ dữ liệu từ bảng {table_name}...")
+            df = pg_hook.get_pandas_df(sql)
 
         if df.empty:
             logger.warning(f"Bảng {table_name} không có dữ liệu cho ngày {extraction_date}.")
@@ -54,7 +59,11 @@ def extract_and_load_to_minio(table_name: str,
     # 2. Transform: Chuyển đổi sang Parquet
     try:
         parquet_buffer = io.BytesIO()
-        df.to_parquet(parquet_buffer, index=False, engine='pyarrow')
+        df.to_parquet(parquet_buffer,
+                        index=False,
+                        engine='pyarrow',
+                        coerce_timestamps='us',       # Ép về Microseconds (Spark hiểu được)
+                        allow_truncated_timestamps=True) # Cho phép cắt bỏ phần đuôi nano thừa
         parquet_buffer.seek(0)
     except Exception as e:
         logger.error(f"Lỗi xảy ra khi biến đổi dữ liệu sang Parquet: {str(e)}")
