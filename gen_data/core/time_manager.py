@@ -69,7 +69,7 @@ class TimeManager:
             "month": now.month,
             "year": now.year,
             "formatted": now.strftime('%Y-%m-%d %H:%M:%S'),
-            "timestamp": now.timestamp()
+            "timestamp": now
         }
         
         return time_info
