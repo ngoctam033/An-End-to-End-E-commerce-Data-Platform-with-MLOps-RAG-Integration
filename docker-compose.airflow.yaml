@@ -78,7 +78,18 @@ x-airflow-common:
     # _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-pandas pyarrow apache-airflow-providers-apache-spark apache-airflow-providers-postgres apache-airflow-providers-amazon}
     # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
-    AIRFLOW_CONN_SPARK_DEFAULT: "spark://local?deploy-mode=client"
+    AIRFLOW_CONN_SPARK_DEFAULT: '{
+                                    "conn_type": "spark",
+                                    "host": "spark://spark",
+                                    "port": 7077,
+                                    "extra": "{\"deploy_mode\": \"client\", \"master\": \"spark://spark:7077\"}"
+                                  }'
+    # AIRFLOW_CONN_SPARK_DEFAULT: '{
+    #                                 "conn_type": "spark",
+    #                                 "host": "local",
+    #                                 "port": null,
+    #                                 "extra": "{\"master\": \"local[*]\", \"deploy_mode\": \"client\"}"
+    #                               }'
     AIRFLOW_CONN_MINIO_DEFAULT: 'aws://admin:admin123@?endpoint_url=http%3A%2F%2Fminio1%3A9000'
     AIRFLOW_CONN_POSTGRES_DEFAULT: 'postgres://postgres:password@db:5432/ecommerce_db'
   volumes:
