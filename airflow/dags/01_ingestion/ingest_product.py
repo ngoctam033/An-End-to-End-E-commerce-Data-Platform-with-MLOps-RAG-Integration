@@ -12,40 +12,46 @@ default_args = {
 }
 
 @dag(
-    dag_id='ingest_customers_to_minio',
-    description='Ingest customers from Postgres to Iceberg Raw table using Spark',
+    dag_id='ingest_product_to_minio',
+    description='Ingest product from Postgres to Iceberg Raw table using Spark',
     schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
-    tags=['spark', 'iceberg', 'ingestion', 'raw', 'customers'],
+    tags=['spark', 'iceberg', 'ingestion', 'raw', 'product'],
     default_args=default_args
 )
-def ingest_customers_iceberg():
+def ingest_product_iceberg():
     """
     This DAG triggers a Spark job to:
-    1. Read 'customers' table from Postgres via JDBC.
-    2. Write directly to Iceberg Raw table in MinIO.
+    1. Read 'product' table from Postgres via JDBC.
+    2. Filter by execution date (ds) using created_at.
+    3. Write directly to Iceberg Raw table in MinIO.
     """
 
     ingest_job = SparkSubmitOperator(
-        task_id='spark_ingest_customers_to_minio',
+        task_id='spark_ingest_product_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
+        # Arguments: <table_name> <ds> <sql_query>
         application_args=[
-            "customers", 
+            "product", 
             "{{ ds }}", 
-            "SELECT * FROM customers WHERE DATE(created_at) = '{{ ds }}'",
-            "created_at"
+            "SELECT * FROM product"
         ],
         conf={
+            # Resource Allocation
             'spark.cores.max': '1',
             'spark.executor.cores': '1',
             'spark.executor.memory': '1g',
             'spark.driver.memory': '1g',
+
+            # Iceberg with Hadoop Catalog
             'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
             'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
             'spark.sql.catalog.iceberg.type': 'hadoop',
             'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
+            
+            # Hadoop/S3A Configs
             'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
             'spark.hadoop.fs.s3a.access.key': 'admin',
             'spark.hadoop.fs.s3a.secret.key': 'admin123',
@@ -58,4 +64,5 @@ def ingest_customers_iceberg():
 
     ingest_job
 
-ingest_customers_iceberg()
+# Initialize the DAG
+ingest_product_iceberg()

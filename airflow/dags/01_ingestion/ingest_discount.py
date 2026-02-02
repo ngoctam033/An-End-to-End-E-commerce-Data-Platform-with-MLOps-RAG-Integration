@@ -1,10 +1,6 @@
-import logging
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-
-# Cấu hình logging
-logger = logging.getLogger("airflow.task")
 
 default_args = {
     'owner': 'ngoctam',
@@ -12,31 +8,20 @@ default_args = {
 }
 
 @dag(
-    dag_id='ingest_customers_to_minio',
-    description='Ingest customers from Postgres to Iceberg Raw table using Spark',
+    dag_id='ingest_discount_to_minio',
+    description='Ingest discount from Postgres to Iceberg Raw table using Spark',
     schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
-    tags=['spark', 'iceberg', 'ingestion', 'raw', 'customers'],
+    tags=['spark', 'iceberg', 'ingestion', 'raw', 'discount'],
     default_args=default_args
 )
-def ingest_customers_iceberg():
-    """
-    This DAG triggers a Spark job to:
-    1. Read 'customers' table from Postgres via JDBC.
-    2. Write directly to Iceberg Raw table in MinIO.
-    """
-
+def ingest_discount_iceberg():
     ingest_job = SparkSubmitOperator(
-        task_id='spark_ingest_customers_to_minio',
+        task_id='spark_ingest_discount_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        application_args=[
-            "customers", 
-            "{{ ds }}", 
-            "SELECT * FROM customers WHERE DATE(created_at) = '{{ ds }}'",
-            "created_at"
-        ],
+        application_args=["discount", "{{ ds }}", "SELECT * FROM discount"],
         conf={
             'spark.cores.max': '1',
             'spark.executor.cores': '1',
@@ -55,7 +40,6 @@ def ingest_customers_iceberg():
             'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
         }
     )
-
     ingest_job
 
-ingest_customers_iceberg()
+ingest_discount_iceberg()
