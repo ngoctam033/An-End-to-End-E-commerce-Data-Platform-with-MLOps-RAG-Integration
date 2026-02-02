@@ -28,6 +28,7 @@ services:
         curl -s https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.4.3/iceberg-spark-runtime-3.5_2.12-1.4.3.jar -o /opt/spark/jars/iceberg-spark-runtime-3.5_2.12-1.4.3.jar &&
         curl -s https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar -o /opt/spark/jars/hadoop-aws-3.3.4.jar &&
         curl -s https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar -o /opt/spark/jars/aws-java-sdk-bundle-1.12.262.jar &&
+        curl -s https://repo1.maven.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar -o /opt/spark/jars/postgresql-42.6.0.jar &&
         /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
       # Giới hạn tài nguyên cho container
     deploy:
@@ -62,4 +63,5 @@ services:
       curl -s https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.4.3/iceberg-spark-runtime-3.5_2.12-1.4.3.jar -o /opt/spark/jars/iceberg-spark-runtime-3.5_2.12-1.4.3.jar &&
       curl -s https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar -o /opt/spark/jars/hadoop-aws-3.3.4.jar &&
       curl -s https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar -o /opt/spark/jars/aws-java-sdk-bundle-1.12.262.jar &&
+      curl -s https://repo1.maven.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar -o /opt/spark/jars/postgresql-42.6.0.jar &&
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark:7077"
