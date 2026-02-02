@@ -9,8 +9,8 @@ default_args = {
 }
 
 @dag(
-    dag_id='transform_orders_items_iceberg',
-    description='Transform orders and order_items from raw Parquet to Iceberg Silver tables',
+    dag_id='transform_orders_iceberg',
+    description='Transform orders from Iceberg Raw to Iceberg Silver tables',
     schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
@@ -20,17 +20,17 @@ default_args = {
 def transform_orders_dag():
     """
     This DAG triggers a Spark job to:
-    1. Read orders and order_items from raw Parquet files in MinIO.
+    1. Read orders from Iceberg Raw table (iceberg.raw.orders).
     2. Convert timestamps to UTC+7.
     3. Cast currency columns to Decimal.
-    4. Check data consistency between orders and items.
-    5. Save results to Iceberg Silver tables with history support.
+    4. Guard against negative prices.
+    5. Save results to Iceberg Silver tables (iceberg.silver.orders) with history support.
     """
 
     transform_job = SparkSubmitOperator(
         task_id='spark_transform_orders_items',
         # Script location inside the container (shared via volume)
-        application='/opt/airflow/dags/scripts/transform_orders.py',
+        application='/opt/airflow/dags/scripts/transform_table.py',
         conn_id='spark_default',
         # Pass the logical execution date (YYYY-MM-DD) as an argument
         application_args=["{{ ds }}"],
