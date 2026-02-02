@@ -18,6 +18,20 @@ services:
       
     # command: server --address ":9000" --console-address ":9001" http://minio{1...4}/bitnami/minio/data
     command: server --address ":9000" --console-address ":9001" /bitnami/minio/data
-    cpus: "2.0"
+    # cpus "2.0"
+    networks:
+      - ecommerce_network
+
+  minio-init:
+    image: minio/mc
+    depends_on:
+      - minio1
+    entrypoint: >
+      /bin/sh -c "
+      until (/usr/bin/mc alias set local http://minio1:9000 admin admin123) do echo 'Waiting for MinIO...' && sleep 1; done;
+      /usr/bin/mc mb --ignore-existing local/datalake;
+      /usr/bin/mc policy set public local/datalake;
+      exit 0;
+      "
     networks:
       - ecommerce_network
