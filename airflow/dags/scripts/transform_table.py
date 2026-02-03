@@ -11,20 +11,20 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("iceberg_transformation")
 
 class BaseIcebergTransformer(ABC):
-    def __init__(self, table_name, ds):
+    def __init__(self, table_name, ds, source_table, target_table):
         self.table_name = table_name
         self.ds = ds
+        self.source_table = source_table
+        self.target_table = target_table
         self.spark = SparkSession.builder \
             .appName(f"Transform_{table_name}_{ds}") \
             .getOrCreate()
         self.df = None
-        self.raw_table = f"iceberg.raw.{self.table_name}"
-        self.silver_table = f"iceberg.silver.{self.table_name}"
         self.primary_key = None # Sẽ được định nghĩa ở lớp con
 
     def extract(self):
-        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.raw_table}")
-        self.df = self.spark.table(self.raw_table).filter(col("ingestion_date") == self.ds)
+        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table}")
+        self.df = self.spark.table(self.source_table).filter(col("ingestion_date") == self.ds)
         return self
 
     def base_transform(self):
@@ -33,7 +33,7 @@ class BaseIcebergTransformer(ABC):
             logger.info(f"[{self.table_name}] 3. Base Transform: Thêm Metadata")
             self.df = self.df \
                 .withColumn("processed_at", current_timestamp()) \
-                .withColumn("_source_table", lit(self.raw_table))
+                .withColumn("_source_table", lit(self.source_table))
         return self
 
     @abstractmethod
@@ -41,29 +41,43 @@ class BaseIcebergTransformer(ABC):
         pass
 
     def load(self):
-        """Lưu dữ liệu vào bảng Silver bằng DataFrame API"""
+        """Sử dụng MERGE INTO để bảo vệ tính nhất quán của dữ liệu (Idempotency)"""
         if self.df is None or self.df.count() == 0:
             logger.warning(f"[{self.table_name}] 5. Load: Không có dữ liệu để ghi.")
             return self
 
-        # Kiểm tra và tạo bảng nếu chưa tồn tại
-        if not self.spark.catalog.tableExists(self.silver_table):
-            # Tự động tạo Namespace nếu cần (Iceberg Spark 3 sẽ tự xử lý nếu cấu hình đúng)
+        # Đảm bảo Namespace tồn tại
+        namespace = ".".join(self.target_table.split(".")[:-1])
+        if namespace:
+            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
+
+        if not self.spark.catalog.tableExists(self.target_table):
             self._create_table()
         else:
-            logger.info(f"[{self.table_name}] 5. Load: Ghi đè Partitions vào {self.silver_table}")
-            # Sử dụng overwritePartitions để đảm bảo tính Idempotency cho ELT
-            self.df.writeTo(self.silver_table).overwritePartitions()
+            if self.primary_key:
+                logger.info(f"[{self.table_name}] 5. Load: Thực hiện MERGE INTO tại {self.target_table} dựa trên {self.primary_key}")
+                self.df.createOrReplaceTempView("source_view")
+                merge_sql = f"""
+                    MERGE INTO {self.target_table} t
+                    USING source_view s
+                    ON t.{self.primary_key} = s.{self.primary_key}
+                    WHEN MATCHED THEN UPDATE SET *
+                    WHEN NOT MATCHED THEN INSERT *
+                """
+                self.spark.sql(merge_sql)
+            else:
+                logger.info(f"[{self.table_name}] 5. Load: Ghi đè Partitions (Dùng cho bảng không có PK)")
+                self.df.writeTo(self.target_table).overwritePartitions()
         
         return self
 
     def _create_table(self):
-        logger.info(f"[{self.table_name}] Khởi tạo bảng Silver mới")
-        self.df.writeTo(self.silver_table).tableProperty("format-version", "2").create()
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới: {self.target_table}")
+        self.df.writeTo(self.target_table).tableProperty("format-version", "2").create()
 
 class OrdersTransformer(BaseIcebergTransformer):
-    def __init__(self, table_name, ds):
-        super().__init__(table_name, ds)
+    def __init__(self, table_name, ds, source_table, target_table):
+        super().__init__(table_name, ds, source_table, target_table)
         self.primary_key = "id"
 
     def transform(self):
@@ -79,14 +93,14 @@ class OrdersTransformer(BaseIcebergTransformer):
         return self
 
     def _create_table(self):
-        self.df.writeTo(self.silver_table) \
+        self.df.writeTo(self.target_table) \
             .tableProperty("format-version", "2") \
             .partitionedBy(days("order_date")) \
             .create()
 
 class OrderItemsTransformer(BaseIcebergTransformer):
-    def __init__(self, table_name, ds):
-        super().__init__(table_name, ds)
+    def __init__(self, table_name, ds, source_table, target_table):
+        super().__init__(table_name, ds, source_table, target_table)
         self.primary_key = "id"
 
     def transform(self):
@@ -98,29 +112,35 @@ class OrderItemsTransformer(BaseIcebergTransformer):
         return self
 
     def _create_table(self):
-        self.df.writeTo(self.silver_table) \
+        self.df.writeTo(self.target_table) \
             .tableProperty("format-version", "2") \
             .create()
 
+class DefaultTransformer(BaseIcebergTransformer):
+    def transform(self):
+        """Default transform does nothing but ensures the class is not abstract"""
+        logger.info(f"[{self.table_name}] No specific transform defined, using default.")
+        return self
+
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: transform_table.py <ds> [table_name]")
+    if len(sys.argv) < 5:
+        print("Usage: transform_table.py <ds> <table_name> <source_table> <target_table>")
         sys.exit(1)
 
     ds = sys.argv[1]
-    table_name = sys.argv[2] if len(sys.argv) > 2 else "orders"
+    table_name = sys.argv[2]
+    source_table = sys.argv[3]
+    target_table = sys.argv[4]
 
     registry = {
         "orders": OrdersTransformer,
-        "order_items": OrderItemsTransformer
+        "order_items": OrderItemsTransformer,
+        'others': DefaultTransformer
     }
 
-    transformer_cls = registry.get(table_name)
-    if not transformer_cls:
-        logger.error(f"Không tìm thấy Transformer cho bảng: {table_name}")
-        sys.exit(1)
+    transformer_cls = registry.get(table_name, registry['others'])
 
-    transformer = transformer_cls(table_name, ds)
+    transformer = transformer_cls(table_name, ds, source_table, target_table)
     transformer.extract() \
                .base_transform() \
                .transform() \
