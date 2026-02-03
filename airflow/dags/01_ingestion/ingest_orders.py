@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 # Default arguments for the DAG
 default_args = {
@@ -32,7 +33,7 @@ def ingest_orders_iceberg():
         # Script location inside the container
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
         # Arguments: <table_name> <ds> <sql_query> [primary_key]
-        application_args=["orders", "{{ ds }}", "SELECT * FROM orders WHERE DATE(created_at) = '{{ ds }}'", "id"],
+        application_args=["orders", "{{ ds }}", "SELECT * FROM orders WHERE DATE(created_at) = '{{ ds }}'", path_manager.iceberg.raw.orders.get_table(), "id"],
         conf={
             # Resource Allocation
             'spark.cores.max': '1',

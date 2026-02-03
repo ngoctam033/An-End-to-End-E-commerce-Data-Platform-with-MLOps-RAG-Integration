@@ -2,6 +2,7 @@ import logging
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 # Cấu hình logging
 logger = logging.getLogger("airflow.task")
@@ -33,11 +34,7 @@ def ingest_product_iceberg():
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
         # Arguments: <table_name> <ds> <sql_query>
-        application_args=[
-            "product", 
-            "{{ ds }}", 
-            "SELECT * FROM product"
-        ],
+                application_args=["product", "{{ ds }}", "SELECT * FROM product", path_manager.iceberg.raw.product.get_table()],
         conf={
             # Resource Allocation
             'spark.cores.max': '1',

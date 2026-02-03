@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 default_args = {
     'owner': 'ngoctam',
@@ -21,7 +22,7 @@ def ingest_sub_category_iceberg():
         task_id='spark_ingest_sub_category_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        application_args=["sub_category", "{{ ds }}", "SELECT * FROM sub_category"],
+                application_args=["sub_category", "{{ ds }}", "SELECT * FROM sub_category", path_manager.iceberg.raw.sub_category.get_table()],
         conf={
             'spark.cores.max': '1',
             'spark.executor.cores': '1',

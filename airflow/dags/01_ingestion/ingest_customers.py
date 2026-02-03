@@ -2,6 +2,7 @@ import logging
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 # Cấu hình logging
 logger = logging.getLogger("airflow.task")
@@ -31,12 +32,7 @@ def ingest_customers_iceberg():
         task_id='spark_ingest_customers_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        application_args=[
-            "customers", 
-            "{{ ds }}", 
-            "SELECT * FROM customers WHERE DATE(created_at) = '{{ ds }}'",
-            "created_at"
-        ],
+        application_args=["customers", "{{ ds }}", "SELECT * FROM customers WHERE DATE(created_at) = '{{ ds }}'", path_manager.iceberg.raw.customers.get_table(), "id"],
         conf={
             'spark.cores.max': '1',
             'spark.executor.cores': '1',

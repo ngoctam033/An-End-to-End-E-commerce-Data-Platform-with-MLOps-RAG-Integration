@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 # Default arguments for the DAG
 default_args = {
@@ -33,7 +34,7 @@ def transform_orders_dag():
         application='/opt/airflow/dags/scripts/transform_table.py',
         conn_id='spark_default',
         # Pass the logical execution date (YYYY-MM-DD) as an argument
-        application_args=["{{ ds }}"],
+        application_args=["{{ ds }}", "orders", path_manager.iceberg.raw.orders.get_table(), path_manager.iceberg.silver.orders.get_table()],
         # packages='org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.3.0,org.postgresql:postgresql:42.5.4,org.apache.hadoop:hadoop-aws:3.3.2,com.amazonaws:aws-java-sdk-bundle:1.11.1026',
         conf={
             'spark.cores.max': '2',

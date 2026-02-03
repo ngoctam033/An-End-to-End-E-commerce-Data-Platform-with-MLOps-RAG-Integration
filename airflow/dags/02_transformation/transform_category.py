@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 default_args = {
     'owner': 'ngoctam',
@@ -21,7 +22,7 @@ def transform_category_dag():
         task_id='spark_transform_category',
         application='/opt/airflow/dags/scripts/transform_table.py',
         conn_id='spark_default',
-        application_args=["{{ ds }}", "category"],
+        application_args=["{{ ds }}", "category", path_manager.iceberg.raw.category.get_table(), path_manager.iceberg.silver.category.get_table()],
         conf={
             'spark.cores.max': '2',
             'spark.executor.cores': '1',

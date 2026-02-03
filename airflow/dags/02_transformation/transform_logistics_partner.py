@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 default_args = {
     'owner': 'ngoctam',
@@ -21,7 +22,7 @@ def transform_logistics_partner_dag():
         task_id='spark_transform_logistics_partner',
         application='/opt/airflow/dags/scripts/transform_table.py',
         conn_id='spark_default',
-        application_args=["{{ ds }}", "logistics_partner"],
+        application_args=["{{ ds }}", "logistics_partner", path_manager.iceberg.raw.logistics_partner.get_table(), path_manager.iceberg.silver.logistics_partner.get_table()],
         conf={
             'spark.cores.max': '2',
             'spark.executor.cores': '1',

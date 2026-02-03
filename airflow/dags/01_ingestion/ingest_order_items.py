@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 default_args = {
     'owner': 'ngoctam',
@@ -26,7 +27,7 @@ def ingest_order_items_iceberg():
         task_id='spark_ingest_order_items_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        application_args=["order_items", "{{ ds }}", "SELECT * FROM order_items", ""],
+                application_args=["order_items", "{{ ds }}", "SELECT * FROM order_items", path_manager.iceberg.raw.order_items.get_table(), "id"],
         conf={
             'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
             'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',

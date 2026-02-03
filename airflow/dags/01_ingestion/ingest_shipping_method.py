@@ -1,6 +1,7 @@
 import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from utils.path_node import path_manager
 
 default_args = {
     'owner': 'ngoctam',
@@ -21,7 +22,7 @@ def ingest_shipping_method_iceberg():
         task_id='spark_ingest_shipping_method_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        application_args=["shipping_method", "{{ ds }}", "SELECT * FROM shipping_method"],
+                application_args=["shipping_method", "{{ ds }}", "SELECT * FROM shipping_method", path_manager.iceberg.raw.shipping_method.get_table()],
         conf={
             'spark.cores.max': '1',
             'spark.executor.cores': '1',
