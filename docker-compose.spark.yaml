@@ -10,16 +10,17 @@ services:
       - ecommerce_network
     depends_on:
       - minio1
-    # volumes:
-    #   - ./warehouse:/home/iceberg/warehouse
-    #   - ./notebooks:/home/iceberg/notebooks/notebooks
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      # - ./warehouse:/home/iceberg/warehouse
+      # - ./notebooks:/home/iceberg/notebooks/notebooks
     environment:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=admin123
       - AWS_REGION=us-east-1
-      - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=2g
-      - SPARK_MASTER_MEMORY=1g
+      # - SPARK_WORKER_CORES=2
+      # - SPARK_WORKER_MEMORY=2G
+      # - SPARK_MASTER_MEMORY=1g
       - SPARK_UI_PORT=8080
       - SPARK_MASTER_PORT=7077
       # - SPARK_CONF_spark_jars_packages=org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262
@@ -34,11 +35,9 @@ services:
     deploy:
       resources:
         limits:
-          # cpus '2.0'
-          memory: 4G
+          memory: 1G
         reservations:
-          # cpus '1.0'
-          memory: 2G
+          memory: 512M
 
   # Worker Node (Mới thêm: Chịu trách nhiệm xử lý tính toán)
   spark-worker:
@@ -50,13 +49,20 @@ services:
       - ecommerce_network
     depends_on:
       - spark
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
     environment:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=admin123
       - AWS_REGION=us-east-1
-      - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=2G
-      # - SPARK_CONF_spark_jars_packages=org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262
+      - SPARK_WORKER_CORES=6
+      - SPARK_WORKER_MEMORY=6G
+    deploy:
+      resources:
+        limits:
+          memory: 7G
+        reservations:
+          memory: 6G
     # Ghi đè entrypoint để chạy class Worker của Spark
     entrypoint: >
       /bin/sh -c "
