@@ -1,9 +1,10 @@
 import sys
 import logging
-from abc import ABC, abstractmethod
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, current_timestamp, from_utc_timestamp, trim, upper, days, lit, expr
+from pyspark.sql.functions import from_utc_timestamp, col, trim, upper, current_timestamp, days
 from pyspark.sql.types import DecimalType
+from pyspark.sql.functions import lit
+from abc import ABC, abstractmethod
 
 # Cấu hình Logging
 logging.basicConfig(level=logging.INFO)
@@ -26,18 +27,6 @@ class BaseIcebergTransformer(ABC):
         self.df = self.spark.table(self.raw_table).filter(col("ingestion_date") == self.ds)
         return self
 
-    def validate(self):
-        """Bước kiểm tra chất lượng dữ liệu (Data Quality)"""
-        if self.df is not None:
-            logger.info(f"[{self.table_name}] 2. Validation: Kiểm tra dữ liệu")
-            # Ví dụ: Kiểm tra không cho phép ID bị NULL
-            if self.primary_key:
-                null_count = self.df.filter(col(self.primary_key).isNull()).count()
-                if null_count > 0:
-                    logger.warning(f"PHÁT HIỆN {null_count} dòng có {self.primary_key} bị NULL!")
-                    # Bạn có thể lựa chọn .filter(...) để loại bỏ hoặc raise Exception
-        return self
-
     def base_transform(self):
         """Thêm các cột Audit Metadata cho Data Lake"""
         if self.df is not None:
@@ -52,30 +41,19 @@ class BaseIcebergTransformer(ABC):
         pass
 
     def load(self):
-        """Sử dụng MERGE INTO để bảo vệ tính nhất quán của dữ liệu (Idempotency)"""
+        """Lưu dữ liệu vào bảng Silver bằng DataFrame API"""
         if self.df is None or self.df.count() == 0:
             logger.warning(f"[{self.table_name}] 5. Load: Không có dữ liệu để ghi.")
             return self
 
-        self.spark.sql("CREATE NAMESPACE IF NOT EXISTS iceberg.silver")
-
+        # Kiểm tra và tạo bảng nếu chưa tồn tại
         if not self.spark.catalog.tableExists(self.silver_table):
+            # Tự động tạo Namespace nếu cần (Iceberg Spark 3 sẽ tự xử lý nếu cấu hình đúng)
             self._create_table()
         else:
-            if self.primary_key:
-                logger.info(f"[{self.table_name}] 5. Load: Thực hiện MERGE INTO dựa trên {self.primary_key}")
-                self.df.createOrReplaceTempView("source_view")
-                merge_sql = f"""
-                    MERGE INTO {self.silver_table} t
-                    USING source_view s
-                    ON t.{self.primary_key} = s.{self.primary_key}
-                    WHEN MATCHED THEN UPDATE SET *
-                    WHEN NOT MATCHED THEN INSERT *
-                """
-                self.spark.sql(merge_sql)
-            else:
-                logger.info(f"[{self.table_name}] 5. Load: Ghi đè Partitions (Dùng cho bảng không có PK)")
-                self.df.writeTo(self.silver_table).overwritePartitions()
+            logger.info(f"[{self.table_name}] 5. Load: Ghi đè Partitions vào {self.silver_table}")
+            # Sử dụng overwritePartitions để đảm bảo tính Idempotency cho ELT
+            self.df.writeTo(self.silver_table).overwritePartitions()
         
         return self
 
@@ -144,7 +122,6 @@ def main():
 
     transformer = transformer_cls(table_name, ds)
     transformer.extract() \
-               .validate() \
                .base_transform() \
                .transform() \
                .load()
