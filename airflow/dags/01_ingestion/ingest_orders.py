@@ -31,8 +31,8 @@ def ingest_orders_iceberg():
         conn_id='spark_default',
         # Script location inside the container
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-        # Arguments: <table_name> <ds> <sql_query> [date_column]
-        application_args=["orders", "{{ ds }}", "SELECT * FROM orders WHERE DATE(created_at) = '{{ ds }}'", "created_at"],
+        # Arguments: <table_name> <ds> <sql_query> [primary_key]
+        application_args=["orders", "{{ ds }}", "SELECT * FROM orders WHERE DATE(created_at) = '{{ ds }}'", "id"],
         conf={
             # Resource Allocation
             'spark.cores.max': '1',

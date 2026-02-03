@@ -36,45 +36,14 @@ def transform_orders_dag():
         application_args=["{{ ds }}"],
         # packages='org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.3.0,org.postgresql:postgresql:42.5.4,org.apache.hadoop:hadoop-aws:3.3.2,com.amazonaws:aws-java-sdk-bundle:1.11.1026',
         conf={
-            # --- CẤP PHÁT TÀI NGUYÊN (RESOURCE ALLOCATION) ---
-            
-            # 1. Tổng số cores tối đa mà toàn bộ ứng dụng này có thể chiếm dụng từ cluster
             'spark.cores.max': '2',
-            
-            # 2. Số cores cấp cho mỗi Executor (đơn vị xử lý song song)
             'spark.executor.cores': '1',
-            
-            # 3. Bộ nhớ RAM cấp cho mỗi Executor (ví dụ: 1g, 2g, 512m)
-            'spark.executor.memory': '2g',
-            
-            # 4. Bộ nhớ RAM cấp cho Driver (nơi điều khiển job, chạy trong Airflow Worker)
+            'spark.executor.memory': '4g',
             'spark.driver.memory': '1g',
-
-            'spark.master': 'local',
-            # Spark Networking
-            'spark.submit.deployMode': 'client',
-            'spark.driver.host': 'airflow-worker',
-            'spark.driver.bindAddress': '0.0.0.0',
-            
-            # Iceberg with Hadoop Catalog
             'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
             'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
             'spark.sql.catalog.iceberg.type': 'hadoop',
             'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
-            'spark.sql.catalog.iceberg.s3.endpoint': 'http://minio1:9000',
-            'spark.sql.catalog.iceberg.s3.access-key-id': 'admin',
-            'spark.sql.catalog.iceberg.s3.secret-access-key': 'admin123',
-            'spark.sql.catalog.iceberg.s3.path-style-access': 'true',
-            'spark.sql.catalog.iceberg.s3.region': 'us-east-1',
-            'spark.sql.catalog.iceberg.client.region': 'us-east-1',
-            
-            # AWS & S3A Environment/Hadoop Configs
-            'spark.executorEnv.AWS_REGION': 'us-east-1',
-            'spark.driverEnv.AWS_REGION': 'us-east-1',
-            'spark.driver.extraJavaOptions': '-Daws.region=us-east-1',
-            'spark.executor.extraJavaOptions': '-Daws.region=us-east-1',
-            'spark.hadoop.aws.region': 'us-east-1',
-            'spark.hadoop.fs.s3a.endpoint.region': 'us-east-1',
             'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
             'spark.hadoop.fs.s3a.access.key': 'admin',
             'spark.hadoop.fs.s3a.secret.key': 'admin123',
@@ -82,15 +51,6 @@ def transform_orders_dag():
             'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
             'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
             'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
-            'spark.hadoop.fs.s3a.endpoint.region': 'us-east-1',
-
-            # Environment for Executors
-            'spark.executorEnv.AWS_REGION': 'us-east-1',
-            'spark.driverEnv.AWS_REGION': 'us-east-1',
-
-            # Extra Parquet/Iceberg Stability
-            'spark.sql.parquet.enableVectorizedReader': 'false',
-            'spark.sql.parquet.mergeSchema': 'false',
         },
         # Ensure we have the necessary jars if they are not built into the image
         # Using packages might be slow on first run, but ensures portability.
