@@ -7,6 +7,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+from airflow.utils.trigger_rule import TriggerRule
+
 # Danh sách các DAG con cần chạy theo thứ tự tuần tự
 CHILD_DAG_IDS = dag_registry.get_dags()
 @dag(
@@ -38,6 +40,7 @@ def master_orchestrator():
             wait_for_completion=True,
             poke_interval=30,
             reset_dag_run=True,
+            trigger_rule=TriggerRule.ALL_DONE,
         )
 
         # Thiết lập quan hệ phụ thuộc tuần tự (Sequential)
