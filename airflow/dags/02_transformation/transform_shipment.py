@@ -9,23 +9,23 @@ default_args = {
 }
 
 @dag(
-    dag_id='transform_logistics_partner_iceberg',
-    description='Transform logistics_partner from Iceberg Raw to Iceberg Silver tables',
+    dag_id='transform_shipment_iceberg',
+    description='Transform shipment from Iceberg Raw to Iceberg Silver tables',
     schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
-    tags=['spark', 'iceberg', 'transformation', 'silver', 'logistics_partner'],
+    tags=['spark', 'iceberg', 'transformation', 'silver', 'shipment'],
     default_args=default_args
 )
-def transform_logistics_partner_dag():
+def transform_shipment_dag():
     transform_job = SparkSubmitOperator(
-        task_id='spark_transform_logistics_partner',
+        task_id='spark_transform_shipment',
         application='/opt/airflow/dags/scripts/transform_table.py',
         conn_id='spark_default',
-        application_args=["{{ ds }}", "logistics_partner", path_manager.iceberg.raw.logistics_partner.get_table(), path_manager.iceberg.silver.logistics_partner.get_table()],
+        application_args=["{{ ds }}", "shipment", path_manager.iceberg.raw.shipment.get_table(), path_manager.iceberg.silver.shipment.get_table()],
 
     )
 
     transform_job
 
-dag_instance = transform_logistics_partner_dag()
+dag_instance = transform_shipment_dag()
