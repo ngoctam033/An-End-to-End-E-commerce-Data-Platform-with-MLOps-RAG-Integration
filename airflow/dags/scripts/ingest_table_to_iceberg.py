@@ -1,6 +1,7 @@
 import sys
 import logging
 from abc import ABC
+from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit, current_timestamp
 
@@ -19,11 +20,43 @@ class BaseIcebergIngestor(ABC):
         self.sql_query = sql_query
         self.primary_key = primary_key
         self.target_table = target_table
+        spark_conf = SparkConf()
+        
+        # Cấu hình mặc định
+        defaults = {
+            'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
+            'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
+            'spark.sql.catalog.iceberg.type': 'hadoop',
+            'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
+            'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
+            'spark.hadoop.fs.s3a.access.key': 'admin',
+            'spark.hadoop.fs.s3a.secret.key': 'admin123',
+            'spark.hadoop.fs.s3a.path.style.access': 'true',
+            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+            'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
+            'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
+            'spark.hadoop.fs.s3a.metrics.enabled': 'false',
+            # CẤU HÌNH TÀI NGUYÊN TỐI ĐA
+            'spark.cores.max': '12',
+            'spark.executor.cores': '4',
+            'spark.executor.memory': '8g',
+            'spark.driver.memory': '2g',
+            'spark.executor.memoryOverhead': '2g',
+        }
+        
+        for k, v in defaults.items():
+            if not spark_conf.contains(k):
+                spark_conf.set(k, v)
+
         self.spark = SparkSession.builder \
             .appName(f"Ingest_{table_name}_{ds}") \
+            .config(conf=spark_conf) \
             .getOrCreate()
         self.df = None
-        
+        logger.info(f"[{self.table_name}] Khởi tạo Ingestor cho bảng {table_name} với ds={ds}")
+        logger.info(f"[{self.table_name}] SQL Query: {sql_query}")
+        logger.info(f"[{self.table_name}] Target Table: {target_table}")
+        logger.info(f"[{self.table_name}] Primary Key: {primary_key}")
         # Cấu hình Postgres JDBC
         self.jdbc_url = "jdbc:postgresql://db:5432/ecommerce_db"
         self.connection_properties = {
@@ -55,14 +88,17 @@ class BaseIcebergIngestor(ABC):
         return self
 
     def load(self):
-        """Bước 2: Load - Lưu dữ liệu vào Raw Zone (Iceberg) sử dụng MERGE INTO nếu có PK"""
+        """Bước 2: Load - Lưu dữ liệu vào Raw Zone (Iceberg)"""
         if self.df is None:
             return self
+        # in ra full path của s3
+        
 
         logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table}")
         
         # Đảm bảo Namespace tồn tại
         namespace = ".".join(self.target_table.split(".")[:-1])
+        logger.info(f"[{self.table_name}] Namespace: {namespace}")
         if namespace:
             self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
 
@@ -71,22 +107,11 @@ class BaseIcebergIngestor(ABC):
             logger.info(f"[{self.table_name}] Khởi tạo bảng mới")
             self.df.writeTo(self.target_table) \
                 .tableProperty("format-version", "2") \
+                .partitionedBy("created_at") \
                 .create()
         else:
-            if self.primary_key:
-                logger.info(f"[{self.table_name}] Merge dữ liệu vào bảng hiện tại (PK: {self.primary_key})")
-                self.df.createOrReplaceTempView("source_view")
-                merge_sql = f"""
-                    MERGE INTO {self.target_table} t
-                    USING source_view s
-                    ON t.{self.primary_key} = s.{self.primary_key}
-                    WHEN MATCHED THEN UPDATE SET *
-                    WHEN NOT MATCHED THEN INSERT *
-                """
-                self.spark.sql(merge_sql)
-            else:
-                logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại (Không có PK)")
-                self.df.writeTo(self.target_table).append()
+            logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại")
+            self.df.writeTo(self.target_table).append()
             
         logger.info(f"[{self.table_name}] Hoàn thành Extract & Load.")
         return self
@@ -113,8 +138,4 @@ def main():
     ingestor.extract().load()
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logger.error(f"Lỗi trong quá trình Ingest (EL): {str(e)}")
-        sys.exit(1)
+    main()

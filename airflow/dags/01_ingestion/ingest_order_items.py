@@ -35,7 +35,7 @@ def ingest_order_items_iceberg():
             'spark.executor.memory': '8g',
             'spark.driver.memory': '2g',
             'spark.memory.offHeap.enabled': 'true',
-            'spark.memory.offHeap.size': '1g',
+            'spark.memory.offHeap.size': '2g',
             'spark.sql.execution.arrow.pyspark.enabled': 'false',
             'spark.sql.parquet.enableVectorizedReader': 'false',
             'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
