@@ -28,7 +28,8 @@ CREATE TABLE order_items (
     discount_amount NUMERIC(12, 2),
     quantity INT ,
     amount NUMERIC(12, 2) ,
-    is_active BOOLEAN 
+    is_active BOOLEAN ,
+    created_at TIMESTAMP 
 );
 
 create table order_channel(
@@ -320,3 +321,21 @@ copy warehouse (id, name, address, geo_location_id, capacity_sqm,
 FROM '/docker-entrypoint-initdb.d/warehouse.csv'
 DELIMITER ','
 CSV HEADER;
+
+-- Cập nhật tất cả created_at về 2023-01-01 để khớp với Spark Transform logic
+UPDATE orders SET created_at = '2023-01-01';
+UPDATE order_items SET created_at = '2023-01-01';
+UPDATE order_channel SET created_at = '2023-01-01';
+UPDATE product SET created_at = '2023-01-01';
+UPDATE product_review SET created_at = '2023-01-01';
+UPDATE sub_category SET created_at = '2023-01-01';
+UPDATE category SET created_at = '2023-01-01';
+UPDATE discount SET created_at = '2023-01-01';
+UPDATE brand SET created_at = '2023-01-01';
+UPDATE payment SET created_at = '2023-01-01';
+UPDATE shipment SET created_at = '2023-01-01';
+UPDATE logistics_partner SET created_at = '2023-01-01';
+UPDATE shipping_method SET created_at = '2023-01-01';
+UPDATE customers SET created_at = '2023-01-01';
+UPDATE geo_location SET created_at = '2023-01-01';
+UPDATE warehouse SET created_at = '2023-01-01';

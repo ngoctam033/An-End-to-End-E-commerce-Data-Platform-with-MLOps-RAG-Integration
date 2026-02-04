@@ -33,10 +33,10 @@ SELECT
     -- Nếu sản phẩm chưa có giá thì để mặc định 0
     COALESCE(p.price, 0) * (0.6 + RANDOM() * 0.2) AS unit_cost,
     
-    NOW() AS last_counted_at,
+    '2023-01-01'::timestamp AS last_counted_at,
     TRUE AS is_active,
-    NOW() AS created_at,
-    NOW() AS updated_at
+    '2023-01-01'::timestamp AS created_at,
+    '2023-01-01'::timestamp AS updated_at
 
 FROM product p
 CROSS JOIN warehouse w
