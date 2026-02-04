@@ -17,11 +17,17 @@ class PathNode:
         # Gọi đến phương thức xử lý của PathManager
         return self._manager.create_child_node(self, name)
 
-    def get(self) -> Path:
+    def get(self) -> str:
         """
         Trả về đối tượng Path cuối cùng từ thư viện pathlib.
         """
         return str(self._base.joinpath(*self._parts))
+
+    def get_table(self) -> str:
+        """
+        Trả về tên bảng theo định dạng Iceberg (catalog.database.table)
+        """
+        return ".".join(self._parts)
 
     def __str__(self):
         return str(self.get())
@@ -68,12 +74,18 @@ class PathManager(PathNode):
             parts=new_parts,
             manager=self
         )
-# Ví dụ cấu trúc cây thư mục được phép
+# Cấu trúc bảng của Iceberg
+TABLES = [
+    "orders", "order_items", "order_channel", "order_status_history",
+    "product", "product_review", "sub_category", "category",
+    "discount", "brand", "payment", "shipment", "logistics_partner",
+    "shipping_method", "customers", "geo_location", "warehouse", "inventory"
+]
+
 ALLOWED_PATHS = {
-    "lakehouse": {
-        "raw": {
-            "orders": {}
-        }
+    "iceberg": {
+        "raw": {table: {} for table in TABLES},
+        "silver": {table: {} for table in TABLES}
     }
 }
 path_manager = PathManager(allowed_paths=ALLOWED_PATHS)
