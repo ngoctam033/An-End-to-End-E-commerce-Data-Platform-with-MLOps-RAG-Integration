@@ -13,6 +13,7 @@ class OrderItemsGenerator(BaseGenerator):
             DO $$
             DECLARE
                 _target_order_id BIGINT;
+                _order_created_at TIMESTAMP;
                 _product_id BIGINT;
                 _unit_price NUMERIC(12, 2);
                 _quantity INT;
@@ -26,7 +27,7 @@ class OrderItemsGenerator(BaseGenerator):
                 -- ==================================================================
                 
                 -- Logic: Chọn ID từ bảng orders mà ID đó chưa xuất hiện trong bảng order_items
-                SELECT id INTO _target_order_id
+                SELECT id, order_date INTO _target_order_id, _order_created_at
                 FROM orders o
                 WHERE NOT EXISTS (
                     SELECT 1 FROM order_items oi WHERE oi.order_id = o.id
@@ -68,11 +69,11 @@ class OrderItemsGenerator(BaseGenerator):
                     -- Insert vào bảng order_items
                     INSERT INTO order_items (
                         order_id, product_id, unit_price, discount_amount,
-                        quantity, amount, is_active
+                        quantity, amount, is_active, created_at
                     )
                     VALUES (
                         _target_order_id, _product_id, _unit_price, 0,
-                        _quantity, _item_amount, true
+                        _quantity, _item_amount, true, _order_created_at
                     );
                 END LOOP;
 
