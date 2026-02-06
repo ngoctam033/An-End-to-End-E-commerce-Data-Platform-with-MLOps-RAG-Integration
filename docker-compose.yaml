@@ -1,38 +1,13 @@
-services:
-  db:
-    image: postgres:16-alpine
-    container_name: ecommerce_postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: ecommerce_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./init-db:/docker-entrypoint-initdb.d
-    cpus: "2.0"
-    networks:
-      - ecommerce_network
-
-  gen_data:
-    build: ./gen_data
-    container_name: gen_data
-    networks:
-      - ecommerce_network
-    depends_on:
-      - db
-    cpus: "2.0"
-    volumes:
-      - ./gen_data:/app
-
 # Khai báo "nhập khẩu" các file con
 include:
-  - docker-compose.airflow.yaml
-  - docker-compose.dagster.yaml
-  - docker-compose.minio.yaml
-  - docker-compose.iceberg.yaml
-  - docker-compose.prefect.yaml
-  - docker-compose.spark.yaml
+  - airflow/docker-compose.airflow.yaml
+  - database/docker-compose.db.yaml
+  - gen_data/docker-compose.gen_data.yaml
+  - iceberg/docker-compose.iceberg.yaml
+  - minio/docker-compose.minio.yaml
+  # - dagster/docker-compose.dagster.yaml
+  # - prefect/docker-compose.prefect.yaml
+  - spark/docker-compose.spark.yaml
 
   # clickhouse:
   #   image: clickhouse/clickhouse-server:latest

@@ -53,8 +53,8 @@ class TimeManager:
         Returns:
             dict: Thông tin thời gian mới.
         """
-        # Tăng thời gian thêm 1 phút
-        self.current_time += timedelta(minutes=1)
+        # Tăng thời gian thêm 10 phút
+        self.current_time += timedelta(minutes=10)
         
         # Lưu trạng thái ngay lập tức
         self._save_state()

@@ -1,0 +1,11 @@
+services:
+  gen_data:
+    build: .
+    container_name: gen_data
+    networks:
+      - ecommerce_network
+    depends_on:
+      - db
+    cpus: "2.0"
+    volumes:
+      - .:/app

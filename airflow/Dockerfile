@@ -20,17 +20,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Tải Iceberg Runtime và các thư viện Hadoop AWS
-# Lưu ý: Các file jar này cũng phải tương thích với version Spark
-# Dưới đây là cấu hình cho Spark 3.5.x (dùng iceberg-spark-runtime-3.5)
-RUN curl -O https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.4.3/iceberg-spark-runtime-3.5_2.12-1.4.3.jar \
-    && mv iceberg-spark-runtime-3.5_2.12-1.4.3.jar /opt/spark/jars/ \
-    && curl -O https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar \
-    && mv hadoop-aws-3.3.4.jar /opt/spark/jars/ \
-    && curl -O https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar \
-    && mv aws-java-sdk-bundle-1.12.262.jar /opt/spark/jars/ \
-    && curl -O https://repo1.maven.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar \
-    && mv postgresql-42.6.0.jar /opt/spark/jars/
+# Copy local JARs instead of downloading them
+COPY jars/iceberg-spark-runtime-3.5_2.12-1.4.3.jar /opt/spark/jars/
+COPY jars/hadoop-aws-3.3.4.jar /opt/spark/jars/ 
+COPY jars/aws-java-sdk-bundle-1.12.262.jar /opt/spark/jars/
+COPY jars/postgresql-42.6.0.jar /opt/spark/jars/
 
 ENV SPARK_HOME=/opt/spark
 ENV PATH="$SPARK_HOME/bin:$PATH"
@@ -41,4 +35,6 @@ USER airflow
 RUN pip install pandas pyarrow \
                 apache-airflow-providers-apache-spark \
                 apache-airflow-providers-postgres \
-                apache-airflow-providers-amazon
+                apache-airflow-providers-amazon \
+                "pyiceberg[s3fs,pyarrow]" \
+                s3fs
