@@ -40,15 +40,15 @@ class BaseIcebergTransformer(ABC):
             'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
             'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
             'spark.hadoop.fs.s3a.metrics.enabled': 'false',
-            # CẤU HÌNH TÀI NGUYÊN TỐI ĐA
-            'spark.cores.max': '12',
-            'spark.executor.cores': '4',
-            'spark.executor.memory': '8g',
-            'spark.driver.memory': '2g',
-            'spark.executor.memoryOverhead': '2g',
+            # CẤU HÌNH TÀI NGUYÊN (Tối ưu cho worker 2GB RAM)
+            'spark.cores.max': '2',
+            'spark.executor.cores': '1',
+            'spark.executor.memory': '1g',
+            'spark.driver.memory': '512m',
+            'spark.executor.memoryOverhead': '256m',
             # GIẢM TỐI ĐA SỰ SONG SONG ĐỂ TRÁNH LỖI 134 VÀ SHUFFLE FAILURE
-            'spark.sql.shuffle.partitions': '4',
-            'spark.default.parallelism': '4',
+            'spark.sql.shuffle.partitions': '1',
+            'spark.default.parallelism': '1',
             'spark.memory.fraction': '0.7',
             'spark.sql.adaptive.enabled': 'true',
             'spark.sql.iceberg.handle-timestamp-without-timezone': 'true',
@@ -67,11 +67,11 @@ class BaseIcebergTransformer(ABC):
         self.df = None
 
     def extract(self):
-        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table}")
-        # Chỉ filter, không thực hiện bất kỳ Action nào (count, show, isEmpty)
-        self.df = self.spark.table(self.source_table).filter(col("ingestion_date") == self.ds)
-        # in ra số dòng lấy được
-        # logger.info(f"[{self.table_name}] Số dòng lấy được: {self.df.count()}")
+        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table} (giới hạn 500 dòng)")
+        # Lọc theo ingestion_date và giới hạn 500 dòng
+        self.df = self.spark.table(self.source_table) \
+            .filter(col("ingestion_date") == self.ds) \
+            .limit(500)
         return self
 
     def base_transform(self):
@@ -85,22 +85,37 @@ class BaseIcebergTransformer(ABC):
     def transform(self):
         return self
 
-    def load(self):
-        if self.df is None:
-            return self
-
+    def prepare_target_table(self):
+        """Kiểm tra namespace và tạo bảng target nếu chưa tồn tại trước khi extract."""
         namespace = ".".join(self.target_table.split(".")[:-1])
         if namespace:
             self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
 
-        logger.info(f"[{self.table_name}] 5. Load: Đang thực hiện ghi dữ liệu vào {self.target_table}...")
-
         if not self.spark.catalog.tableExists(self.target_table):
+            logger.info(f"[{self.table_name}] 0. Prepare: Bảng {self.target_table} chưa tồn tại. Đang tạo...")
+            # Lấy schema bằng cách chạy flow transform trên dữ liệu rỗng
+            temp_df = self.spark.table(self.source_table).limit(0)
+            original_df = self.df
+            self.df = temp_df
+            self.base_transform().transform()
             self._create_table()
+            # Reset lại df để không ảnh hưởng đến bước extract
+            self.df = original_df
         else:
-            # Sắp xếp nhẹ trước khi ghi để giảm áp lực ghi vào Partition của Iceberg
-            self.df.coalesce(1).sortWithinPartitions("created_at").writeTo(self.target_table).append()
-            logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu.")
+            logger.info(f"[{self.table_name}] 0. Prepare: Bảng {self.target_table} đã tồn tại.")
+        
+        return self
+
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 5. Load: Bắt đầu quá trình ghi dữ liệu vào {self.target_table}")
+
+        # Bảng đã được chuẩn bị ở bước prepare_target_table, chỉ thực hiện append
+        # Sắp xếp nhẹ trước khi ghi để giảm áp lực ghi vào Partition của Iceberg
+        self.df.writeTo(self.target_table).append()
+        logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu.")
         
         return self
 
@@ -148,7 +163,7 @@ def main():
 
     transformer = transformer_cls(table_name, ds, source_table, target_table)
     try:
-        transformer.extract().base_transform().transform().load()
+        transformer.prepare_target_table().extract().base_transform().transform().load()
     finally:
         # QUAN TRỌNG: Luôn giải phóng bộ nhớ
         transformer.spark.stop()

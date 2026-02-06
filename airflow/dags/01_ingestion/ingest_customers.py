@@ -1,6 +1,6 @@
 import logging
 import pendulum
-from airflow.decorators import dag
+from airflow.sdk import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from utils.path_node import path_manager
 

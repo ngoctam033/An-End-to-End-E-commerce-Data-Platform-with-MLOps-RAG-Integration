@@ -1,6 +1,6 @@
 import logging
 import pendulum
-from airflow.decorators import dag
+from airflow.sdk import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from utils.path_node import path_manager
 
@@ -36,26 +36,26 @@ def ingest_product_iceberg():
         # Arguments: <table_name> <ds> <sql_query>
                 application_args=["product", "{{ ds }}", "SELECT * FROM product", path_manager.iceberg.raw.product.get_table()],
         conf={
-            # Resource Allocation
-            'spark.cores.max': '1',
-            'spark.executor.cores': '1',
-            'spark.executor.memory': '1g',
-            'spark.driver.memory': '1g',
+            # # Resource Allocation
+            # 'spark.cores.max': '1',
+            # 'spark.executor.cores': '1',
+            # 'spark.executor.memory': '1g',
+            # 'spark.driver.memory': '1g',
 
-            # Iceberg with Hadoop Catalog
-            'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
-            'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
-            'spark.sql.catalog.iceberg.type': 'hadoop',
-            'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
+            # # Iceberg with Hadoop Catalog
+            # 'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
+            # 'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
+            # 'spark.sql.catalog.iceberg.type': 'hadoop',
+            # 'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
             
-            # Hadoop/S3A Configs
-            'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
-            'spark.hadoop.fs.s3a.access.key': 'admin',
-            'spark.hadoop.fs.s3a.secret.key': 'admin123',
-            'spark.hadoop.fs.s3a.path.style.access': 'true',
-            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
-            'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
-            'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
+            # # Hadoop/S3A Configs
+            # 'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
+            # 'spark.hadoop.fs.s3a.access.key': 'admin',
+            # 'spark.hadoop.fs.s3a.secret.key': 'admin123',
+            # 'spark.hadoop.fs.s3a.path.style.access': 'true',
+            # 'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+            # 'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
+            # 'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
         }
     )
 

@@ -1,5 +1,5 @@
 import pendulum
-from airflow.decorators import dag
+from airflow.sdk import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from utils.path_node import path_manager
 
@@ -29,26 +29,6 @@ def ingest_order_items_iceberg():
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
         application_args=["order_items", "{{ ds }}", "SELECT * FROM order_items", path_manager.iceberg.raw.order_items.get_table(), "id"],
         conf={
-            # 'spark.cores.max': '1',
-            'spark.executor.instances': '1',
-            'spark.executor.cores': '2',
-            'spark.executor.memory': '8g',
-            'spark.driver.memory': '2g',
-            'spark.memory.offHeap.enabled': 'true',
-            'spark.memory.offHeap.size': '2g',
-            'spark.sql.execution.arrow.pyspark.enabled': 'false',
-            'spark.sql.parquet.enableVectorizedReader': 'false',
-            'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
-            'spark.sql.catalog.iceberg': 'org.apache.iceberg.spark.SparkCatalog',
-            'spark.sql.catalog.iceberg.type': 'hadoop',
-            'spark.sql.catalog.iceberg.warehouse': 's3a://datalake',
-            'spark.hadoop.fs.s3a.endpoint': 'http://minio1:9000',
-            'spark.hadoop.fs.s3a.access.key': 'admin',
-            'spark.hadoop.fs.s3a.secret.key': 'admin123',
-            'spark.hadoop.fs.s3a.path.style.access': 'true',
-            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
-            'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
-            'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
         }
     )
 
