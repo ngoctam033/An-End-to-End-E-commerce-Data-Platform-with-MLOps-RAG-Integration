@@ -3,7 +3,7 @@ services:
     image: prefecthq/prefect:2-latest
     restart: always
     volumes:
-      - ./prefect:/opt/prefect/flows # Mount code của bạn vào đây
+      - .:/opt/prefect/flows # Mount code của bạn vào đây
     entrypoint: ["/opt/prefect/entrypoint.sh", "prefect", "server", "start"]
     environment:
       # Cấu hình kết nối DB
@@ -13,7 +13,7 @@ services:
       - PREFECT_SERVER_API_HOST=0.0.0.0
     ports:
       - "4200:4200"
-    cpus: "2.0"
+    #cpus: "2.0"
     # depends_on:
       # - db
     networks:

@@ -49,10 +49,12 @@ x-airflow-common:
   # In order to add custom dependencies or upgrade provider distributions you can use your extended image.
   # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
   # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-  build: ./airflow
+  build:
+    context: ..
+    dockerfile: airflow/Dockerfile
   # build: .
   env_file:
-    - ${ENV_FILE_PATH:-.env}
+    - ${ENV_FILE_PATH:-../.env}
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -82,7 +84,7 @@ x-airflow-common:
                                     "conn_type": "spark",
                                     "host": "spark://spark",
                                     "port": 7077,
-                                    "extra": "{\"deploy_mode\": \"client\", \"master\": \"spark://spark:7077\"}"
+                                    "extra": "{\"deploy_mode\": \"cluster\", \"master\": \"spark://spark:7077\"}"
                                   }'
     # AIRFLOW_CONN_SPARK_DEFAULT: '{
     #                                 "conn_type": "spark",
@@ -93,10 +95,10 @@ x-airflow-common:
     AIRFLOW_CONN_MINIO_DEFAULT: 'aws://admin:admin123@?endpoint_url=http%3A%2F%2Fminio1%3A9000'
     AIRFLOW_CONN_POSTGRES_DEFAULT: 'postgres://postgres:password@db:5432/ecommerce_db'
   volumes:
-    - ./airflow/dags:/opt/airflow/dags
-    - ./airflow/logs:/opt/airflow/logs
-    - ./airflow/config:/opt/airflow/config
-    - ./airflow/plugins:/opt/airflow/plugins
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./config:/opt/airflow/config
+    - ./plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-50000}:0"
   cpus: "2.0"
   depends_on:

@@ -1,0 +1,71 @@
+services:
+  spark:
+    build:
+      context: ..
+      dockerfile: spark/Dockerfile
+    ports:
+      - "8888:8888" # Jupyter Notebook
+      - "8080:8080" # Spark UI
+    networks:
+      - ecommerce_network
+    depends_on:
+      - minio1
+    volumes:
+      - ../airflow/dags:/opt/airflow/dags
+      # - ./warehouse:/home/iceberg/warehouse
+      - ../notebooks:/home/iceberg/notebooks
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=admin123
+      - AWS_REGION=us-east-1
+      - SPARK_UI_PORT=8080
+      - SPARK_MASTER_PORT=7077
+      # Giới hạn tài nguyên Master
+      - SPARK_MASTER_MEMORY=1g
+      - SPARK_DAEMON_MEMORY=512m
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1536M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    entrypoint: >
+        /bin/sh -c "
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --notebook-dir=/home/iceberg/notebooks &
+        /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
+
+  # Worker Node (Mới thêm: Chịu trách nhiệm xử lý tính toán)
+  spark-worker:
+    build:
+      context: ..
+      dockerfile: spark/Dockerfile
+    container_name: spark-worker
+    ports:
+      - "8082:8081" # Worker UI
+    networks:
+      - ecommerce_network
+    depends_on:
+      - spark
+    volumes:
+      - ../airflow/dags:/opt/airflow/dags
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=admin123
+      - AWS_REGION=us-east-1
+      # Giới hạn tài nguyên Worker
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=1536m
+      - SPARK_DAEMON_MEMORY=256m
+      - SPARK_EXECUTOR_MEMORY=1g
+      - SPARK_EXECUTOR_CORES=1
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+    entrypoint: >
+      /bin/sh -c "
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark:7077"
