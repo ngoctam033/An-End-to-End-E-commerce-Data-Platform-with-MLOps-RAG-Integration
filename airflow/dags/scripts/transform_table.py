@@ -70,8 +70,7 @@ class BaseIcebergTransformer(ABC):
         logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table} (giới hạn 500 dòng)")
         # Lọc theo ingestion_date và giới hạn 500 dòng
         self.df = self.spark.table(self.source_table) \
-            .filter(col("ingestion_date") == self.ds) \
-            .limit(500)
+            .filter(col("ingestion_date") == self.ds)
         return self
 
     def base_transform(self):

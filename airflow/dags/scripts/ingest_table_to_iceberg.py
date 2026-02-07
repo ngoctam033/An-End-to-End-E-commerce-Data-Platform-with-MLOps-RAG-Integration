@@ -36,12 +36,13 @@ class BaseIcebergIngestor(ABC):
             'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
             'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
             'spark.hadoop.fs.s3a.metrics.enabled': 'false',
-            # CẤU HÌNH TÀI NGUYÊN TỐI ĐA
-            'spark.cores.max': '12',
-            'spark.executor.cores': '4',
-            'spark.executor.memory': '8g',
-            'spark.driver.memory': '2g',
-            'spark.executor.memoryOverhead': '2g',
+            # CẤU HÌNH TÀI NGUYÊN (Tối ưu cho 12 Cores / 8GB RAM Total)
+            # Worker: 7GB -> Chạy 2 Executor (2GB + 512MB Overhead) + Driver (1GB) = 6GB Total Used
+            'spark.cores.max': '2',
+            'spark.executor.cores': '1',
+            'spark.executor.memory': '1g',
+            'spark.driver.memory': '512m',
+            'spark.executor.memoryOverhead': '256m',
         }
         
         for k, v in defaults.items():
