@@ -20,17 +20,17 @@ services:
       - AWS_REGION=us-east-1
       - SPARK_UI_PORT=8080
       - SPARK_MASTER_PORT=7077
-      # Giới hạn tài nguyên Master
-      - SPARK_MASTER_MEMORY=1g
-      - SPARK_DAEMON_MEMORY=512m
+      # Giới hạn tài nguyên Master (Tối thiểu hóa để dành RAM cho Worker)
+      - SPARK_MASTER_MEMORY=512m
+      - SPARK_DAEMON_MEMORY=256m
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 1536M
-        reservations:
           cpus: '0.5'
-          memory: 512M
+          memory: 1G
+        reservations:
+          cpus: '0.1'
+          memory: 256M
     entrypoint: >
         /bin/sh -c "
         jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --notebook-dir=/home/iceberg/notebooks &
@@ -54,18 +54,21 @@ services:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=admin123
       - AWS_REGION=us-east-1
-      # Giới hạn tài nguyên Worker
-      - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=1536m
-      - SPARK_DAEMON_MEMORY=256m
-      - SPARK_EXECUTOR_MEMORY=1g
-      - SPARK_EXECUTOR_CORES=1
+      # Giới hạn tài nguyên Worker (12 Cores / 7GB cho Executor Pool)
+      - SPARK_WORKER_CORES=12
+      - SPARK_WORKER_MEMORY=7g
+      - SPARK_DAEMON_MEMORY=512m
+      # Config mặc định executor (sẽ bị override bởi job)
+      - SPARK_EXECUTOR_MEMORY=2g
+      - SPARK_EXECUTOR_CORES=5
     deploy:
       resources:
         limits:
-          memory: 2G
+          cpus: '12.0'
+          memory: 8G
         reservations:
-          memory: 1G
+          cpus: '2.0'
+          memory: 4G
     entrypoint: >
       /bin/sh -c "
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark:7077"

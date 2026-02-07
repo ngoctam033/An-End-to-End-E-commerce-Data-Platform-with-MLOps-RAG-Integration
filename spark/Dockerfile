@@ -1,5 +1,4 @@
-FROM apache/spark:3.5.0
-
+FROM tabulario/spark-iceberg
 USER root
 
 # Cài đặt Jupyter để giữ nguyên tính năng trên port 8888
