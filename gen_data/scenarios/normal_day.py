@@ -57,5 +57,5 @@ class NormalDaySimulator(BaseSimulator):
                 
             except Exception as e:
                 logger.error(f"Lỗi xảy ra trong vòng lặp mô phỏng: {e}")
-                time.sleep(60)
-            time.sleep(60)
+                # time.sleep(1)
+            # time.sleep(1)
