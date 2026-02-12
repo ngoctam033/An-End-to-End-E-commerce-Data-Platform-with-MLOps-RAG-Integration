@@ -1,8 +1,9 @@
 FROM tabulario/spark-iceberg
 USER root
 
-# Cài đặt Jupyter để giữ nguyên tính năng trên port 8888
-RUN pip install --no-cache-dir jupyterlab notebook && \
+# Cài đặt Jupyter từ local python packages (setup/) để tránh tải lại
+COPY setup/python_packages /tmp/python_packages
+RUN pip install --no-cache-dir --no-index --find-links=/tmp/python_packages jupyterlab notebook && \
     mkdir -p /home/iceberg/notebooks
 
 # Copy local JARs

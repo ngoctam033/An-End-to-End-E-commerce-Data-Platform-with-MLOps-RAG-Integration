@@ -1,0 +1,7 @@
+pyspark==3.5.5
+pyarrow
+apache-airflow-providers-apache-spark
+apache-airflow-providers-postgres
+apache-airflow-providers-amazon
+pyiceberg[s3fs,pyarrow]
+s3fs

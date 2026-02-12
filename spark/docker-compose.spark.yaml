@@ -3,6 +3,7 @@ services:
     build:
       context: ..
       dockerfile: spark/Dockerfile
+    container_name: spark_master
     ports:
       - "8888:8888" # Jupyter Notebook
       - "8080:8080" # Spark UI

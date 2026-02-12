@@ -1,9 +1,11 @@
 .venv
+.agent/
 gen_data/logs/
 airflow/config/
 airflow/logs/
 airflow/plugins/
 jars/
+setup/
 __pycache__/
 *.pyc
 *.pyo
