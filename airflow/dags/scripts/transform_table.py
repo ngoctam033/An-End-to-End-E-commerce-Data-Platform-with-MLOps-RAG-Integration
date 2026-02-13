@@ -20,12 +20,6 @@ class BaseIcebergTransformer(ABC):
         spark_conf = SparkConf()
         
         # Cấu hình JVM tối ưu cho Java 17 và máy yếu
-        jvm_flags = (
-            "-XX:+UseG1GC "
-            "--add-opens=java.base/java.nio=ALL-UNNAMED "
-            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED "
-            "-Dio.netty.tryReflectionSetAccessible=true"
-        )
 
         defaults = {
             'spark.sql.extensions': 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions',
@@ -46,14 +40,7 @@ class BaseIcebergTransformer(ABC):
             'spark.executor.memory': '1g',
             'spark.driver.memory': '512m',
             'spark.executor.memoryOverhead': '256m',
-            # GIẢM TỐI ĐA SỰ SONG SONG ĐỂ TRÁNH LỖI 134 VÀ SHUFFLE FAILURE
-            'spark.sql.shuffle.partitions': '1',
-            'spark.default.parallelism': '1',
-            'spark.memory.fraction': '0.7',
-            'spark.sql.adaptive.enabled': 'true',
             'spark.sql.iceberg.handle-timestamp-without-timezone': 'true',
-            'spark.executor.extraJavaOptions': jvm_flags,
-            'spark.driver.extraJavaOptions': jvm_flags
         }
         
         for k, v in defaults.items():
