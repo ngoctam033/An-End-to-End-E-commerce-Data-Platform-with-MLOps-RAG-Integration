@@ -22,8 +22,7 @@ def ingest_geo_location_iceberg():
         task_id='spark_ingest_geo_location_to_minio',
         conn_id='spark_default',
         application='/opt/airflow/dags/scripts/ingest_table_to_iceberg.py',
-                application_args=["geo_location", "{{ ds }}", "SELECT * FROM geo_location", path_manager.iceberg.raw.geo_location.get_table()],
-
+        application_args=["geo_location", "{{ ds }}", "SELECT * FROM geo_location", path_manager.iceberg.raw.geo_location.get_table()],
     )
     ingest_job
 

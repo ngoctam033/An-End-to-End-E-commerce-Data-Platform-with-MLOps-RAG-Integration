@@ -67,8 +67,7 @@ class BaseIcebergTransformer(ABC):
         self.df = None
 
     def extract(self):
-        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table} (giới hạn 500 dòng)")
-        # Lọc theo ingestion_date và giới hạn 500 dòng
+        logger.info(f"[{self.table_name}] 1. Extraction: Đọc từ {self.source_table}")
         self.df = self.spark.table(self.source_table) \
             .filter(col("ingestion_date") == self.ds)
         return self
@@ -115,7 +114,34 @@ class BaseIcebergTransformer(ABC):
         # Sắp xếp nhẹ trước khi ghi để giảm áp lực ghi vào Partition của Iceberg
         self.df.writeTo(self.target_table).append()
         logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu.")
+        return self
+
+class GeoLocationTransformer(BaseIcebergTransformer):
+    """Transformer riêng cho geo_location với lô 5000 dòng"""
+    def transform(self):
+        if self.df is not None:
+            logger.info(f"[{self.table_name}] 4. Specific Transform: GeoLocation (Batch 5000)")
+        return self
+
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 5. Load (Batch): Ghi dữ liệu geo_location theo lô 5000 dòng")
         
+        total_rows = self.df.count()
+        num_partitions = math.ceil(total_rows / 10000)
+        
+        writer = self.df.repartition(num_partitions).writeTo(self.target_table)
+        
+        if not self.spark.catalog.tableExists(self.target_table):
+            writer.tableProperty("format-version", "2") \
+                .partitionedBy("ingestion_date") \
+                .create()
+        else:
+            writer.append()
+            
+        logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu cho GeoLocation.")
         return self
 
     def _create_table(self):
@@ -157,7 +183,11 @@ def main():
         sys.exit(1)
 
     ds, table_name, source_table, target_table = sys.argv[1:5]
-    registry = {"orders": OrdersTransformer, "order_items": OrderItemsTransformer}
+    registry = {
+        "orders": OrdersTransformer, 
+        "order_items": OrderItemsTransformer,
+        "geo_location": GeoLocationTransformer
+    }
     transformer_cls = registry.get(table_name, DefaultTransformer)
 
     transformer = transformer_cls(table_name, ds, source_table, target_table)

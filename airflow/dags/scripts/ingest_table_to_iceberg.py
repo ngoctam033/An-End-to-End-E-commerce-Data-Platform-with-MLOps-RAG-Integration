@@ -4,6 +4,7 @@ from abc import ABC
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit, current_timestamp
+import math
 
 # Cấu hình Logging
 logging.basicConfig(level=logging.INFO)
@@ -117,6 +118,39 @@ class BaseIcebergIngestor(ABC):
         logger.info(f"[{self.table_name}] Hoàn thành Extract & Load.")
         return self
 
+class GeoLocationIngestor(BaseIcebergIngestor):
+    """Xử lý riêng cho bảng geo_location với lô 5000 dòng"""
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 2. Load (Batch): Đang lưu geo_location theo lô 5000 dòng")
+        
+        namespace = ".".join(self.target_table.split(".")[:-1])
+        if namespace:
+            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
+
+        total_rows = self.df.count()
+        num_partitions = math.ceil(total_rows / 10000)
+        logger.info(f"[{self.table_name}] Tổng số dòng: {total_rows}. Chia thành {num_partitions} files.")
+
+        # Thêm table property để Iceberg biết chia file nhỏ hơn (nếu cần)
+        # Nhưng quan trọng nhất là repartition + partitionBy
+        writer = self.df.repartition(num_partitions).writeTo(self.target_table)
+        
+        if not self.spark.catalog.tableExists(self.target_table):
+            logger.info(f"[{self.table_name}] Khởi tạo bảng mới với property batching")
+            writer.tableProperty("format-version", "2") \
+                .tableProperty("write.target-file-size-bytes", "536870912") \
+                .partitionedBy("ingestion_date") \
+                .create()
+        else:
+            logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại")
+            writer.append()
+            
+        logger.info(f"[{self.table_name}] Hoàn thành Extract & Load cho GeoLocation.")
+        return self
+
 class DefaultIngestor(BaseIcebergIngestor):
     """Sử dụng trực tiếp logic mặc định của base class cho mục tiêu EL"""
     pass
@@ -132,10 +166,10 @@ def main():
     target_table = sys.argv[4]
     primary_key = sys.argv[5] if len(sys.argv) > 5 else None
 
-    # Khởi tạo Ingestor
-    ingestor = DefaultIngestor(table_name, ds, sql_query, target_table, primary_key)
+    registry = {"geo_location": GeoLocationIngestor}
+    ingestor_cls = registry.get(table_name, DefaultIngestor)
     
-    # Thực hiện chuỗi Extract & Load
+    ingestor = ingestor_cls(table_name, ds, sql_query, target_table, primary_key)
     ingestor.extract().load()
 
 if __name__ == "__main__":
