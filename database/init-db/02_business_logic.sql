@@ -16,9 +16,9 @@ BEGIN
             NEW.start_date, NEW.end_date;
         END IF;
 
-        -- Ensure End Date is in the future for NEW records (Business Rule)
-        IF TG_OP = 'INSERT' AND NEW.end_date < NOW() THEN
-             RAISE EXCEPTION 'End Date must be in the future for new records.';
+        -- Ensure End Date is after Created At for NEW records (Simulation Friendly)
+        IF TG_OP = 'INSERT' AND NEW.end_date < NEW.created_at THEN
+             RAISE EXCEPTION 'End Date must be after Created At for new records.';
         END IF;
     END IF;
     RETURN NEW;
