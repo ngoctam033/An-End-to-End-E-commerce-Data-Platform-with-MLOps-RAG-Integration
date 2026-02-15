@@ -17,3 +17,4 @@ __pycache__/
 .env.*
 .vscode/
 .idea/
+gen_data/simulation_time.txt

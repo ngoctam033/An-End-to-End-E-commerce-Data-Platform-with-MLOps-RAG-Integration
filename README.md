@@ -29,6 +29,12 @@ graph TD
 
 ## 🚀 Key Features
 
+*   **Omni-channel E-commerce Simulation**: Sophisticated business logic covering the entire retail ecosystem:
+    *   **Multi-channel Ecosystem**: Integrated flows for Shopee, Lazada, Tiki, and internal Website.
+    *   **Customer Loyalty System**: Dynamic tiering (Bronze to Platinum) based on spending and loyalty points.
+    *   **Advanced Order Management**: Complete lifecycle tracking from Pending to Delivered/Returned.
+    *   **Inventory & Logistics**: Multi-warehouse support with FIFO logs and safety stock alerts.
+    *   **Activity Intelligence**: Behavioral tracking (views, searches, cart actions) for RAG/MLOps integration.
 *   **Dynamic Data Generation**: Simulates realistic e-commerce scenarios including:
     *   **Normal Day**: Regular traffic and transaction patterns.
     *   **Flash Sale**: High-concurrency spikes in orders.
@@ -40,6 +46,21 @@ graph TD
     *   **Apache Spark**: Distributed processing for heavy data transformations.
     *   **MinIO**: S3-compatible object storage for the Data Lake.
 *   **Containerized Environment**: Fully containerized using Docker and Docker Compose for easy deployment.
+
+## 📊 Business Intelligence & KPIs
+
+Designed to support data-driven decision making, the platform facilitates tracking of:
+*   **Financial Metrics**: GMV (Gross Merchandise Value), AOV (Average Order Value), and detailed Profit Margin analysis.
+*   **Operational Excellence**: Shipping SLA compliance, Inventory Turnover rates, and Return Rate monitoring.
+*   **Customer Insights**: Retention rates, Cart Abandonment analysis, and Cart-to-Order conversion funnels.
+
+## 🗄️ Enhanced Data Schema
+
+The database schema (`01_schema.sql`) has been expanded to 20+ tables to support deep relational analysis:
+*   **Core Entities**: `orders`, `order_items`, `customers`, `products`, `inventory`.
+*   **Audit & Tracking**: `inventory_log`, `order_status_history`, `customer_activity_log`.
+*   **Experience & Retention**: `cart`, `cart_items`, `wishlist`, `order_return`.
+*   **Data Integrity**: Strict FK constraints and PL/pgSQL validation rules to ensure high-quality data for the Lakehouse.
 
 ## 🛠 Technology Stack
 
