@@ -82,10 +82,16 @@ TABLES = [
     "shipping_method", "customers", "geo_location", "warehouse", "inventory"
 ]
 
+GOLD_TABLES = [
+    "daily_sales_mart", "customer_analytics_mart", "product_performance_mart",
+    "logistics_mart", "inventory_snapshot_mart"
+]
+
 ALLOWED_PATHS = {
     "iceberg": {
         "raw": {table: {} for table in TABLES},
-        "silver": {table: {} for table in TABLES}
+        "silver": {table: {} for table in TABLES},
+        "gold": {table: {} for table in GOLD_TABLES}
     }
 }
 path_manager = PathManager(allowed_paths=ALLOWED_PATHS)

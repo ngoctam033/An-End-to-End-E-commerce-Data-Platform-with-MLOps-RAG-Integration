@@ -79,6 +79,13 @@ class BaseIcebergTransformer(ABC):
                 .withColumn("_source_table", lit(self.source_table))
         return self
 
+    def _create_table(self):
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới: {self.target_table}")
+        self.df.coalesce(1).writeTo(self.target_table) \
+            .tableProperty("format-version", "2") \
+            .partitionedBy(days("created_at")) \
+            .create()
+
     @abstractmethod
     def transform(self):
         return self
@@ -104,6 +111,22 @@ class BaseIcebergTransformer(ABC):
         
         return self
 
+    def run(self):
+        """Thực thi toàn bộ pipeline: Prepare -> Extract -> Transform -> Load"""
+        try:
+            self.prepare_target_table() \
+                .extract() \
+                .base_transform() \
+                .transform() \
+                .load()
+        except Exception as e:
+            logger.error(f"[{self.table_name}] Lỗi khi chạy pipeline: {str(e)}")
+            raise
+        finally:
+            if self.spark:
+                logger.info(f"[{self.table_name}] Đóng Spark Session.")
+                self.spark.stop()
+
     def load(self):
         if self.df is None:
             return self
@@ -117,38 +140,28 @@ class BaseIcebergTransformer(ABC):
         return self
 
 class GeoLocationTransformer(BaseIcebergTransformer):
-    """Transformer riêng cho geo_location với lô 5000 dòng"""
-    def transform(self):
-        if self.df is not None:
-            logger.info(f"[{self.table_name}] 4. Specific Transform: GeoLocation (Batch 5000)")
-        return self
+    """Transformer riêng cho geo_location tối ưu theo partition province_name"""
 
     def load(self):
         if self.df is None:
             return self
 
-        logger.info(f"[{self.table_name}] 5. Load (Batch): Ghi dữ liệu geo_location theo lô 5000 dòng")
+        logger.info(f"[{self.table_name}] 5. Load: Ghi dữ liệu geo_location tối ưu (repartition by province_name)")
         
-        total_rows = self.df.count()
-        num_partitions = math.ceil(total_rows / 10000)
-        
-        writer = self.df.repartition(num_partitions).writeTo(self.target_table)
-        
-        if not self.spark.catalog.tableExists(self.target_table):
-            writer.tableProperty("format-version", "2") \
-                .partitionedBy("ingestion_date") \
-                .create()
-        else:
-            writer.append()
+        # Bảng đã được chuẩn bị/tạo ở bước prepare_target_table (run pipeline)
+        self.df.repartition(col("province_name")).writeTo(self.target_table).append()
             
         logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu cho GeoLocation.")
         return self
+        
+    def transform(self):
+        return self
 
     def _create_table(self):
-        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới: {self.target_table}")
-        self.df.coalesce(1).writeTo(self.target_table) \
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới với partition province_name")
+        self.df.repartition(col("province_name")).writeTo(self.target_table) \
             .tableProperty("format-version", "2") \
-            .partitionedBy(days("created_at")) \
+            .partitionedBy("province_name") \
             .create()
 
 class OrdersTransformer(BaseIcebergTransformer):
@@ -189,13 +202,10 @@ def main():
         "geo_location": GeoLocationTransformer
     }
     transformer_cls = registry.get(table_name, DefaultTransformer)
-
+    
+    # Khởi tạo và chạy pipeline
     transformer = transformer_cls(table_name, ds, source_table, target_table)
-    try:
-        transformer.prepare_target_table().extract().base_transform().transform().load()
-    finally:
-        # QUAN TRỌNG: Luôn giải phóng bộ nhớ
-        transformer.spark.stop()
+    transformer.run()
 
 if __name__ == "__main__":
     main()

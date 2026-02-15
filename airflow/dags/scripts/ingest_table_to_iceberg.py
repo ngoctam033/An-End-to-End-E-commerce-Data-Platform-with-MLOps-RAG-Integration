@@ -4,7 +4,6 @@ from abc import ABC
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit, current_timestamp
-import math
 
 # Cấu hình Logging
 logging.basicConfig(level=logging.INFO)
@@ -130,19 +129,13 @@ class GeoLocationIngestor(BaseIcebergIngestor):
         if namespace:
             self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
 
-        total_rows = self.df.count()
-        num_partitions = math.ceil(total_rows / 10000)
-        logger.info(f"[{self.table_name}] Tổng số dòng: {total_rows}. Chia thành {num_partitions} files.")
-
-        # Thêm table property để Iceberg biết chia file nhỏ hơn (nếu cần)
-        # Nhưng quan trọng nhất là repartition + partitionBy
-        writer = self.df.repartition(num_partitions).writeTo(self.target_table)
+        writer = self.df.writeTo(self.target_table)
         
         if not self.spark.catalog.tableExists(self.target_table):
             logger.info(f"[{self.table_name}] Khởi tạo bảng mới với property batching")
             writer.tableProperty("format-version", "2") \
                 .tableProperty("write.target-file-size-bytes", "536870912") \
-                .partitionedBy("ingestion_date") \
+                .partitionedBy("province_name") \
                 .create()
         else:
             logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại")
