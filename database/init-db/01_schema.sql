@@ -17,7 +17,13 @@ CREATE TABLE orders (
     created_at TIMESTAMP ,
     updated_at TIMESTAMP ,
     total_price NUMERIC(11, 2) ,
-    profit NUMERIC(12, 2) 
+    profit NUMERIC(12, 2) ,
+    -- v2.0: Order lifecycle tracking
+    notes TEXT,
+    confirmed_at TIMESTAMP,
+    delivered_at TIMESTAMP,
+    cancelled_at TIMESTAMP,
+    cancel_reason VARCHAR(200)
 );
 
 CREATE TABLE order_items (
@@ -142,7 +148,11 @@ create table shipment (
     shipping_status VARCHAR(50) ,
     created_at TIMESTAMP ,
     updated_at TIMESTAMP ,
-    is_active BOOLEAN  DEFAULT TRUE
+    is_active BOOLEAN  DEFAULT TRUE,
+    -- v2.0: Delivery tracking
+    estimated_delivery TIMESTAMP,
+    actual_delivery TIMESTAMP,
+    delivery_attempts INT DEFAULT 0
 );
 
 -- logistics_partner
@@ -171,7 +181,16 @@ create table customers (
     geo_location_id BIGINT ,
     order_channel_id BIGINT ,
     created_at TIMESTAMP ,
-    is_active BOOLEAN  DEFAULT TRUE
+    is_active BOOLEAN  DEFAULT TRUE,
+    -- v2.0: Customer profile & tier system
+    name VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    tier VARCHAR(20) DEFAULT 'Bronze' CHECK (tier IN ('Bronze', 'Silver', 'Gold', 'Platinum')),
+    total_spent NUMERIC(15, 2) DEFAULT 0,
+    loyalty_points INT DEFAULT 0,
+    last_order_date TIMESTAMP,
+    updated_at TIMESTAMP
 );
 
 create table geo_location (
@@ -215,6 +234,96 @@ CREATE TABLE inventory (
     updated_at TIMESTAMP  DEFAULT now(),
     UNIQUE(product_id, warehouse_id) 
     -- mỗi sản phẩm chỉ có một bản ghi tồn kho trong mỗi kho
+);
+
+-- =============================================================================
+-- v2.0: NEW TABLES FOR ENHANCED BUSINESS FLOWS
+-- =============================================================================
+
+-- Bảng order_return (Quản lý trả hàng/hoàn tiền)
+CREATE TABLE order_return (
+    id SERIAL PRIMARY KEY,
+    order_id BIGINT NOT NULL,
+    customer_id BIGINT NOT NULL,
+    reason VARCHAR(200) NOT NULL,
+    return_type VARCHAR(50) NOT NULL CHECK (return_type IN ('refund', 'exchange', 'repair')),
+    status VARCHAR(50) NOT NULL DEFAULT 'pending' 
+        CHECK (status IN ('pending', 'approved', 'rejected', 'processing', 'completed')),
+    refund_amount NUMERIC(12, 2) DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT now(),
+    updated_at TIMESTAMP DEFAULT now(),
+    resolved_at TIMESTAMP
+);
+
+-- Bảng inventory_log (Lịch sử thay đổi tồn kho - Audit Trail)
+CREATE TABLE inventory_log (
+    id SERIAL PRIMARY KEY,
+    inventory_id BIGINT NOT NULL,
+    change_type VARCHAR(50) NOT NULL 
+        CHECK (change_type IN ('sale', 'restock', 'return', 'adjustment', 'damage')),
+    quantity_change INT NOT NULL,
+    quantity_before INT NOT NULL,
+    quantity_after INT NOT NULL,
+    reference_id BIGINT,
+    reference_type VARCHAR(50) CHECK (reference_type IN ('order', 'purchase_order', 'return', 'manual')),
+    note TEXT,
+    changed_by VARCHAR(100) DEFAULT 'System',
+    created_at TIMESTAMP DEFAULT now()
+);
+
+-- Bảng customer_activity_log (Lịch sử hoạt động khách hàng)
+CREATE TABLE customer_activity_log (
+    id SERIAL PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    activity_type VARCHAR(50) NOT NULL 
+        CHECK (activity_type IN ('view', 'search', 'add_to_cart', 'remove_from_cart', 'purchase', 'review', 'wishlist')),
+    product_id BIGINT,
+    channel VARCHAR(50),
+    metadata JSONB,
+    created_at TIMESTAMP DEFAULT now()
+);
+
+-- Bảng wishlist (Danh sách yêu thích)
+CREATE TABLE wishlist (
+    id SERIAL PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    added_at TIMESTAMP DEFAULT now(),
+    is_active BOOLEAN DEFAULT TRUE,
+    UNIQUE(customer_id, product_id)
+);
+
+-- Bảng cart (Giỏ hàng)
+CREATE TABLE cart (
+    id SERIAL PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    channel VARCHAR(50),                -- Kênh mua: Shopee, Lazada, Tiki, Website
+    status VARCHAR(20) NOT NULL DEFAULT 'active'
+        CHECK (status IN ('active', 'checked_out', 'abandoned', 'expired')),
+    total_amount NUMERIC(12, 2) DEFAULT 0,
+    item_count INT DEFAULT 0,
+    expires_at TIMESTAMP,               -- Giỏ hàng hết hạn sau 7 ngày không hoạt động
+    checked_out_at TIMESTAMP,           -- Thời điểm checkout thành đơn hàng
+    order_id BIGINT,                    -- Liên kết đơn hàng sau khi checkout
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT now(),
+    updated_at TIMESTAMP DEFAULT now()
+);
+
+-- Bảng cart_items (Chi tiết giỏ hàng)
+CREATE TABLE cart_items (
+    id SERIAL PRIMARY KEY,
+    cart_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    unit_price NUMERIC(12, 2) NOT NULL, -- Snapshot giá tại thời điểm thêm vào giỏ
+    discount_amount NUMERIC(12, 2) DEFAULT 0,
+    amount NUMERIC(12, 2) NOT NULL,     -- = unit_price * quantity - discount_amount
+    added_at TIMESTAMP DEFAULT now(),
+    updated_at TIMESTAMP DEFAULT now(),
+    is_active BOOLEAN DEFAULT TRUE,
+    UNIQUE(cart_id, product_id)          -- Mỗi sản phẩm chỉ xuất hiện 1 lần trong giỏ
 );
     
 --tạo foreign key cho các bảng
@@ -261,6 +370,33 @@ ALTER TABLE product_review
     ADD CONSTRAINT fk_product_review_customer
         FOREIGN KEY (customer_id) REFERENCES customers(id);
 
+-- v2.0: Foreign keys for new tables
+ALTER TABLE order_return
+    ADD CONSTRAINT fk_return_order FOREIGN KEY (order_id) REFERENCES orders(id),
+    ADD CONSTRAINT fk_return_customer FOREIGN KEY (customer_id) REFERENCES customers(id);
+
+ALTER TABLE inventory_log
+    ADD CONSTRAINT fk_inventory_log_inventory 
+        FOREIGN KEY (inventory_id) REFERENCES inventory(id);
+
+ALTER TABLE customer_activity_log
+    ADD CONSTRAINT fk_activity_customer 
+        FOREIGN KEY (customer_id) REFERENCES customers(id),
+    ADD CONSTRAINT fk_activity_product 
+        FOREIGN KEY (product_id) REFERENCES product(id);
+
+ALTER TABLE wishlist
+    ADD CONSTRAINT fk_wishlist_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    ADD CONSTRAINT fk_wishlist_product FOREIGN KEY (product_id) REFERENCES product(id);
+
+ALTER TABLE cart
+    ADD CONSTRAINT fk_cart_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    ADD CONSTRAINT fk_cart_order FOREIGN KEY (order_id) REFERENCES orders(id);
+
+ALTER TABLE cart_items
+    ADD CONSTRAINT fk_cart_items_cart FOREIGN KEY (cart_id) REFERENCES cart(id),
+    ADD CONSTRAINT fk_cart_items_product FOREIGN KEY (product_id) REFERENCES product(id);
+
 -- Chèn dữ liệu từ file CSV vào bảng
 COPY geo_location (ward_code, ward_name, ward_type, district_name, province_name)
 FROM '/docker-entrypoint-initdb.d/data_geo.csv'
@@ -304,17 +440,52 @@ FROM '/docker-entrypoint-initdb.d/product.csv'
 DELIMITER ','
 CSV HEADER;
 
-copy payment (id, payment_method, payment_status, transaction_id, amount,
-    created_at, updated_at, is_active)
-FROM '/docker-entrypoint-initdb.d/payment.csv'  
+-- Sử dụng bảng tạm để load dữ liệu từ CSV và bỏ qua cột id
+CREATE TEMP TABLE temp_payment (
+    id BIGINT,
+    payment_method VARCHAR(50),
+    payment_status VARCHAR(50),
+    transaction_id VARCHAR(100),
+    amount NUMERIC(12, 2),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    is_active BOOLEAN
+);
+
+COPY temp_payment (id, payment_method, payment_status, transaction_id, amount, created_at, updated_at, is_active)
+FROM '/docker-entrypoint-initdb.d/payment.csv'
 DELIMITER ','
 CSV HEADER;
 
-copy discount (id, name, discount_type, value, start_date, end_date, is_active,
-    created_at, updated_at)
+INSERT INTO payment (payment_method, payment_status, transaction_id, amount, created_at, updated_at, is_active)
+SELECT payment_method, payment_status, transaction_id, amount, created_at, updated_at, is_active
+FROM temp_payment;
+
+DROP TABLE temp_payment;
+
+-- Sử dụng bảng tạm cho discount
+CREATE TEMP TABLE temp_discount (
+    id BIGINT,
+    name VARCHAR(100),
+    discount_type VARCHAR(50),
+    value NUMERIC(12, 2),
+    start_date TIMESTAMP,
+    end_date TIMESTAMP,
+    is_active BOOLEAN,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+COPY temp_discount (id, name, discount_type, value, start_date, end_date, is_active, created_at, updated_at)
 FROM '/docker-entrypoint-initdb.d/discount.csv'
 DELIMITER ','
 CSV HEADER;
+
+INSERT INTO discount (name, discount_type, value, start_date, end_date, is_active, created_at, updated_at)
+SELECT name, discount_type, value, start_date, end_date, is_active, created_at, updated_at
+FROM temp_discount;
+
+DROP TABLE temp_discount;
 
 copy warehouse (id, name, address, geo_location_id, capacity_sqm,
     manager, contact_phone, is_active, created_at, updated_at)
