@@ -52,7 +52,7 @@ class InventoryGenerator(BaseGenerator):
                 -- 4. Cập nhật Database
                 UPDATE inventory
                 SET quantity = _new_qty,
-                    updated_at = NOW()
+                    updated_at = NOW()::TIMESTAMP
                 WHERE warehouse_id = _selected_warehouse_id 
                 AND product_id = _selected_product_id;
 

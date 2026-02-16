@@ -79,12 +79,13 @@ TABLES = [
     "orders", "order_items", "order_channel", "order_status_history",
     "product", "product_review", "sub_category", "category",
     "discount", "brand", "payment", "shipment", "logistics_partner",
-    "shipping_method", "customers", "geo_location", "warehouse", "inventory"
+    "shipping_method", "customers", "geo_location", "warehouse", "inventory",
+    "order_return", "inventory_log", "customer_activity_log", "wishlist", "cart", "cart_items"
 ]
 
 GOLD_TABLES = [
     "daily_sales_mart", "customer_analytics_mart", "product_performance_mart",
-    "logistics_mart", "inventory_snapshot_mart"
+    "logistics_mart", "inventory_snapshot_mart", "cart_analytics_mart"
 ]
 
 ALLOWED_PATHS = {

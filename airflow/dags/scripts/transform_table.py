@@ -187,8 +187,66 @@ class OrderItemsTransformer(BaseIcebergTransformer):
                 .dropDuplicates(["order_id", "product_id"])
         return self
 
+class OrderStatusHistoryTransformer(BaseIcebergTransformer):
+    def _create_table(self):
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới partition by changed_at")
+        self.df.coalesce(1).writeTo(self.target_table) \
+            .tableProperty("format-version", "2") \
+            .partitionedBy(days("changed_at")) \
+            .create()
+
+    def transform(self):
+        if self.df is not None:
+            logger.info(f"[{self.table_name}] 4. Specific Transform: Order Status History")
+            self.df = self.df \
+                .withColumn("changed_at", from_utc_timestamp(col("changed_at"), "GMT+7")) \
+                .withColumn("status", upper(trim(col("status").cast("string"))))
+        return self
+
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 5. Load: Ghi dữ liệu Order Status History với chế độ overwrite partition")
+        self.df.writeTo(self.target_table).overwrite(col("ingestion_date") == self.ds)
+        logger.info(f"[{self.table_name}] 5. Load: Hoàn tất ghi dữ liệu.")
+        return self
+
+class WishlistTransformer(BaseIcebergTransformer):
+    def _create_table(self):
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới partition by added_at")
+        self.df.coalesce(1).writeTo(self.target_table) \
+            .tableProperty("format-version", "2") \
+            .partitionedBy(days("added_at")) \
+            .create()
+
+    def transform(self):
+        if self.df is not None:
+            logger.info(f"[{self.table_name}] 4. Specific Transform: Wishlist")
+            self.df = self.df \
+                .withColumn("added_at", from_utc_timestamp(col("added_at"), "GMT+7"))
+        return self
+
+class CartItemsTransformer(BaseIcebergTransformer):
+    def _create_table(self):
+        logger.info(f"[{self.table_name}] Khởi tạo bảng target mới partition by added_at")
+        self.df.coalesce(1).writeTo(self.target_table) \
+            .tableProperty("format-version", "2") \
+            .partitionedBy(days("added_at")) \
+            .create()
+
+    def transform(self):
+        if self.df is not None:
+            logger.info(f"[{self.table_name}] 4. Specific Transform: Cart Items")
+            self.df = self.df \
+                .withColumn("added_at", from_utc_timestamp(col("added_at"), "GMT+7"))
+        return self
+
 class DefaultTransformer(BaseIcebergTransformer):
     def transform(self):
+        # Mặc định chuyển đổi created_at sang GMT+7 nếu tồn tại
+        if self.df is not None and "created_at" in self.df.columns:
+             self.df = self.df.withColumn("created_at", from_utc_timestamp(col("created_at"), "GMT+7"))
         return self
 
 def main():
@@ -199,7 +257,10 @@ def main():
     registry = {
         "orders": OrdersTransformer, 
         "order_items": OrderItemsTransformer,
-        "geo_location": GeoLocationTransformer
+        "geo_location": GeoLocationTransformer,
+        "order_status_history": OrderStatusHistoryTransformer,
+        "wishlist": WishlistTransformer,
+        "cart_items": CartItemsTransformer
     }
     transformer_cls = registry.get(table_name, DefaultTransformer)
     

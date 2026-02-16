@@ -117,6 +117,54 @@ class BaseIcebergIngestor(ABC):
         logger.info(f"[{self.table_name}] Hoàn thành Extract & Load.")
         return self
 
+class OrderStatusHistoryIngestor(BaseIcebergIngestor):
+    """Xử lý riêng cho bảng order_status_history (partition theo changed_at)"""
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table} (Partition: changed_at)")
+        
+        namespace = ".".join(self.target_table.split(".")[:-1])
+        if namespace:
+            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
+
+        if not self.spark.catalog.tableExists(self.target_table):
+            self.df.writeTo(self.target_table) \
+                .tableProperty("format-version", "2") \
+                .partitionedBy("changed_at") \
+                .create()
+        else:
+            self.df.writeTo(self.target_table).append()
+            
+        return self
+
+class WishlistIngestor(BaseIcebergIngestor):
+    """Xử lý riêng cho bảng wishlist (partition theo added_at)"""
+    def load(self):
+        if self.df is None:
+            return self
+
+        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table} (Partition: added_at)")
+        
+        namespace = ".".join(self.target_table.split(".")[:-1])
+        if namespace:
+            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
+
+        if not self.spark.catalog.tableExists(self.target_table):
+            self.df.writeTo(self.target_table) \
+                .tableProperty("format-version", "2") \
+                .partitionedBy("added_at") \
+                .create()
+        else:
+            self.df.writeTo(self.target_table).append()
+            
+        return self
+
+class CartItemsIngestor(WishlistIngestor):
+    """Xử lý riêng cho bảng cart_items (partition theo added_at - kế thừa WishlistIngestor)"""
+    pass
+
 class GeoLocationIngestor(BaseIcebergIngestor):
     """Xử lý riêng cho bảng geo_location với lô 5000 dòng"""
     def load(self):
@@ -159,7 +207,12 @@ def main():
     target_table = sys.argv[4]
     primary_key = sys.argv[5] if len(sys.argv) > 5 else None
 
-    registry = {"geo_location": GeoLocationIngestor}
+    registry = {
+        "geo_location": GeoLocationIngestor,
+        "order_status_history": OrderStatusHistoryIngestor,
+        "wishlist": WishlistIngestor,
+        "cart_items": CartItemsIngestor
+    }
     ingestor_cls = registry.get(table_name, DefaultIngestor)
     
     ingestor = ingestor_cls(table_name, ds, sql_query, target_table, primary_key)

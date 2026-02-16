@@ -5,74 +5,72 @@ from datetime import datetime
 
 class CustomersGenerator(BaseGenerator):
     def __init__(self):
-        # Khởi tạo class cha
         super().__init__()
         self.sql_command = """
-            -- Sử dụng khối lệnh DO (PL/pgSQL) để xử lý logic sinh mã phức tạp
             DO $$
             DECLARE
                 _random_ward_code BIGINT;
                 _random_channel_id BIGINT;
-                _channel_code VARCHAR(20);      -- Biến lưu mã viết tắt của kênh (ví dụ: 'FB', 'WEB')
-                _current_count BIGINT;          -- Biến đếm số lượng khách hàng hiện tại
-                _new_customer_code VARCHAR(50); -- Biến lưu mã khách hàng cuối cùng
+                _channel_code VARCHAR(20);
+                _current_count BIGINT;
+                _new_customer_code VARCHAR(50);
+                _name VARCHAR(100);
+                _email VARCHAR(100);
+                _phone VARCHAR(20);
             BEGIN
-                -- Bước 1: Tìm ward_code ngẫu nhiên
+                -- Bước 1: Chọn vị trí ngẫu nhiên
                 SELECT ward_code INTO _random_ward_code
-                FROM geo_location
-                ORDER BY RANDOM()
-                LIMIT 1;
+                FROM geo_location ORDER BY RANDOM() LIMIT 1;
 
-                -- Bước 2: Tìm channel_id VÀ channel_code ngẫu nhiên
-                -- Lưu ý: Giả định bảng order_channel có cột 'channel_code' (hoặc bạn đổi thành tên cột tương ứng chứa mã viết tắt)
+                -- Bước 2: Chọn kênh ngẫu nhiên
                 SELECT id, name INTO _random_channel_id, _channel_code
-                FROM order_channel
-                ORDER BY RANDOM()
-                LIMIT 1;
+                FROM order_channel ORDER BY RANDOM() LIMIT 1;
 
-                -- Bước 3: Tính số thứ tự của khách hàng trong kênh này
-                -- Đếm số khách hàng hiện có thuộc kênh vừa lấy được
+                -- Bước 3: Đếm khách hàng trong kênh
                 SELECT COUNT(*) INTO _current_count
-                FROM customers
-                WHERE order_channel_id = _random_channel_id;
+                FROM customers WHERE order_channel_id = _random_channel_id;
 
-                -- Bước 4: Tạo mã khách hàng theo format: KH + [Mã Kênh] + [Số thứ tự 3 chữ số]
-                -- Ví dụ: Kênh là 'FB', đang có 5 khách -> KH + FB + 006 => KHFB006
-                _new_customer_code := 'KH' || '_' || _channel_code || '_' || LPAD((_current_count + 1)::TEXT, 3, '0');
+                -- Bước 4: Tạo mã khách hàng
+                _new_customer_code := 'KH_' || _channel_code || '_' || LPAD((_current_count + 1)::TEXT, 3, '0');
 
-                -- Bước 5: Thực hiện Insert
+                -- Bước 5: Sinh thông tin cá nhân
+                _name := (ARRAY[
+                    'Nguyễn Văn', 'Trần Thị', 'Lê Minh', 'Phạm Hoàng', 'Hoàng Thu',
+                    'Vũ Đức', 'Đặng Ngọc', 'Bùi Quang', 'Đỗ Thanh', 'Ngô Phương',
+                    'Dương Hải', 'Lý Thành', 'Phan Anh', 'Hồ Bích', 'Tô Minh'
+                ])[FLOOR(RANDOM() * 15 + 1)::INT]
+                || ' ' || (ARRAY[
+                    'An', 'Bình', 'Châu', 'Dũng', 'Em', 'Giang', 'Hà', 'Khoa',
+                    'Lan', 'Minh', 'Nam', 'Phúc', 'Quân', 'Sơn', 'Tú', 'Uyên', 'Vy'
+                ])[FLOOR(RANDOM() * 17 + 1)::INT];
+
+                _email := LOWER(REPLACE(_new_customer_code, '_', '.')) || '@gmail.com';
+                _phone := '09' || LPAD(FLOOR(RANDOM() * 100000000)::TEXT, 8, '0');
+
+                -- Bước 6: Insert
                 INSERT INTO customers (
-                    customer_code,
-                    geo_location_id,
-                    order_channel_id,
-                    created_at
-                )
-                VALUES (
-                    _new_customer_code,
-                    _random_ward_code,
-                    _random_channel_id,
-                    NOW()
+                    customer_code, geo_location_id, order_channel_id,
+                    name, email, phone,
+                    tier, total_spent, loyalty_points,
+                    created_at, updated_at, is_active
+                ) VALUES (
+                    _new_customer_code, _random_ward_code, _random_channel_id,
+                    _name, _email, _phone,
+                    'Bronze', 0, 0,
+                    NOW()::TIMESTAMP, NOW()::TIMESTAMP, TRUE
                 );
 
-                -- (Tuỳ chọn) In ra mã vừa tạo để kiểm tra trong phần Messages của tool quản lý DB
-                RAISE NOTICE 'Đã tạo khách hàng mới với mã: %', _new_customer_code;
+                RAISE NOTICE 'Đã tạo khách hàng: % - %', _new_customer_code, _name;
             END $$;
-            """
+        """
 
     def generate(self, params=None):
-        """
-        Tạo dữ liệu giả và lưu vào bảng customers bằng 100% câu lệnh SQL.
-        """
         result = False
         try:
-            # Thực thi thông qua class cha
             result = super().generate()
-            
-            if result == True:
-                logger.info("Generated customer thành công bằng 100% SQL logic.")
-            
+            if result:
+                logger.info("Generated customer thành công.")
             return result
-            
         except Exception as e:
             logger.error(f"Lỗi trong CustomersGenerator: {e}")
             return False
