@@ -10,11 +10,60 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.sqlite3
-*.db
-*.log
-.env
-.env.*
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+*.cover
+.hypothesis/
+
+# IDE
 .vscode/
 .idea/
-gen_data/simulation_time.txt
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.venv
+venv/
+ENV/
+
+# Logs
+logs/
+*.log
+
+# Airflow specific
+airflow/logs/
+airflow/airflow.db
+airflow/webserver_config.py
+airflow/airflow.cfg
+
+# Data directories
+notebooks/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Secrets
+.secrets.baseline
+
+# GitLab
+.gitlab/logs/
+.gitlab/data/
+.gitlab/config/
+
+# Monitoring
+monitoring/data/
+monitoring/logs/
+
+# Backup
+backup/data/
+*.sql.gz
+*.dump
+
+# Swarm
+docker-swarm/secrets/
