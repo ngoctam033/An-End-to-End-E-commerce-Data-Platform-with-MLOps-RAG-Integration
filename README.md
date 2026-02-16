@@ -79,7 +79,7 @@ The database schema (`01_schema.sql`) has been expanded to 20+ tables to support
 
 ```text
 .
-├── airflow/                # Airflow configuration and DAGs
+├── airflow/                # Airflow configuration and DAGs [Documentation](airflow/README.md)
 │   ├── dags/               # Workflow definitions (Ingestion, Transformation)
 │   ├── config/             # Airflow config files
 │   └── Dockerfile          # Custom Airflow image definition
