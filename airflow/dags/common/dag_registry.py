@@ -23,12 +23,31 @@ class DagRegistry:
             'ingest_brand_to_minio', 'transform_brand_iceberg',
             'ingest_logistics_partner_to_minio', 'transform_logistics_partner_iceberg',
             'ingest_payment_to_minio', 'transform_payment_iceberg',
-            # 'ingest_shipment_to_minio', 'transform_shipment_iceberg',
+            'ingest_shipment_to_minio', 'transform_shipment_iceberg',
             'ingest_warehouse_to_minio', 'transform_warehouse_iceberg',
-            # 'ingest_order_status_history_to_minio', 'transform_order_status_history_iceberg',
-            # 'ingest_product_review_to_minio', 'transform_product_review_iceberg',
+            'ingest_order_status_history_to_minio', 'transform_order_status_history_iceberg',
+            'ingest_product_review_to_minio', 'transform_product_review_iceberg',
             'ingest_sub_category_to_minio', 'transform_sub_category_iceberg',
             'ingest_shipping_method_to_minio', 'transform_shipping_method_iceberg',
+            # v2.0 tables
+            'ingest_order_return_to_minio', 'transform_order_return_iceberg',
+            'ingest_inventory_log_to_minio', 'transform_inventory_log_iceberg',
+            'ingest_customer_activity_log_to_minio', 'transform_customer_activity_log_iceberg',
+            'ingest_wishlist_to_minio', 'transform_wishlist_iceberg',
+            'ingest_cart_to_minio', 'transform_cart_iceberg',
+            'ingest_cart_items_to_minio', 'transform_cart_items_iceberg',
+            # Gold Layer - Data Marts
+            'build_daily_sales_mart',
+            'build_customer_analytics_mart',
+            'build_product_performance_mart',
+            'build_logistics_mart',
+            'build_inventory_snapshot_mart',
+            'build_cart_analytics_mart',
+            
+            # v2.0 Gold Marts
+            'mart_inventory_analysis',
+            'mart_return_analysis',
+            'mart_customer_retention',
         ]
 
     def get_dags(self):
