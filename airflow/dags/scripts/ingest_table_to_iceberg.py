@@ -14,6 +14,10 @@ class BaseIcebergIngestor(ABC):
     Lớp cơ sở tập trung vào vai trò Extract & Load (EL).
     Lấy dữ liệu từ Source (Postgres) và lưu trữ nguyên bản vào Raw Zone (Iceberg).
     """
+    # Các thuộc tính có thể ghi đè ở class con
+    partition_column = "created_at"
+    extra_table_properties = {}
+
     def __init__(self, table_name, ds, sql_query, target_table, primary_key=None):
         self.table_name = table_name
         self.ds = ds
@@ -36,16 +40,16 @@ class BaseIcebergIngestor(ABC):
             'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
             'spark.hadoop.fs.s3a.aws.credentials.provider': 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider',
             'spark.hadoop.fs.s3a.metrics.enabled': 'false',
-            # CẤU HÌNH TÀI NGUYÊN (Tối ưu cho 12 Cores / 8GB RAM Total)
-            # Worker: 7GB -> Chạy 2 Executor (2GB + 512MB Overhead) + Driver (1GB) = 6GB Total Used
-            'spark.cores.max': '2',
-            'spark.executor.cores': '1',
-            'spark.executor.memory': '1g',
-            'spark.driver.memory': '512m',
-            'spark.executor.memoryOverhead': '256m',
+            # Tài nguyên (Mặc định - Sẽ bị ghi đè nếu truyền từ Airflow/SparkSubmit)
+            'spark.cores.max': '12',
+            'spark.executor.cores': '12',
+            'spark.executor.memory': '2g',
+            'spark.driver.memory': '1g',
+            'spark.executor.memoryOverhead': '512m',
         }
         
         for k, v in defaults.items():
+            # QUAN TRỌNG: Chỉ set nếu chưa có (ưu tiên cấu hình từ spark-submit)
             if not spark_conf.contains(k):
                 spark_conf.set(k, v)
 
@@ -92,74 +96,39 @@ class BaseIcebergIngestor(ABC):
         """Bước 2: Load - Lưu dữ liệu vào Raw Zone (Iceberg)"""
         if self.df is None:
             return self
-        # in ra full path của s3
-        
 
-        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table}")
+        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table} (Partition: {self.partition_column})")
         
         # Đảm bảo Namespace tồn tại
         namespace = ".".join(self.target_table.split(".")[:-1])
-        logger.info(f"[{self.table_name}] Namespace: {namespace}")
         if namespace:
             self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
+
+        # Khởi tạo writer
+        writer = self.df.writeTo(self.target_table).tableProperty("format-version", "2")
+        
+        # Thêm các properties bổ sung từ class con
+        for key, value in self.extra_table_properties.items():
+            writer = writer.tableProperty(key, value)
 
         # Ghi dữ liệu
         if not self.spark.catalog.tableExists(self.target_table):
             logger.info(f"[{self.table_name}] Khởi tạo bảng mới")
-            self.df.writeTo(self.target_table) \
-                .tableProperty("format-version", "2") \
-                .partitionedBy("created_at") \
-                .create()
+            writer.partitionedBy(self.partition_column).create()
         else:
             logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại")
-            self.df.writeTo(self.target_table).append()
+            writer.append()
             
         logger.info(f"[{self.table_name}] Hoàn thành Extract & Load.")
         return self
 
 class OrderStatusHistoryIngestor(BaseIcebergIngestor):
     """Xử lý riêng cho bảng order_status_history (partition theo changed_at)"""
-    def load(self):
-        if self.df is None:
-            return self
-
-        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table} (Partition: changed_at)")
-        
-        namespace = ".".join(self.target_table.split(".")[:-1])
-        if namespace:
-            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
-
-        if not self.spark.catalog.tableExists(self.target_table):
-            self.df.writeTo(self.target_table) \
-                .tableProperty("format-version", "2") \
-                .partitionedBy("changed_at") \
-                .create()
-        else:
-            self.df.writeTo(self.target_table).append()
-            
-        return self
+    partition_column = "changed_at"
 
 class WishlistIngestor(BaseIcebergIngestor):
     """Xử lý riêng cho bảng wishlist (partition theo added_at)"""
-    def load(self):
-        if self.df is None:
-            return self
-
-        logger.info(f"[{self.table_name}] 2. Load: Đang lưu dữ liệu vào {self.target_table} (Partition: added_at)")
-        
-        namespace = ".".join(self.target_table.split(".")[:-1])
-        if namespace:
-            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
-
-        if not self.spark.catalog.tableExists(self.target_table):
-            self.df.writeTo(self.target_table) \
-                .tableProperty("format-version", "2") \
-                .partitionedBy("added_at") \
-                .create()
-        else:
-            self.df.writeTo(self.target_table).append()
-            
-        return self
+    partition_column = "added_at"
 
 class CartItemsIngestor(WishlistIngestor):
     """Xử lý riêng cho bảng cart_items (partition theo added_at - kế thừa WishlistIngestor)"""
@@ -167,30 +136,10 @@ class CartItemsIngestor(WishlistIngestor):
 
 class GeoLocationIngestor(BaseIcebergIngestor):
     """Xử lý riêng cho bảng geo_location với lô 5000 dòng"""
-    def load(self):
-        if self.df is None:
-            return self
-
-        logger.info(f"[{self.table_name}] 2. Load (Batch): Đang lưu geo_location theo lô 5000 dòng")
-        
-        namespace = ".".join(self.target_table.split(".")[:-1])
-        if namespace:
-            self.spark.sql(f"CREATE NAMESPACE IF NOT EXISTS {namespace}")
-
-        writer = self.df.writeTo(self.target_table)
-        
-        if not self.spark.catalog.tableExists(self.target_table):
-            logger.info(f"[{self.table_name}] Khởi tạo bảng mới với property batching")
-            writer.tableProperty("format-version", "2") \
-                .tableProperty("write.target-file-size-bytes", "536870912") \
-                .partitionedBy("province_name") \
-                .create()
-        else:
-            logger.info(f"[{self.table_name}] Append dữ liệu vào bảng hiện tại")
-            writer.append()
-            
-        logger.info(f"[{self.table_name}] Hoàn thành Extract & Load cho GeoLocation.")
-        return self
+    partition_column = "province_name"
+    extra_table_properties = {
+        "write.target-file-size-bytes": "536870912"
+    }
 
 class DefaultIngestor(BaseIcebergIngestor):
     """Sử dụng trực tiếp logic mặc định của base class cho mục tiêu EL"""

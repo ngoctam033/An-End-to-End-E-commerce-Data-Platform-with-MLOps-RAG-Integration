@@ -21,7 +21,7 @@ def mart_customer_retention_dag():
     
     computation_task = SparkSubmitOperator(
         task_id='compute_retention_metrics',
-        application='/opt/airflow/dags/03_data_marts/build_customer_retention_mart.py',
+        application='/opt/airflow/dags/scripts/build_customer_retention_mart.py',
         conn_id='spark_default',
         application_args=[
             "{{ ds }}",

@@ -55,12 +55,16 @@ Designed to support data-driven decision making, the platform facilitates tracki
 *   **Customer Insights**: Retention rates, Cart Abandonment analysis, and Cart-to-Order conversion funnels.
 
 ## 🗄️ Enhanced Data Schema
+The database schema (`01_schema.sql`) has been expanded to 25 tables to support deep relational analysis:
 
-The database schema (`01_schema.sql`) has been expanded to 20+ tables to support deep relational analysis:
-*   **Core Entities**: `orders`, `order_items`, `customers`, `products`, `inventory`.
-*   **Audit & Tracking**: `inventory_log`, `order_status_history`, `customer_activity_log`.
-*   **Experience & Retention**: `cart`, `cart_items`, `wishlist`, `order_return`.
-*   **Data Integrity**: Strict FK constraints and PL/pgSQL validation rules to ensure high-quality data for the Lakehouse.
+*   **Core Transactions**: `orders`, `order_items`, `payment`.
+*   **Product Catalogue**: `product`, `category`, `sub_category`, `brand`, `discount`.
+*   **Customer 360**: `customers`, `geo_location`, `customer_activity_log`, `wishlist`.
+*   **Inventory & Logistics**: `inventory`, `inventory_log`, `warehouse`, `shipment`, `logistics_partner`.
+*   **Experience & Retention**: `cart`, `cart_items`, `order_return`, `order_status_history`, `product_review`.
+*   **Reference Data**: `order_channel`, `shipping_method`.
+
+For detailed definitions of all tables and columns, refer to the [Data Dictionary](docs/data_dictionary.md).
 
 ## 🛠 Technology Stack
 

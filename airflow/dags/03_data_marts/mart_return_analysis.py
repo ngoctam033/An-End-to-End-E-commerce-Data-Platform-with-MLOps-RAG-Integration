@@ -21,7 +21,7 @@ def mart_return_analysis_dag():
     
     computation_task = SparkSubmitOperator(
         task_id='compute_return_metrics',
-        application='/opt/airflow/dags/03_data_marts/build_return_analysis_mart.py',
+        application='/opt/airflow/dags/scripts/build_return_analysis_mart.py',
         conn_id='spark_default',
         application_args=[
             "{{ ds }}",

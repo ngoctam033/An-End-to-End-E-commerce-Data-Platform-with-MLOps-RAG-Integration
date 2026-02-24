@@ -50,7 +50,10 @@ Defines the "Single Source of Truth" for all Iceberg table paths.
 -   **Usage**: Spark scripts import `path_manager` to resolve S3 paths, ensuring consistency across environments.
 
 ### 3. Spark Scripts (`scripts/`)
--   `ingest_table_to_iceberg.py`: Generic script for EL (Extract-Load). Handles JDBC connection and Iceberg writes.
+-   `ingest_table_to_iceberg.py`: **Refactored** generic script for EL (Extract-Load).
+    -   Uses a unified `IcebergIngestor` class.
+    -   Centralizes table-specific configurations (partition keys, file size properties) in a `TABLE_CONFIGS` dictionary.
+    -   Eliminates repetitive subclasses for cleaner maintenance.
 -   `transform_table.py`: Generic script for ETL. Uses a **Transformer Registry** to apply table-specific logic (e.g., masking PII, calculating totals).
 
 ## 📊 Data Marts (Gold Layer)
@@ -78,6 +81,7 @@ TABLES = [..., "new_table"]
 Create `airflow/dags/01_ingestion/ingest_new_table.py`.
 -   Copy an existing pattern (e.g., `ingest_orders.py`).
 -   Update `DAG_ID` and `SQL_QUERY` (Full vs Incremental).
+-   **Optional**: If the table requires custom partitioning or Iceberg properties, add an entry to `TABLE_CONFIGS` in `airflow/dags/scripts/ingest_table_to_iceberg.py`.
 
 ### 3. Create Transformation DAG
 Create `airflow/dags/02_transformation/transform_new_table.py`.
