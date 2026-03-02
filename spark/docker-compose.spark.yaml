@@ -5,8 +5,8 @@ services:
       dockerfile: spark/Dockerfile
     container_name: spark_master
     ports:
-      - "8888:8888" # Jupyter Notebook
-      - "8080:8080" # Spark UI
+      - "${SPARK_JUPYTER_EXTERNAL_PORT:-8888}:8888" # Jupyter Notebook
+      - "${SPARK_MASTER_EXTERNAL_PORT:-8080}:8080" # Spark UI
     networks:
       - ecommerce_network
     depends_on:
@@ -44,7 +44,7 @@ services:
       dockerfile: spark/Dockerfile
     container_name: spark-worker
     ports:
-      - "8082:8081" # Worker UI
+      - "${SPARK_WORKER_EXTERNAL_PORT:-8082}:8081" # Worker UI
     networks:
       - ecommerce_network
     depends_on:
@@ -55,21 +55,22 @@ services:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=admin123
       - AWS_REGION=us-east-1
-      # Giới hạn tài nguyên Worker (12 Cores / 7GB cho Executor Pool)
-      - SPARK_WORKER_CORES=12
-      - SPARK_WORKER_MEMORY=7g
+      # Giới hạn tài nguyên Worker (12 Cores / 4GB)
+      # 4G limit: 2g executor + 512m overhead + 512m daemon + 1g buffer = ~4G
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=3g
       - SPARK_DAEMON_MEMORY=512m
       # Config mặc định executor (sẽ bị override bởi job)
       - SPARK_EXECUTOR_MEMORY=2g
-      - SPARK_EXECUTOR_CORES=5
+      - SPARK_EXECUTOR_CORES=2
     deploy:
       resources:
         limits:
-          cpus: '12.0'
-          memory: 8G
-        reservations:
           cpus: '2.0'
           memory: 4G
+        reservations:
+          cpus: '2.0'
+          memory: 2G
     entrypoint: >
       /bin/sh -c "
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark:7077"

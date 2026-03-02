@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gen-data
+  namespace: ecommerce
+  labels:
+    app: gen-data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gen-data
+  template:
+    metadata:
+      labels:
+        app: gen-data
+    spec:
+      containers:
+      - name: gen-data
+        image: ecommerce-gen-data:latest
+        imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "1.0"
+            memory: "1Gi"

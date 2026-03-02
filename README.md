@@ -77,7 +77,7 @@ For detailed definitions of all tables and columns, refer to the [Data Dictionar
 | **Database** | PostgreSQL 16 | Operational transactional database |
 | **Caching/Msg** | Redis | Message broker for Airflow Celery |
 | **Language** | Python, SQL | Core implementation languages |
-| **Infrastructure** | Docker Compose | Multi-container orchestration |
+| **Infrastructure** | Docker Compose, **Kubernetes** | Container orchestration options |
 
 ## 📂 Project Structure
 
@@ -95,6 +95,7 @@ For detailed definitions of all tables and columns, refer to the [Data Dictionar
 │   └── notebook/           # Jupyter notebooks for ad-hoc analysis
 ├── iceberg/                # Iceberg catalog configuration
 ├── minio/                  # MinIO storage configuration
+├── K8S/                    # Kubernetes manifests [Documentation](K8S/README.md)
 └── docker-compose.yaml     # Main entry point for services
 ```
 
@@ -124,11 +125,12 @@ For detailed definitions of all tables and columns, refer to the [Data Dictionar
     docker compose up -d
     ```
 
-4.  **Verify Status**:
-    Check if all containers are healthy:
     ```bash
     docker compose ps
     ```
+
+### Optional: Kubernetes Deployment
+The platform also supports deployment on Kubernetes (Minikube). For instructions, see the [Kubernetes Guide](K8S/README.md).
 
 ## 🖥 Usage Guide
 

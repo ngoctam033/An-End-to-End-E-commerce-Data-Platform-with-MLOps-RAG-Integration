@@ -33,7 +33,7 @@ services:
     container_name: dagster_webserver
     #cpus: "2.0"
     ports:
-      - '3030:3000'
+      - "${DAGSTER_WEBSERVER_EXTERNAL_PORT:-3030}:3000"
     environment:
       DAGSTER_POSTGRES_USER: postgres
       DAGSTER_POSTGRES_PASSWORD: password

@@ -13,8 +13,8 @@ include:
   #   image: clickhouse/clickhouse-server:latest
   #   container_name: clickhouse-server
   #   ports:
-  #     - "8123:8123" # HTTP Port
-  #     - "9000:9000" # Native Port
+  #     - "${CLICKHOUSE_HTTP_PORT:-8123}:8123" # HTTP Port
+  #     - "${CLICKHOUSE_NATIVE_PORT:-9000}:9000" # Native Port
   #   volumes:
   #     - ./init-clickhouse:/docker-entrypoint-initdb.d
   #     # Uncomment dòng dưới nếu bạn có file cấu hình user

@@ -13,8 +13,8 @@ services:
     # volumes:
     #   - minio1-data:/bitnami/minio/data
     ports:
-      - "9002:9000"
-      - "9001:9001"  # Console UI
+      - "${MINIO_API_EXTERNAL_PORT:-9002}:9000"
+      - "${MINIO_CONSOLE_EXTERNAL_PORT:-9001}:9001"
       
     # command: server --address ":9000" --console-address ":9001" http://minio{1...4}/bitnami/minio/data
     command: server --address ":9000" --console-address ":9001" /bitnami/minio/data

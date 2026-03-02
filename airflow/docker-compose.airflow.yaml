@@ -125,7 +125,7 @@ services:
     cpus: "2.0"
     restart: no
     ports:
-      - "5435:5432"
+      - "${AIRFLOW_DB_EXTERNAL_PORT:-5435}:5432"
     networks:
       - ecommerce_network
 
@@ -150,7 +150,7 @@ services:
     container_name: af_api
     command: api-server
     ports:
-      - "8081:8080"
+      - "${AIRFLOW_WEBSERVER_EXTERNAL_PORT:-8081}:8080"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/version"]
       interval: 30s
@@ -368,7 +368,7 @@ services:
     profiles:
       - flower
     ports:
-      - "5555:5555"
+      - "${AIRFLOW_FLOWER_EXTERNAL_PORT:-5555}:5555"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:5554/"]
       interval: 30s
