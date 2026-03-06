@@ -11,7 +11,7 @@ default_args = {
 @dag(
     dag_id='mart_return_analysis',
     description='Build Gold Mart: Return Analysis (Rates, Reasons, Refund Impact)',
-    schedule='0 2 * * *',  # Daily at 02:00 AM
+    schedule= None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
     tags=['spark', 'iceberg', 'gold', 'returns'],

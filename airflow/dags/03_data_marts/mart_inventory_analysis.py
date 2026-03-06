@@ -11,7 +11,7 @@ default_args = {
 @dag(
     dag_id='mart_inventory_analysis',
     description='Build Gold Mart: Inventory Analysis (Stock Levels, Turnover, Loss)',
-    schedule='0 1 * * *',  # Daily at 01:00 AM
+    schedule= None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
     tags=['spark', 'iceberg', 'gold', 'inventory'],

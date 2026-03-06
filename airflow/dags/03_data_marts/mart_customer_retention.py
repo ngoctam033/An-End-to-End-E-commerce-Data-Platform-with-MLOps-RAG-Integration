@@ -11,7 +11,7 @@ default_args = {
 @dag(
     dag_id='mart_customer_retention',
     description='Build Gold Mart: Customer Retention (Churn, Engagement, Abandonment)',
-    schedule='0 3 * * *',  # Daily at 03:00 AM
+    schedule= None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
     tags=['spark', 'iceberg', 'gold', 'customer', 'retention'],
